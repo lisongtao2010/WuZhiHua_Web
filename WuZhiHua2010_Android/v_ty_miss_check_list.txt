@@ -1,0 +1,130 @@
+﻿USE [AvoidMiss_New]
+GO
+
+/****** Object:  View [dbo].[v_ty_miss_check_list]    Script Date: 2016/02/04 16:39:29 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE VIEW [dbo].[v_ty_miss_check_list]
+AS
+SELECT '旧'                AS sysnm,
+       tb_completedata.finish_date,
+       TB_TypeMS.GoodsName,
+       tb_completedata.code AS goods_cd --商品コード  
+       ,
+       tb_completedata.makenumber--作番  
+       ,
+       tb_completedata.productionquantity--完工数量  
+       ,
+       tb_completedata.product_line--生产线  
+       ,
+       tb_completedata.direction--向先  
+       ,
+       tb_completedata.pay_date--纳期日 
+       ,
+       CASE
+         WHEN BB.[ID] IS NULL THEN '未检查'
+         WHEN AA.cntId < CC.cntId THEN '未全检'
+         WHEN BB.result = 'NG' THEN '不合格未二检'
+         ELSE ''
+       END                  jieguo
+--原因  
+FROM   [ScanCheck].[dbo].tb_completedata
+       LEFT JOIN [ScanCheck].[dbo].TB_TypeMS
+              ON tb_completedata.code = TB_TypeMS.Code
+       LEFT JOIN (SELECT Count([ID]) AS cntId,
+                         [Code],
+                         [MakeNumber]
+                  FROM   [ScanCheck].[dbo].[TB_CheckDetail]
+                  GROUP  BY [Code],
+                            [MakeNumber]) AA
+              ON AA.makenumber = tb_completedata.makenumber
+                 AND AA.code = tb_completedata.code
+       LEFT JOIN (SELECT b.[ID],
+                         b.[Code],
+                         b.[MakeNumber],
+                         b.result
+                  FROM   (SELECT Max([ID]) AS maxId,
+                                 [Code],
+                                 [MakeNumber]
+                          FROM   [ScanCheck].[dbo].[TB_CheckDetail]
+                          GROUP  BY [Code],
+                                    [MakeNumber]) a
+                         INNER JOIN [ScanCheck].[dbo].[TB_CheckDetail] b
+                                 ON a.maxId = b.[ID]) BB
+              ON BB.makenumber = tb_completedata.makenumber
+                 AND BB.code = tb_completedata.code
+       LEFT JOIN (SELECT Count(a.code) AS cntId,
+                         a.code,
+                         a.makenumber
+                  FROM   tb_completedata a
+                         INNER JOIN tb_setallcheck b
+                                 ON a.code = b.code
+                  GROUP  BY a.code,
+                            a.makenumber) CC
+              ON CC.makenumber = tb_completedata.makenumber
+                 AND CC.code = tb_completedata.code
+UNION
+SELECT DISTINCT '新'                AS sysnm,
+                tb_completedata.finish_date,
+                m_goods.goods_name,--商品名  
+                tb_completedata.code AS goods_cd --商品コード  
+                ,
+                tb_completedata.makenumber--作番  
+                ,
+                tb_completedata.productionquantity--完工数量  
+                ,
+                tb_completedata.product_line--生产线  
+                ,
+                tb_completedata.direction--向先  
+                ,
+                tb_completedata.pay_date--纳期日 
+                ,
+                CASE
+                  WHEN BB.[ID] IS NULL THEN '未检查'
+                  WHEN AA.cntId < CC.cntId THEN '未全检'
+                  WHEN BB.result = 'NG' THEN '不合格未二检'
+                  ELSE ''
+                END                  jieguo
+--原因  
+FROM   tb_completedata
+       LEFT JOIN m_goods
+              ON m_goods.goods_cd = tb_completedata.code
+                 AND m_goods.delete_flg = '0'
+       LEFT JOIN (SELECT Count([id]) AS cntId,
+                         [goods_id],
+                         [make_number]
+                  FROM   t_check_result
+                  GROUP  BY [goods_id],
+                            [make_number]) AA
+              ON AA.make_number = tb_completedata.makenumber
+                 AND AA.goods_id = m_goods.id
+       LEFT JOIN (SELECT nom.*
+                  FROM   t_check_result AS nom
+                         INNER JOIN (SELECT goods_id,
+                                            make_number,
+                                            Max(id) AS id
+                                     FROM   t_check_result
+                                     GROUP  BY goods_id,
+                                               make_number) AS maxt
+                                 ON maxt.id = nom.id) AS BB
+              ON BB.goods_id = m_goods.id
+                 AND BB.make_number = tb_completedata.makenumber
+       LEFT JOIN (SELECT Count(a.code) AS cntId,
+                         a.code,
+                         a.makenumber
+                  FROM   tb_completedata a
+                         INNER JOIN tb_setallcheck b
+                                 ON a.code = b.code
+                  GROUP  BY a.code,
+                            a.makenumber) CC
+              ON CC.makenumber = tb_completedata.makenumber
+                 AND CC.code = tb_completedata.code
+WHERE  continue_chk_flg <> '2'
+       AND continue_chk_flg <> '3' --2待判 3临时
+
+
+GO
