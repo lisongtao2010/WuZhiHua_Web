@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.Mobile.master" AutoEventWireup="false" CodeFile="CheckToolsMobile.aspx.vb" Inherits="CheckCunFaMobile" %>
+﻿<%@ Page Language="VB" MasterPageFile="~/Site.Mobile.master" AutoEventWireup="false" CodeFile="CheckToolsMobile.aspx.vb" Inherits="CheckCunFaMobile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server"></asp:Content>
 <asp:Content ID="C1" ContentPlaceHolderID="FC" Runat="Server">

@@ -7,8 +7,7 @@ function ConfirmMsg(e) {
 function ConfirmKanryouMsg(e) {
 
     var myResult;
-    myResult = '';
-
+    myResult = true;
     var msg;
     msg = "";
     $.ajax({
@@ -16,13 +15,8 @@ function ConfirmKanryouMsg(e) {
         async: false,
         url: "AJAX.aspx?k=2&param=" + $("#ctl00_FC_hidResult_id").val(),
         success: function (d) {
-            if (d == "OK") {
-                myResult = '';
-            } else if (d.split(',')[0] == 'LOU') {
-                myResult = 'LOU';
-                msg = d.split(',')[1];
-            } else {
-                myResult = 'NG';
+            if (d != "OK") {
+                myResult = false;
                 msg = d;
             }
         },
@@ -31,15 +25,13 @@ function ConfirmKanryouMsg(e) {
         }
     });
 
-    if (myResult == 'OK') {
+    if (myResult) {
         return confirm('是否' + e.value + "?");
-    } else if (myResult == 'LOU') {
-        alert("存在漏检的情况[" + msg + "]");
-        alert("不能完了退出");
-        return false;
+
     } else {
         alert("存在轻 中 重 误 漏检的情况[" + msg + "]");
-        return confirm('是否完了');
+        alert("不能完了退出");
+        return false;
     }
 
 
@@ -51,7 +43,7 @@ function ConfirmKanryouMsg(e) {
 function UpdateRow(myasyn) {
 
     var tr;
-    tr = $(GL_OLD_SELECTED_ROW);
+    tr = $(dom_old_select_row);
 
     if (tr.length == 0) {
         return;

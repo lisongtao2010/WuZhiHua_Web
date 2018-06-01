@@ -266,16 +266,16 @@ Partial Class CheckCunFaMobile
         Dim ResultDA As New ResultDA
         ResultDA.Updatet_check_result_continue_chk_flg(Me.hidResult_id.Value, "0", Me.tbxCheckUserCd.Text, Com.GetResult(Me.hidResult_id.Value))
 
-        Dim tongyong_cd As String = _
-checkDA.Gettongyong_cd(Me.tbxGoodsCd.Text.Trim)
+        If Not Com.GetResultLoujian(Me.hidResult_id.Value) Then
+            Dim tongyong_cd As String = _
+            checkDA.Gettongyong_cd(Me.tbxGoodsCd.Text.Trim)
 
-        If tongyong_cd <> "" Then
-            ResultDA.UpdFirstCheck(tongyong_cd)
-            'Else
-            '    ResultDA.InsFirstCheck(Me.tbxGoodsCd.Text.Trim, Me.tbxGoodsCd.Text.Trim)
+            If tongyong_cd <> "" Then
+                ResultDA.UpdFirstCheck(tongyong_cd)
+                'Else
+                '    ResultDA.InsFirstCheck(Me.tbxGoodsCd.Text.Trim, Me.tbxGoodsCd.Text.Trim)
+            End If
         End If
-
-
 
         'Dim result_id As String = Me.hidResult_id.Value
         'If Com.GetResult(result_id) = "OK" Then

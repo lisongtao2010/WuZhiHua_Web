@@ -111,8 +111,12 @@ Partial Class AJAX
         Dim result_id As String = param(0)
 
         Try
-            Dim ResultDA As New ResultDA
-            Response.Write(Com.GetResultSuu(result_id))
+            If Com.GetResultLoujian(result_id) Then
+                Response.Write("LOU," & Com.GetResultSuu(result_id))
+            Else
+                Response.Write(Com.GetResultSuu(result_id))
+            End If
+
         Catch ex As Exception
             Response.Write("NG")
         End Try

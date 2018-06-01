@@ -140,6 +140,18 @@ Public Class Com
         End If
     End Function
 
+    Public Shared Function GetResultLoujian(ByVal result_id As String) As Boolean
+        Dim CheckDA As New CheckDA
+        Dim dt As Data.DataTable = CheckDA.GetChkDetailResultMSG(result_id)
+        If dt.Select("result='' ").Length > 0 Then
+
+            Return True
+
+        Else
+            Return False
+        End If
+    End Function
+
     '类型Scan Or Input
     Public Shared Function GetRemark(ByVal remark As String, ByVal result As String _
                             , ByVal ktype As String _

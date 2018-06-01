@@ -529,7 +529,7 @@ Public Class CheckDA
         Dim sb As New StringBuilder
         Dim paramList As New List(Of SqlParameter)
         sb.AppendLine("SELECT tongyong_cd FROM t_first_check where tongyong_cd in (")
-        sb.AppendLine("SELECT tongyong_cd FROM t_first_check where good_cd = '" & cd & "')")
+        sb.AppendLine("SELECT tongyong_cd FROM t_first_check where good_cd = '" & cd.Replace("-", "") & "')")
         sb.AppendLine("and checked_flg='1'")
         Dim ds As New DataSet
         '検索の実行
@@ -546,7 +546,7 @@ Public Class CheckDA
 
         Dim sb As New StringBuilder
         Dim paramList As New List(Of SqlParameter)
-        sb.AppendLine(" SELECT tongyong_cd FROM t_first_check where good_cd = '" & cd & "'")
+        sb.AppendLine(" SELECT tongyong_cd FROM t_first_check where good_cd = '" & cd.Replace("-", "") & "'")
 
         Dim ds As New DataSet
         '検索の実行
