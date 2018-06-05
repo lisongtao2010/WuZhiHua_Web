@@ -17,7 +17,7 @@ function ConfirmKanryouMsg(e) {
         url: "AJAX.aspx?k=2&param=" + $("#ctl00_FC_hidResult_id").val(),
         success: function (d) {
             if (d == "OK") {
-                myResult = '';
+                myResult = 'OK';
             } else if (d.split(',')[0] == 'LOU') {
                 myResult = 'LOU';
                 msg = d.split(',')[1];
@@ -32,14 +32,16 @@ function ConfirmKanryouMsg(e) {
     });
 
     if (myResult == 'OK') {
+        return true;
         return confirm('是否' + e.value + "?");
     } else if (myResult == 'LOU') {
         alert("存在漏检的情况[" + msg + "]");
         alert("不能完了退出");
         return false;
     } else {
-        alert("存在轻 中 重 误 漏检的情况[" + msg + "]");
-        return confirm('是否完了');
+        return true;
+        //alert("存在轻 中 重 误 漏检的情况[" + msg + "]");
+        //return confirm('是否完了');
     }
 
 

@@ -165,7 +165,7 @@ SamePiCi:
 
         'Next
 
-        'Return ""
+        Return ""
 
     End Function
 

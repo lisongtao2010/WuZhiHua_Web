@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="Content/Mobile.css" />
     <script src="Scripts/jquery-1.10.2.min.js"></script>
     <script src="Scripts/ConstJScript.js"></script>
-    <script src="Scripts/ScanTextbox.js"></script>
+    <script src="Scripts/ScanTextbox.js?version=2018060"></script>
     <script src="Scripts/CommonJScript.js"></script>
 
 

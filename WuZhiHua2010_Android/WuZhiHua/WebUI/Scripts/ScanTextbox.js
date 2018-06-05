@@ -71,6 +71,7 @@ $(document).ready(function () {
     $(".textbox_scan").keydown(function (e) {
 
         if (e.which == 13) {
+            $(this).val($(this).val().replace(/-/g, ""));
             //获得行的基准值 ，并且根据基准值进行检查
             CheckRowInput(this);
             //设置焦点到下一个单元格

@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server"></asp:Content>
 <asp:Content ID="C1" ContentPlaceHolderID="FC" Runat="Server">
     <script src="Scripts/CheckJScript.js" type="text/javascript"></script>
-    <script src="Scripts/UpdateJScript.js" type="text/javascript"></script>
+    <script src="Scripts/UpdateJScript.js?version=2018060" type="text/javascript"></script>
 
     <script>
         var Gl_FocusTextbox;

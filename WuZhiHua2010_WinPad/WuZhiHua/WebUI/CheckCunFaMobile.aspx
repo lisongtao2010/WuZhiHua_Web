@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="C1" ContentPlaceHolderID="FC" runat="Server">
     <script src="Scripts/CheckJScript.js" type="text/javascript"></script>
-    <script src="Scripts/UpdateJScript.js" type="text/javascript"></script>
+    <script src="Scripts/UpdateJScript.js?version=20180604" type="text/javascript"></script>
     <script language="javascript">
         var Gl_FocusTextbox;
         Gl_FocusTextbox = null;

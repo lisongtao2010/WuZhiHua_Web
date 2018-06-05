@@ -16,7 +16,7 @@
     </script>
     <script language="javascript" type="text/javascript" src="Scripts/jquery-1.10.2.min.js"></script>
     <script language="javascript" type="text/javascript" src="Scripts/ConstJScript.js"></script>
-    <script language="javascript" type="text/javascript" src="Scripts/ScanTextbox.js?version=20180511"></script>
+    <script language="javascript" type="text/javascript" src="Scripts/ScanTextbox.js?version=20180604"></script>
     <script language="javascript" type="text/javascript" src="Scripts/CommonJScript.js"></script>
 </head>
 <body>
