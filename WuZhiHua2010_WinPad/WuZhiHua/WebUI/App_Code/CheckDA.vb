@@ -53,6 +53,15 @@ Public Class CheckDA
         sb.AppendLine("AND MakeNumber=@MakeNumber")
 
 
+        sb.AppendLine("SELECT distinct Code ")
+        sb.AppendLine("INTO #TB_CompleteData_good_cd")
+        sb.AppendLine("FROM")
+        sb.AppendLine("	TB_CompleteData WITH(readcommitted) ")
+        sb.AppendLine("WHERE ")
+        sb.AppendLine("	Product_Line = @p ")
+        sb.AppendLine("	AND Finish_Date BETWEEN @s AND @e ")
+        sb.AppendLine("	AND Code = @Pgoods_cd")
+
         sb.AppendLine(" SELECT ")
         sb.AppendLine(" A.id AS 'ID' ")
         sb.AppendLine(" , B.goods_cd AS '商品CD' ")
@@ -81,11 +90,14 @@ Public Class CheckDA
 
         sb.AppendLine("AND (replace(cast(B.goods_cd as varchar(30)),'-',''))")
         sb.AppendLine("IN  (")
-        sb.AppendLine("SELECT Code")
-        sb.AppendLine("FROM TB_CompleteData WITH(READCOMMITTED)")
-        sb.AppendLine("WHERE Product_Line = @p")
-        sb.AppendLine("AND Finish_Date BETWEEN @s AND @e")
-        sb.AppendLine("AND Code = @Pgoods_cd ")
+
+        sb.AppendLine("SELECT Code FROM #TB_CompleteData_good_cd")
+
+        'sb.AppendLine("SELECT Code")
+        'sb.AppendLine("FROM TB_CompleteData WITH(READCOMMITTED)")
+        'sb.AppendLine("WHERE Product_Line = @p")
+        'sb.AppendLine("AND Finish_Date BETWEEN @s AND @e")
+        'sb.AppendLine("AND Code = @Pgoods_cd ")
         sb.AppendLine(" )")
         sb.AppendLine(" AND continue_chk_flg <> 3 ") '临时保存以外的数据
         sb.AppendLine(" AND D.Product_Line = @p ")
