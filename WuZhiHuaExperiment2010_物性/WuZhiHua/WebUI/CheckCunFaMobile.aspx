@@ -164,7 +164,7 @@ maxlength="100"><%#Eval("remarks").ToString %></textarea>
 <ItemTemplate >
 <%# Com.GetRemark(Eval("remarks").ToString, Eval("result").ToString, Eval("benchmark_type").ToString, Eval("benchmark_type_old").ToString, Eval("benchmark_value1").ToString, Eval("benchmark_value2").ToString, Eval("benchmark_value3").ToString, Eval("benchmark_value1_old").ToString, Eval("benchmark_value2_old").ToString, Eval("benchmark_value3_old").ToString, Eval("measure_value1").ToString, Eval("measure_value2").ToString)%>
 </ItemTemplate>
-  
+ <ItemStyle Font-Size="12" CssClass="JQ_JIZHUN txt_warp" />
 </asp:TemplateField>                          
 </Columns>
 </asp:GridView>
@@ -282,15 +282,17 @@ maxlength="100"><%#Eval("remarks").ToString %></textarea>
 
     <script>
 
-    $(document).ready(function () {
-        Show100('100%');
-        RowSelect($(".JQ_CheckMS")[0].rows[0]);
-        var shiceObj;
-        shiceObj = $($(".JQ_CheckMS")[0].rows[0]).find(".JQ_SHICE1");
-        if (shiceObj.css("display") != "none") {
-            SetFocusAndSelectText(shiceObj);
-        }
-    });
+        $(document).ready(function () {
+            Show100('100%');
+            if ($(".JQ_CheckMS").length > 0) {
+                RowSelect($(".JQ_CheckMS")[0].rows[0]);
+                var shiceObj;
+                shiceObj = $($(".JQ_CheckMS")[0].rows[0]).find(".JQ_SHICE1");
+                if (shiceObj.css("display") != "none") {
+                    SetFocusAndSelectText(shiceObj);
+                }
+            }
+        });
 
     </script>
 </asp:Content>

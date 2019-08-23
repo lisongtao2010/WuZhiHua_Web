@@ -324,6 +324,9 @@ Partial Class NewCheckCunFaMobile
                     ElseIf (checkMs.Rows(i).Item("benchmark_type") = "51" Or checkMs.Rows(i).Item("benchmark_type") = "61" Or checkMs.Rows(i).Item("benchmark_type") = "63" Or checkMs.Rows(i).Item("benchmark_type") = "65") And inputSuu = 3 Then
                         checkMs.Rows(i).Item("JQ_atai1") = ZeroToEmpty(sumValue / 3)
                         checkMs.Rows(i).Item("JQ_atai2") = ZeroToEmpty(minValue)
+                    ElseIf (checkMs.Rows(i).Item("benchmark_type") >= "66" AndAlso checkMs.Rows(i).Item("benchmark_type") <= "71") Then
+                        checkMs.Rows(i).Item("JQ_atai1") = ZeroToEmpty(sumValue / inputSuu)
+                        checkMs.Rows(i).Item("JQ_atai2") = ZeroToEmpty(minValue)
                     End If
                     Me.Label7.Text = "平均值"
                     Me.Label8.Text = "最小值"
@@ -443,39 +446,51 @@ Partial Class NewCheckCunFaMobile
     End Function
 
     Function GetMinValue(ByVal value As Decimal, ByRef newValue As Object) As Decimal
+        Try
+            If newValue IsNot DBNull.Value AndAlso newValue.ToString <> "" Then
 
-        If newValue IsNot DBNull.Value AndAlso newValue.ToString <> "" Then
 
-
-            If Convert.ToDecimal(newValue) <= value Or value = 0 Then
-                value = Convert.ToDecimal(newValue)
+                If Convert.ToDecimal(newValue) <= value Or value = 0 Then
+                    value = Convert.ToDecimal(newValue)
+                End If
+                newValue = Convert.ToDecimal(newValue).ToString("########0.0")
             End If
-            newValue = Convert.ToDecimal(newValue).ToString("########0.0")
-        End If
+        Catch ex As Exception
+
+        End Try
+
 
         Return value
 
     End Function
 
     Function GetMaxValue(ByVal value As Decimal, ByRef newValue As Object) As Decimal
-
-        If newValue IsNot DBNull.Value AndAlso newValue.ToString <> "" Then
-            If Convert.ToDecimal(newValue) >= value Then
-                value = Convert.ToDecimal(newValue)
+        Try
+            If newValue IsNot DBNull.Value AndAlso newValue.ToString <> "" Then
+                If Convert.ToDecimal(newValue) >= value Then
+                    value = Convert.ToDecimal(newValue)
+                End If
             End If
-        End If
+        Catch ex As Exception
+
+        End Try
+
 
         Return value
 
     End Function
 
     Function GetNumValue(ByRef newValue As Object) As Decimal
+        Try
+            If newValue IsNot DBNull.Value AndAlso newValue.ToString <> "" Then
+                Return Convert.ToDecimal(newValue)
+            Else
+                Return 0
+            End If
 
-        If newValue IsNot DBNull.Value AndAlso newValue.ToString <> "" Then
-            Return Convert.ToDecimal(newValue)
-        Else
+        Catch ex As Exception
             Return 0
-        End If
+        End Try
 
 
     End Function

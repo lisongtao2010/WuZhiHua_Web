@@ -14,7 +14,11 @@ function isInteger(obj) {
         f = f + ".0";
     }
     return f;
-}  
+}
+
+function KesanBilink(e,key) {
+   return Math.round(Math.round(25 / key * e.value * 100) / 10) / 10;
+}
 
 function CheckRowInput(e) {
 
@@ -44,6 +48,9 @@ function CheckRowInput(e) {
     zbenchmark_value2 = tr.attr("zbenchmark_value2");
     zbenchmark_value3 = tr.attr("zbenchmark_value3");
 
+
+
+    //ピーリンク
     if (parseInt(zbenchmark_type) >= 60 && parseInt(zbenchmark_type) <= 65) {
 
         if (GL_JQ_INPUT_TEXTBOX_OLD_VALUE != e.value) {
@@ -72,13 +79,57 @@ function CheckRowInput(e) {
         }
 
     }
+
+    //ピーリンク 2 Width
+    if (parseInt(zbenchmark_type) >= 66 && parseInt(zbenchmark_type) <= 71) {
+
+        var v135 = "135";
+        var v246 = "246";
+        var ky = ($(e).parent().index() + 1) + "";  //$(e).attr("id");
+
+        if (parseInt(zbenchmark_type) == 66) {
+            if (v246.indexOf(ky) >= 0) {
+                e.value = KesanBilink(e, 15);
+            }
+        } else if (parseInt(zbenchmark_type) == 67) {
+            if (v246.indexOf(ky) >= 0) {
+                e.value = KesanBilink(e, 10);
+            }
+        } else if (parseInt(zbenchmark_type) == 68) {
+            if (v246.indexOf(ky) >= 0) {
+                e.value = KesanBilink(e, 5);
+            }
+        } else if (parseInt(zbenchmark_type) == 69) {
+            if (v135.indexOf(ky) >= 0) {
+                e.value = KesanBilink(e, 15);
+            }
+            if (v246.indexOf(ky) >= 0) {
+                e.value = KesanBilink(e, 10);
+            }
+        } else if (parseInt(zbenchmark_type) == 70) {
+            if (v135.indexOf(ky) >= 0) {
+                e.value = KesanBilink(e, 15);
+            }
+            if (v246.indexOf(ky) >= 0) {
+                e.value = KesanBilink(e, 5);
+            }
+        } else if (parseInt(zbenchmark_type) == 71) {
+            if (v135.indexOf(ky) >= 0) {
+                e.value = KesanBilink(e, 10);
+            }
+            if (v246.indexOf(ky) >= 0) {
+                e.value = KesanBilink(e, 5);
+            }
+        }
+
+        zbenchmark_type = "50"; //输入1~6 的值，求平均数>=基准值1①，并且求最小值>=基准值1②
+
+    }
+
     if (parseInt(zbenchmark_type) == 56) {
         if (GL_JQ_INPUT_TEXTBOX_OLD_VALUE != e.value) {
-
             //计算变换 表面胶合强度
-            //e.value = Math.round(e.value / 400 * 10) / 10;
             e.value = Math.round(Math.round(e.value / 400 * 100) / 10) / 10;
-
         }
     }
 

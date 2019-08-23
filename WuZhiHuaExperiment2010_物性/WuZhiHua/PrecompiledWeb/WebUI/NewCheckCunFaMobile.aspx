@@ -1,8 +1,8 @@
-﻿<%@ page title="" language="VB" masterpagefile="~/Site.Mobile.master" autoeventwireup="false" inherits="NewCheckCunFaMobile, App_Web_qrd4zh2n" %>
+﻿<%@ page title="" language="VB" masterpagefile="~/Site.Mobile.master" autoeventwireup="false" inherits="NewCheckCunFaMobile, App_Web_tyhxttpm" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server"></asp:Content>
 <asp:Content ID="C1" ContentPlaceHolderID="FC" Runat="Server">
-    <script src="Scripts/CheckJScript.js" type="text/javascript"></script>
+    <script src="Scripts/CheckJScript.js?ver=1.1" type="text/javascript"></script>
     <script src="Scripts/UpdateJScript.js" type="text/javascript"></script>
 
     <script>
@@ -146,7 +146,7 @@
 --%>
 <asp:TemplateField HeaderText ="实测1">
 <ItemTemplate >
-<input type="text" readonly="readonly" class='<%#GetTextBoxClass(Eval("check_way").ToString) %> JQ_SHICE1' value='<%#Eval("measure_value1").ToString%>' 
+<input type="text" readonly="readonly" id="g1" class='<%#GetTextBoxClass(Eval("check_way").ToString) %> JQ_SHICE1' value='<%#Eval("measure_value1").ToString%>' 
 style=" display:<%# GetTextBoxEnable(Eval("benchmark_type").ToString,1) %>;"/>
 </ItemTemplate>
 <ItemStyle Width="100" /> 
@@ -154,7 +154,7 @@ style=" display:<%# GetTextBoxEnable(Eval("benchmark_type").ToString,1) %>;"/>
 
 <asp:TemplateField HeaderText ="实测2">
 <ItemTemplate >
-<input type="text" readonly="readonly" class='<%#GetTextBoxClass(Eval("check_way").ToString) %> JQ_SHICE2' value='<%#Eval("measure_value2").ToString%>' 
+<input type="text" readonly="readonly" id="g2" class='<%#GetTextBoxClass(Eval("check_way").ToString) %> JQ_SHICE2' value='<%#Eval("measure_value2").ToString%>' 
 style="display:<%# GetTextBoxEnable(Eval("benchmark_type").ToString,2) %>;"/>
 </ItemTemplate>
 <ItemStyle Width="100" />
@@ -162,7 +162,7 @@ style="display:<%# GetTextBoxEnable(Eval("benchmark_type").ToString,2) %>;"/>
 
 <asp:TemplateField HeaderText ="实测3">
 <ItemTemplate >
-<input type="text" readonly="readonly" class='<%#GetTextBoxClass(Eval("check_way").ToString) %> JQ_SHICE3' value='<%#Eval("measure_value3").ToString%>' 
+<input type="text" readonly="readonly" id="g3" class='<%#GetTextBoxClass(Eval("check_way").ToString) %> JQ_SHICE3' value='<%#Eval("measure_value3").ToString%>' 
 style="display:<%# GetTextBoxEnable(Eval("benchmark_type").ToString,3) %>;"/>
 </ItemTemplate>
 <ItemStyle Width="100" />
@@ -171,7 +171,7 @@ style="display:<%# GetTextBoxEnable(Eval("benchmark_type").ToString,3) %>;"/>
 
 <asp:TemplateField HeaderText ="实测4">
 <ItemTemplate >
-<input type="text" readonly="readonly" class='<%#GetTextBoxClass(Eval("check_way").ToString) %> JQ_SHICE4' value='<%#Eval("measure_value4").ToString%>' 
+<input type="text" readonly="readonly" id="g4" class='<%#GetTextBoxClass(Eval("check_way").ToString) %> JQ_SHICE4' value='<%#Eval("measure_value4").ToString%>' 
 style="display:<%# GetTextBoxEnable(Eval("benchmark_type").ToString,4) %>;"/>
 </ItemTemplate>
 <ItemStyle Width="100" />
@@ -180,7 +180,7 @@ style="display:<%# GetTextBoxEnable(Eval("benchmark_type").ToString,4) %>;"/>
 
 <asp:TemplateField HeaderText ="实测5">
 <ItemTemplate >
-<input type="text" readonly="readonly" class='<%#GetTextBoxClass(Eval("check_way").ToString) %> JQ_SHICE5' value='<%#Eval("measure_value5").ToString%>' 
+<input type="text" readonly="readonly" id="g5" class='<%#GetTextBoxClass(Eval("check_way").ToString) %> JQ_SHICE5' value='<%#Eval("measure_value5").ToString%>' 
 style="display:<%# GetTextBoxEnable(Eval("benchmark_type").ToString,5) %>;"/>
 </ItemTemplate>
 <ItemStyle Width="100" />
@@ -189,7 +189,7 @@ style="display:<%# GetTextBoxEnable(Eval("benchmark_type").ToString,5) %>;"/>
 
 <asp:TemplateField HeaderText ="实测6">
 <ItemTemplate >
-<input type="text" readonly="readonly" class='<%#GetTextBoxClass(Eval("check_way").ToString) %> JQ_SHICE6' value='<%#Eval("measure_value6").ToString%>' 
+<input type="text" readonly="readonly" id="g6" class='<%#GetTextBoxClass(Eval("check_way").ToString) %> JQ_SHICE6' value='<%#Eval("measure_value6").ToString%>' 
 style="display:<%# GetTextBoxEnable(Eval("benchmark_type").ToString,6) %>;"/>
 </ItemTemplate>
 <ItemStyle Width="100" />
@@ -351,15 +351,19 @@ maxlength="100"><%#Eval("remarks").ToString %></textarea>
     <asp:HiddenField ID="hidKind_Name" runat="server" />
     <script>
 
-    $(document).ready(function () {
-        Show100('100%');
-        RowSelect($(".JQ_CheckMS")[0].rows[0]);
-        var shiceObj;
-        shiceObj = $($(".JQ_CheckMS")[0].rows[0]).find(".JQ_SHICE1");
-        if (shiceObj.css("display") != "none") {
-            SetFocusAndSelectText(shiceObj);
-        }
-    });
+        $(document).ready(function () {
+            Show100('100%');
+
+            if ($(".JQ_CheckMS").length > 0) {
+                RowSelect($(".JQ_CheckMS")[0].rows[0]);
+                var shiceObj;
+                shiceObj = $($(".JQ_CheckMS")[0].rows[0]).find(".JQ_SHICE1");
+                if (shiceObj.css("display") != "none") {
+                    SetFocusAndSelectText(shiceObj);
+                }
+            }
+
+        });
 
     </script>
 </asp:Content>
