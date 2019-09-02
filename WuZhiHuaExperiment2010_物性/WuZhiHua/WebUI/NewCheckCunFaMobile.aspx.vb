@@ -325,7 +325,10 @@ Partial Class NewCheckCunFaMobile
                         checkMs.Rows(i).Item("JQ_atai1") = ZeroToEmpty(sumValue / 3)
                         checkMs.Rows(i).Item("JQ_atai2") = ZeroToEmpty(minValue)
                     ElseIf (checkMs.Rows(i).Item("benchmark_type") >= "66" AndAlso checkMs.Rows(i).Item("benchmark_type") <= "71") Then
-                        checkMs.Rows(i).Item("JQ_atai1") = ZeroToEmpty(sumValue / inputSuu)
+                        If inputSuu <> 0 Then
+                            checkMs.Rows(i).Item("JQ_atai1") = ZeroToEmpty(sumValue / inputSuu)
+                        End If
+
                         checkMs.Rows(i).Item("JQ_atai2") = ZeroToEmpty(minValue)
                     End If
                     Me.Label7.Text = "平均值"
