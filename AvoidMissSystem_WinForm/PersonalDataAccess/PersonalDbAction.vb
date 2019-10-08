@@ -151,26 +151,6 @@ Public Class PersonFillDataset
 
 
     Public Function FillDataset(ByVal cmdType As CommandType, ByVal cmdText As String, ByRef ds As DataSet, ByVal dtName As String, ByVal paras As SqlParameter()) As Integer
-        'MyCon.Open()
-        'Dim Cmd As New SqlCommand
-        'Dim MyDa As New SqlDataAdapter
-        'Cmd.CommandType = CommandType.Text
-        'Cmd.Connection = MyCon
-        'Cmd.CommandTimeout = 300000
-        'Cmd.Parameters.AddRange(paras)   '将参数传入    
-        'Cmd.CommandText = cmdText
-
-        'Dim dt As New DataTable
-        'dt.TableName = dtName
-
-        'MyDa.SelectCommand = Cmd
-
-        'MyDa.Fill(dt)
-
-        'ds.Tables.Add(dt)
-
-        ' MyCon.Close()
-
 
         Dim dataAdatpter As System.Data.SqlClient.SqlDataAdapter = Nothing
         Dim conn As System.Data.SqlClient.SqlConnection = Nothing
