@@ -96,9 +96,12 @@ $(document).ready(function () {
         //GL_JQ_INPUT_TEXTBOX_OLD_VALUE = $(this).val();
     });
 
+    var keyUpFlg = false;
     $(".textbox_input").blur(function (e) {
         $(this).css("background-color", "#99FFFF");
+        keyUpFlg = false;
     });
+
     //输入文本框 鼠标抬起
     $(".textbox_input").mouseup(function (e) {
         this.select();
@@ -107,7 +110,19 @@ $(document).ready(function () {
 
     //输入文本框 
     $(".textbox_input").keydown(function (e) {
+
+        if (!keyUpFlg) {
+            $(this).attr("readonly", false);
+            $(this)[0].select();
+            keyUpFlg = true;
+        }
+
         if (e.which == 13) {
+
+            $(this).attr("readonly", true);
+            CheckRowInput(this);
+            UpdateRow();
+
             //设置焦点到下一个单元格
             SetNextFocus(e, this, true);
             e.preventDefault ? e.preventDefault() : e.returnValue = false;
