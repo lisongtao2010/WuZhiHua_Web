@@ -15,7 +15,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <OptionStrict>On</OptionStrict>
+    <OptionStrict>Off</OptionStrict>
     <ManifestCertificateThumbprint>C2CFBD0523B6AFE7385061535EE0E6556936E3DA</ManifestCertificateThumbprint>
     <ManifestKeyFile>Lixil.AvoidMissSystem.WinUI_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
@@ -51,8 +51,9 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>Lixil.AvoidMissSystem.WinUI.xml</DocumentationFile>
-    <NoWarn>42353,42354,42355</NoWarn>
-    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -61,19 +62,21 @@
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>Lixil.AvoidMissSystem.WinUI.xml</DocumentationFile>
-    <NoWarn>42353,42354,42355</NoWarn>
-    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>Off</OptionExplicit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Itis.ApplicationBlocks.ExceptionManagement, Version=2.1.0.2, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lixil.AvoidMissSystem.Utilities\dll\Itis.ApplicationBlocks.ExceptionManagement.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Windows.Forms" />
@@ -316,7 +319,7 @@
       <Name>Lixil.AvoidMissSystem.BizLogic</Name>
     </ProjectReference>
     <ProjectReference Include="..\Lixil.AvoidMissSystem.Utilities\Lixil.AvoidMissSystem.Utilities.vbproj">
-      <Project>{04E2025A-0473-4E98-9580-F178DA7B7645}</Project>
+      <Project>{04e2025a-0473-4e98-9580-f178da7b7645}</Project>
       <Name>Lixil.AvoidMissSystem.Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="..\PersonalDataAccess\PersonalDataAccess.vbproj">

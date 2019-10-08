@@ -1,4 +1,4 @@
-﻿<%@ page title="" language="VB" masterpagefile="~/Site.Mobile.master" autoeventwireup="false" inherits="CheckCunFaMobile, App_Web_fkd1ajd3" %>
+﻿<%@ page title="" language="VB" masterpagefile="~/Site.Mobile.master" autoeventwireup="false" inherits="CheckCunFaMobile, App_Web_h5l2j0ra" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" Runat="Server"></asp:Content>
 <asp:Content ID="C1" ContentPlaceHolderID="FC" Runat="Server">
     <script src="Scripts/CheckJScript.js"></script>

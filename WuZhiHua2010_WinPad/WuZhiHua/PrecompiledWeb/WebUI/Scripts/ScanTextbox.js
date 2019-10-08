@@ -341,13 +341,36 @@ $(document).ready(function () {
         this.select();
     });
 
+    var keyUpFlg = false;
+    $(".textbox_input").blur(function () {
+        keyUpFlg = false;
+    });
+
     //输入文本框 
     $(".textbox_input").keydown(function (e) {
+
+        if (!keyUpFlg) {
+            $(this).attr("readonly", false);
+            $(this)[0].select();
+            keyUpFlg = true;
+        }
+
         if (e.which == 13) {
+
+            $(this).attr("readonly", true);
+            CheckRowInput(this);
+            UpdateRow();
             //设置焦点到下一个单元格
             SetNextFocus(e, this, true);
             e.preventDefault ? e.preventDefault() : e.returnValue = false;
         }
+
+
+
+
+
+
+
     });
 
 
