@@ -10,10 +10,14 @@
     <RootNamespace>Lixil.AvoidMissSystem.Utilities</RootNamespace>
     <AssemblyName>Lixil.AvoidMissSystem.Utilities</AssemblyName>
     <MyType>Windows</MyType>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
     <OptionStrict>Off</OptionStrict>
     <OptionExplicit>Off</OptionExplicit>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>

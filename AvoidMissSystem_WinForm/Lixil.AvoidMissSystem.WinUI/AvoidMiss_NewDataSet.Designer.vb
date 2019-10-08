@@ -87,7 +87,7 @@ Partial Public Class AvoidMiss_NewDataSet
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
     Public ReadOnly Property TB_User() As TB_UserDataTable
         Get
-            Return Me.tableTB_User
+            'Return Me.tableTB_User
         End Get
     End Property
     
