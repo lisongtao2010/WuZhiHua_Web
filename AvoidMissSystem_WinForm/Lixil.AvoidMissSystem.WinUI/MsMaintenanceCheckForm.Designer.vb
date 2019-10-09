@@ -19,123 +19,123 @@ Partial Class MsMaintenanceCheckForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnDelete = New System.Windows.Forms.Button
-        Me.dtList = New System.Windows.Forms.DataGridView
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.goods_id = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.goods_cd = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.goods_name = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.种类 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.kind_name = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.tools_no = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.tools_order = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.classify_id = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.classify_name = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.classify_order = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.type_cd = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.type_name = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.department_cd = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.department_name = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.kind = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.check_position = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.check_item = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.benchmark_type = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.benchmark_value1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.benchmark_value2 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.benchmark_value3 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.check_way = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.check_times = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.picture_id = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.delete_flg = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.tools_id = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.grpSearch = New System.Windows.Forms.GroupBox
-        Me.chkLDepartment = New Lixil.AvoidMissSystem.WinUI.Common.ColorCodedCheckedListBox
-        Me.Label34 = New System.Windows.Forms.Label
-        Me.chkLType = New Lixil.AvoidMissSystem.WinUI.Common.ColorCodedCheckedListBox
-        Me.chkLKind = New Lixil.AvoidMissSystem.WinUI.Common.ColorCodedCheckedListBox
-        Me.txtSelBenchmarkType = New System.Windows.Forms.TextBox
-        Me.txtSelChkWay = New System.Windows.Forms.TextBox
-        Me.Label25 = New System.Windows.Forms.Label
-        Me.txtSelBMValue3 = New System.Windows.Forms.TextBox
-        Me.txtSelBMValue2 = New System.Windows.Forms.TextBox
-        Me.txtSelBMValue1 = New System.Windows.Forms.TextBox
-        Me.Label26 = New System.Windows.Forms.Label
-        Me.Label28 = New System.Windows.Forms.Label
-        Me.Label29 = New System.Windows.Forms.Label
-        Me.Label30 = New System.Windows.Forms.Label
-        Me.Label31 = New System.Windows.Forms.Label
-        Me.txtSelChkProject = New System.Windows.Forms.TextBox
-        Me.txtSelKind = New System.Windows.Forms.TextBox
-        Me.Label32 = New System.Windows.Forms.Label
-        Me.Label33 = New System.Windows.Forms.Label
-        Me.txtSelChkPosition = New System.Windows.Forms.TextBox
-        Me.Label24 = New System.Windows.Forms.Label
-        Me.txtSelGoodsName = New System.Windows.Forms.TextBox
-        Me.txtSelImgId = New System.Windows.Forms.TextBox
-        Me.txtSelClassify = New System.Windows.Forms.TextBox
-        Me.Label20 = New System.Windows.Forms.Label
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.txtSelToolNo = New System.Windows.Forms.TextBox
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.txtSelGoodsCd = New System.Windows.Forms.TextBox
-        Me.Label4 = New System.Windows.Forms.Label
-        Me.Label5 = New System.Windows.Forms.Label
-        Me.btnClear = New System.Windows.Forms.Button
-        Me.btnSave = New System.Windows.Forms.Button
-        Me.btnSearch = New System.Windows.Forms.Button
-        Me.lblTemplate = New System.Windows.Forms.Label
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox
-        Me.lblRowCount = New System.Windows.Forms.Label
-        Me.lblTemplateDown = New System.Windows.Forms.LinkLabel
-        Me.btnChoosePath = New System.Windows.Forms.Button
-        Me.txtFilePath = New System.Windows.Forms.TextBox
-        Me.btnExcute = New System.Windows.Forms.Button
-        Me.rdbExport = New System.Windows.Forms.RadioButton
-        Me.rdbImport = New System.Windows.Forms.RadioButton
-        Me.btnBack = New System.Windows.Forms.Button
-        Me.txtImgId = New System.Windows.Forms.TextBox
-        Me.txtBenchmarkType = New System.Windows.Forms.TextBox
-        Me.txtGoodsName = New System.Windows.Forms.TextBox
-        Me.btnExit = New System.Windows.Forms.Button
-        Me.Label35 = New System.Windows.Forms.Label
-        Me.txtToolDispNo = New System.Windows.Forms.TextBox
-        Me.Label27 = New System.Windows.Forms.Label
-        Me.Label36 = New System.Windows.Forms.Label
-        Me.txtClassifyDispNo = New System.Windows.Forms.TextBox
-        Me.drpEditDepartment = New System.Windows.Forms.ComboBox
-        Me.Label23 = New System.Windows.Forms.Label
-        Me.pbImg = New System.Windows.Forms.PictureBox
-        Me.Label19 = New System.Windows.Forms.Label
-        Me.Label10 = New System.Windows.Forms.Label
-        Me.txtChkWay = New System.Windows.Forms.TextBox
-        Me.Label6 = New System.Windows.Forms.Label
-        Me.Label18 = New System.Windows.Forms.Label
-        Me.txtEditGoodsCd = New System.Windows.Forms.TextBox
-        Me.txtBenchmarkValue3 = New System.Windows.Forms.TextBox
-        Me.Label7 = New System.Windows.Forms.Label
-        Me.txtBenchmarkValue2 = New System.Windows.Forms.TextBox
-        Me.drpEditKindCd = New System.Windows.Forms.ComboBox
-        Me.Label17 = New System.Windows.Forms.Label
-        Me.grpGoodsEdit = New System.Windows.Forms.GroupBox
-        Me.txtChktimes = New System.Windows.Forms.TextBox
-        Me.Label21 = New System.Windows.Forms.Label
-        Me.txtBenchmarkValue1 = New System.Windows.Forms.TextBox
-        Me.Label8 = New System.Windows.Forms.Label
-        Me.txtEditToolNo = New System.Windows.Forms.TextBox
-        Me.Label16 = New System.Windows.Forms.Label
-        Me.Label9 = New System.Windows.Forms.Label
-        Me.Label15 = New System.Windows.Forms.Label
-        Me.drpEditType = New System.Windows.Forms.ComboBox
-        Me.txtEditClassify = New System.Windows.Forms.TextBox
-        Me.Label14 = New System.Windows.Forms.Label
-        Me.Label11 = New System.Windows.Forms.Label
-        Me.txtChkProject = New System.Windows.Forms.TextBox
-        Me.txtKind = New System.Windows.Forms.TextBox
-        Me.Label13 = New System.Windows.Forms.Label
-        Me.Label12 = New System.Windows.Forms.Label
-        Me.txtChkPosition = New System.Windows.Forms.TextBox
-        Me.btnCsv = New System.Windows.Forms.Button
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.dtList = New System.Windows.Forms.DataGridView()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.goods_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.goods_cd = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.goods_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.种类 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.kind_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tools_no = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tools_order = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.classify_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.classify_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.classify_order = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.type_cd = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.type_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.department_cd = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.department_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.kind = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.check_position = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.check_item = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.benchmark_type = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.benchmark_value1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.benchmark_value2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.benchmark_value3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.check_way = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.check_times = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.picture_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.delete_flg = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tools_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.grpSearch = New System.Windows.Forms.GroupBox()
+        Me.chkLDepartment = New Lixil.AvoidMissSystem.WinUI.Common.ColorCodedCheckedListBox()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.chkLType = New Lixil.AvoidMissSystem.WinUI.Common.ColorCodedCheckedListBox()
+        Me.chkLKind = New Lixil.AvoidMissSystem.WinUI.Common.ColorCodedCheckedListBox()
+        Me.txtSelBenchmarkType = New System.Windows.Forms.TextBox()
+        Me.txtSelChkWay = New System.Windows.Forms.TextBox()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.txtSelBMValue3 = New System.Windows.Forms.TextBox()
+        Me.txtSelBMValue2 = New System.Windows.Forms.TextBox()
+        Me.txtSelBMValue1 = New System.Windows.Forms.TextBox()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.txtSelChkProject = New System.Windows.Forms.TextBox()
+        Me.txtSelKind = New System.Windows.Forms.TextBox()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.txtSelChkPosition = New System.Windows.Forms.TextBox()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.txtSelGoodsName = New System.Windows.Forms.TextBox()
+        Me.txtSelImgId = New System.Windows.Forms.TextBox()
+        Me.txtSelClassify = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtSelToolNo = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtSelGoodsCd = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.btnClear = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.lblTemplate = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.btnCsv = New System.Windows.Forms.Button()
+        Me.lblRowCount = New System.Windows.Forms.Label()
+        Me.lblTemplateDown = New System.Windows.Forms.LinkLabel()
+        Me.btnChoosePath = New System.Windows.Forms.Button()
+        Me.txtFilePath = New System.Windows.Forms.TextBox()
+        Me.btnExcute = New System.Windows.Forms.Button()
+        Me.rdbExport = New System.Windows.Forms.RadioButton()
+        Me.rdbImport = New System.Windows.Forms.RadioButton()
+        Me.btnBack = New System.Windows.Forms.Button()
+        Me.txtImgId = New System.Windows.Forms.TextBox()
+        Me.txtBenchmarkType = New System.Windows.Forms.TextBox()
+        Me.txtGoodsName = New System.Windows.Forms.TextBox()
+        Me.btnExit = New System.Windows.Forms.Button()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.txtToolDispNo = New System.Windows.Forms.TextBox()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.txtClassifyDispNo = New System.Windows.Forms.TextBox()
+        Me.drpEditDepartment = New System.Windows.Forms.ComboBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.pbImg = New System.Windows.Forms.PictureBox()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtChkWay = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.txtEditGoodsCd = New System.Windows.Forms.TextBox()
+        Me.txtBenchmarkValue3 = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtBenchmarkValue2 = New System.Windows.Forms.TextBox()
+        Me.drpEditKindCd = New System.Windows.Forms.ComboBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.grpGoodsEdit = New System.Windows.Forms.GroupBox()
+        Me.txtChktimes = New System.Windows.Forms.TextBox()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.txtBenchmarkValue1 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtEditToolNo = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.drpEditType = New System.Windows.Forms.ComboBox()
+        Me.txtEditClassify = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txtChkProject = New System.Windows.Forms.TextBox()
+        Me.txtKind = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.txtChkPosition = New System.Windows.Forms.TextBox()
         CType(Me.dtList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpSearch.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -149,7 +149,7 @@ Partial Class MsMaintenanceCheckForm
         Me.btnDelete.Location = New System.Drawing.Point(766, -1)
         Me.btnDelete.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(76, 28)
+        Me.btnDelete.Size = New System.Drawing.Size(76, 26)
         Me.btnDelete.TabIndex = 44
         Me.btnDelete.Text = "删除"
         Me.btnDelete.UseVisualStyleBackColor = True
@@ -161,13 +161,13 @@ Partial Class MsMaintenanceCheckForm
         Me.dtList.AllowUserToOrderColumns = True
         Me.dtList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.goods_id, Me.goods_cd, Me.goods_name, Me.种类, Me.kind_name, Me.tools_no, Me.tools_order, Me.classify_id, Me.classify_name, Me.classify_order, Me.type_cd, Me.type_name, Me.department_cd, Me.department_name, Me.kind, Me.check_position, Me.check_item, Me.benchmark_type, Me.benchmark_value1, Me.benchmark_value2, Me.benchmark_value3, Me.check_way, Me.check_times, Me.picture_id, Me.delete_flg, Me.tools_id})
-        Me.dtList.Location = New System.Drawing.Point(17, 398)
+        Me.dtList.Location = New System.Drawing.Point(17, 367)
         Me.dtList.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.dtList.Name = "dtList"
         Me.dtList.ReadOnly = True
         Me.dtList.RowTemplate.Height = 21
         Me.dtList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtList.Size = New System.Drawing.Size(1174, 322)
+        Me.dtList.Size = New System.Drawing.Size(1174, 297)
         Me.dtList.TabIndex = 35
         '
         'id
@@ -428,11 +428,11 @@ Partial Class MsMaintenanceCheckForm
         Me.grpSearch.Controls.Add(Me.Label4)
         Me.grpSearch.Controls.Add(Me.Label5)
         Me.grpSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.grpSearch.Location = New System.Drawing.Point(121, 24)
+        Me.grpSearch.Location = New System.Drawing.Point(121, 22)
         Me.grpSearch.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.grpSearch.Name = "grpSearch"
         Me.grpSearch.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.grpSearch.Size = New System.Drawing.Size(976, 186)
+        Me.grpSearch.Size = New System.Drawing.Size(976, 172)
         Me.grpSearch.TabIndex = 18
         Me.grpSearch.TabStop = False
         Me.grpSearch.Text = "检查项目查询"
@@ -443,17 +443,17 @@ Partial Class MsMaintenanceCheckForm
         Me.chkLDepartment.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.chkLDepartment.ColumnWidth = 75
         Me.chkLDepartment.FormattingEnabled = True
-        Me.chkLDepartment.Location = New System.Drawing.Point(720, 96)
+        Me.chkLDepartment.Location = New System.Drawing.Point(720, 89)
         Me.chkLDepartment.Name = "chkLDepartment"
-        Me.chkLDepartment.Size = New System.Drawing.Size(98, 75)
+        Me.chkLDepartment.Size = New System.Drawing.Size(98, 60)
         Me.chkLDepartment.TabIndex = 16
         '
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
+        Me.Label34.Font = New System.Drawing.Font("微软雅黑", 9.75!)
         Me.Label34.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label34.Location = New System.Drawing.Point(677, 92)
+        Me.Label34.Location = New System.Drawing.Point(677, 85)
         Me.Label34.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(48, 19)
@@ -466,9 +466,9 @@ Partial Class MsMaintenanceCheckForm
         Me.chkLType.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.chkLType.ColumnWidth = 75
         Me.chkLType.FormattingEnabled = True
-        Me.chkLType.Location = New System.Drawing.Point(877, 9)
+        Me.chkLType.Location = New System.Drawing.Point(877, 8)
         Me.chkLType.Name = "chkLType"
-        Me.chkLType.Size = New System.Drawing.Size(90, 165)
+        Me.chkLType.Size = New System.Drawing.Size(90, 150)
         Me.chkLType.TabIndex = 15
         '
         'chkLKind
@@ -477,16 +477,16 @@ Partial Class MsMaintenanceCheckForm
         Me.chkLKind.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.chkLKind.ColumnWidth = 110
         Me.chkLKind.FormattingEnabled = True
-        Me.chkLKind.Location = New System.Drawing.Point(720, 11)
+        Me.chkLKind.Location = New System.Drawing.Point(720, 10)
         Me.chkLKind.Name = "chkLKind"
-        Me.chkLKind.Size = New System.Drawing.Size(98, 75)
+        Me.chkLKind.Size = New System.Drawing.Size(98, 60)
         Me.chkLKind.TabIndex = 14
         '
         'txtSelBenchmarkType
         '
         Me.txtSelBenchmarkType.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.txtSelBenchmarkType.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtSelBenchmarkType.Location = New System.Drawing.Point(75, 119)
+        Me.txtSelBenchmarkType.Location = New System.Drawing.Point(75, 110)
         Me.txtSelBenchmarkType.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtSelBenchmarkType.MaxLength = 2
         Me.txtSelBenchmarkType.Name = "txtSelBenchmarkType"
@@ -496,7 +496,7 @@ Partial Class MsMaintenanceCheckForm
         'txtSelChkWay
         '
         Me.txtSelChkWay.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.txtSelChkWay.Location = New System.Drawing.Point(75, 145)
+        Me.txtSelChkWay.Location = New System.Drawing.Point(75, 134)
         Me.txtSelChkWay.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtSelChkWay.MaxLength = 25
         Me.txtSelChkWay.Name = "txtSelChkWay"
@@ -508,10 +508,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label25.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label25.Location = New System.Drawing.Point(8, 148)
+        Me.Label25.Location = New System.Drawing.Point(8, 137)
         Me.Label25.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(61, 13)
+        Me.Label25.Size = New System.Drawing.Size(67, 13)
         Me.Label25.TabIndex = 58
         Me.Label25.Text = "检查方式："
         '
@@ -519,7 +519,7 @@ Partial Class MsMaintenanceCheckForm
         '
         Me.txtSelBMValue3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.txtSelBMValue3.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtSelBMValue3.Location = New System.Drawing.Point(552, 119)
+        Me.txtSelBMValue3.Location = New System.Drawing.Point(552, 110)
         Me.txtSelBMValue3.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtSelBMValue3.MaxLength = 20
         Me.txtSelBMValue3.Name = "txtSelBMValue3"
@@ -530,7 +530,7 @@ Partial Class MsMaintenanceCheckForm
         '
         Me.txtSelBMValue2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.txtSelBMValue2.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtSelBMValue2.Location = New System.Drawing.Point(367, 119)
+        Me.txtSelBMValue2.Location = New System.Drawing.Point(367, 110)
         Me.txtSelBMValue2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtSelBMValue2.MaxLength = 20
         Me.txtSelBMValue2.Name = "txtSelBMValue2"
@@ -541,7 +541,7 @@ Partial Class MsMaintenanceCheckForm
         '
         Me.txtSelBMValue1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.txtSelBMValue1.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtSelBMValue1.Location = New System.Drawing.Point(178, 120)
+        Me.txtSelBMValue1.Location = New System.Drawing.Point(178, 111)
         Me.txtSelBMValue1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtSelBMValue1.MaxLength = 20
         Me.txtSelBMValue1.Name = "txtSelBMValue1"
@@ -553,10 +553,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label26.Location = New System.Drawing.Point(304, 124)
+        Me.Label26.Location = New System.Drawing.Point(304, 114)
         Me.Label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(55, 13)
+        Me.Label26.Size = New System.Drawing.Size(61, 13)
         Me.Label26.TabIndex = 54
         Me.Label26.Text = "基准值2："
         '
@@ -565,10 +565,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label28.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label28.Location = New System.Drawing.Point(489, 122)
+        Me.Label28.Location = New System.Drawing.Point(489, 113)
         Me.Label28.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(55, 13)
+        Me.Label28.Size = New System.Drawing.Size(61, 13)
         Me.Label28.TabIndex = 53
         Me.Label28.Text = "基准值3："
         '
@@ -577,10 +577,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label29.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label29.Location = New System.Drawing.Point(115, 122)
+        Me.Label29.Location = New System.Drawing.Point(115, 113)
         Me.Label29.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(55, 13)
+        Me.Label29.Size = New System.Drawing.Size(61, 13)
         Me.Label29.TabIndex = 52
         Me.Label29.Text = "基准值1："
         '
@@ -589,10 +589,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label30.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label30.Location = New System.Drawing.Point(8, 122)
+        Me.Label30.Location = New System.Drawing.Point(8, 113)
         Me.Label30.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(61, 13)
+        Me.Label30.Size = New System.Drawing.Size(67, 13)
         Me.Label30.TabIndex = 51
         Me.Label30.Text = "基准类型："
         '
@@ -601,17 +601,17 @@ Partial Class MsMaintenanceCheckForm
         Me.Label31.AutoSize = True
         Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label31.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label31.Location = New System.Drawing.Point(8, 70)
+        Me.Label31.Location = New System.Drawing.Point(8, 65)
         Me.Label31.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(37, 13)
+        Me.Label31.Size = New System.Drawing.Size(43, 13)
         Me.Label31.TabIndex = 45
         Me.Label31.Text = "类别："
         '
         'txtSelChkProject
         '
         Me.txtSelChkProject.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.txtSelChkProject.Location = New System.Drawing.Point(75, 93)
+        Me.txtSelChkProject.Location = New System.Drawing.Point(75, 86)
         Me.txtSelChkProject.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtSelChkProject.MaxLength = 250
         Me.txtSelChkProject.Name = "txtSelChkProject"
@@ -621,7 +621,7 @@ Partial Class MsMaintenanceCheckForm
         'txtSelKind
         '
         Me.txtSelKind.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.txtSelKind.Location = New System.Drawing.Point(75, 67)
+        Me.txtSelKind.Location = New System.Drawing.Point(75, 62)
         Me.txtSelKind.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtSelKind.MaxLength = 50
         Me.txtSelKind.Name = "txtSelKind"
@@ -633,10 +633,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label32.AutoSize = True
         Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label32.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label32.Location = New System.Drawing.Point(8, 95)
+        Me.Label32.Location = New System.Drawing.Point(8, 88)
         Me.Label32.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(61, 13)
+        Me.Label32.Size = New System.Drawing.Size(67, 13)
         Me.Label32.TabIndex = 49
         Me.Label32.Text = "检查项目："
         '
@@ -645,17 +645,17 @@ Partial Class MsMaintenanceCheckForm
         Me.Label33.AutoSize = True
         Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label33.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label33.Location = New System.Drawing.Point(304, 70)
+        Me.Label33.Location = New System.Drawing.Point(304, 65)
         Me.Label33.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(61, 13)
+        Me.Label33.Size = New System.Drawing.Size(67, 13)
         Me.Label33.TabIndex = 47
         Me.Label33.Text = "检查位置："
         '
         'txtSelChkPosition
         '
         Me.txtSelChkPosition.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.txtSelChkPosition.Location = New System.Drawing.Point(367, 67)
+        Me.txtSelChkPosition.Location = New System.Drawing.Point(367, 62)
         Me.txtSelChkPosition.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtSelChkPosition.MaxLength = 50
         Me.txtSelChkPosition.Name = "txtSelChkPosition"
@@ -667,17 +667,17 @@ Partial Class MsMaintenanceCheckForm
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label24.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label24.Location = New System.Drawing.Point(203, 20)
+        Me.Label24.Location = New System.Drawing.Point(203, 18)
         Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(61, 13)
+        Me.Label24.Size = New System.Drawing.Size(67, 13)
         Me.Label24.TabIndex = 43
         Me.Label24.Text = "商品名称："
         '
         'txtSelGoodsName
         '
         Me.txtSelGoodsName.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.txtSelGoodsName.Location = New System.Drawing.Point(284, 17)
+        Me.txtSelGoodsName.Location = New System.Drawing.Point(284, 16)
         Me.txtSelGoodsName.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtSelGoodsName.MaxLength = 50
         Me.txtSelGoodsName.Name = "txtSelGoodsName"
@@ -688,7 +688,7 @@ Partial Class MsMaintenanceCheckForm
         '
         Me.txtSelImgId.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.txtSelImgId.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtSelImgId.Location = New System.Drawing.Point(367, 145)
+        Me.txtSelImgId.Location = New System.Drawing.Point(367, 134)
         Me.txtSelImgId.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtSelImgId.MaxLength = 7
         Me.txtSelImgId.Name = "txtSelImgId"
@@ -698,7 +698,7 @@ Partial Class MsMaintenanceCheckForm
         'txtSelClassify
         '
         Me.txtSelClassify.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.txtSelClassify.Location = New System.Drawing.Point(284, 42)
+        Me.txtSelClassify.Location = New System.Drawing.Point(284, 39)
         Me.txtSelClassify.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtSelClassify.MaxLength = 50
         Me.txtSelClassify.Name = "txtSelClassify"
@@ -710,10 +710,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label20.Location = New System.Drawing.Point(306, 148)
+        Me.Label20.Location = New System.Drawing.Point(306, 137)
         Me.Label20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(48, 13)
+        Me.Label20.Size = New System.Drawing.Size(54, 13)
         Me.Label20.TabIndex = 41
         Me.Label20.Text = "图片ID："
         '
@@ -722,10 +722,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(8, 21)
+        Me.Label1.Location = New System.Drawing.Point(8, 19)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(52, 13)
+        Me.Label1.Size = New System.Drawing.Size(58, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "商品CD："
         '
@@ -733,7 +733,7 @@ Partial Class MsMaintenanceCheckForm
         '
         Me.txtSelToolNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.txtSelToolNo.ImeMode = System.Windows.Forms.ImeMode.Off
-        Me.txtSelToolNo.Location = New System.Drawing.Point(75, 42)
+        Me.txtSelToolNo.Location = New System.Drawing.Point(75, 39)
         Me.txtSelToolNo.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtSelToolNo.MaxLength = 30
         Me.txtSelToolNo.Name = "txtSelToolNo"
@@ -743,9 +743,9 @@ Partial Class MsMaintenanceCheckForm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
+        Me.Label2.Font = New System.Drawing.Font("微软雅黑", 9.75!)
         Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label2.Location = New System.Drawing.Point(677, 13)
+        Me.Label2.Location = New System.Drawing.Point(677, 12)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(48, 19)
@@ -757,10 +757,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label3.Location = New System.Drawing.Point(8, 46)
+        Me.Label3.Location = New System.Drawing.Point(8, 42)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(61, 13)
+        Me.Label3.Size = New System.Drawing.Size(67, 13)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "治具编号："
         '
@@ -768,7 +768,7 @@ Partial Class MsMaintenanceCheckForm
         '
         Me.txtSelGoodsCd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.txtSelGoodsCd.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtSelGoodsCd.Location = New System.Drawing.Point(75, 17)
+        Me.txtSelGoodsCd.Location = New System.Drawing.Point(75, 16)
         Me.txtSelGoodsCd.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtSelGoodsCd.MaxLength = 30
         Me.txtSelGoodsCd.Name = "txtSelGoodsCd"
@@ -780,19 +780,19 @@ Partial Class MsMaintenanceCheckForm
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label4.Location = New System.Drawing.Point(203, 46)
+        Me.Label4.Location = New System.Drawing.Point(203, 42)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(49, 13)
+        Me.Label4.Size = New System.Drawing.Size(55, 13)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "分类名："
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
+        Me.Label5.Font = New System.Drawing.Font("微软雅黑", 9.75!)
         Me.Label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label5.Location = New System.Drawing.Point(824, 11)
+        Me.Label5.Location = New System.Drawing.Point(824, 10)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(48, 19)
@@ -804,7 +804,7 @@ Partial Class MsMaintenanceCheckForm
         Me.btnClear.Location = New System.Drawing.Point(850, -1)
         Me.btnClear.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(76, 28)
+        Me.btnClear.Size = New System.Drawing.Size(76, 26)
         Me.btnClear.TabIndex = 45
         Me.btnClear.Text = "清空"
         Me.btnClear.UseVisualStyleBackColor = True
@@ -814,7 +814,7 @@ Partial Class MsMaintenanceCheckForm
         Me.btnSave.Location = New System.Drawing.Point(682, -1)
         Me.btnSave.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(76, 28)
+        Me.btnSave.Size = New System.Drawing.Size(76, 26)
         Me.btnSave.TabIndex = 43
         Me.btnSave.Text = "保存"
         Me.btnSave.UseVisualStyleBackColor = True
@@ -824,7 +824,7 @@ Partial Class MsMaintenanceCheckForm
         Me.btnSearch.Location = New System.Drawing.Point(598, -1)
         Me.btnSearch.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(76, 28)
+        Me.btnSearch.Size = New System.Drawing.Size(76, 26)
         Me.btnSearch.TabIndex = 42
         Me.btnSearch.Text = "查询"
         Me.btnSearch.UseVisualStyleBackColor = True
@@ -832,9 +832,9 @@ Partial Class MsMaintenanceCheckForm
         'lblTemplate
         '
         Me.lblTemplate.AutoSize = True
-        Me.lblTemplate.Location = New System.Drawing.Point(579, 16)
+        Me.lblTemplate.Location = New System.Drawing.Point(579, 15)
         Me.lblTemplate.Name = "lblTemplate"
-        Me.lblTemplate.Size = New System.Drawing.Size(58, 13)
+        Me.lblTemplate.Size = New System.Drawing.Size(59, 12)
         Me.lblTemplate.TabIndex = 10
         Me.lblTemplate.Text = "模板下载 "
         '
@@ -849,51 +849,60 @@ Partial Class MsMaintenanceCheckForm
         Me.GroupBox3.Controls.Add(Me.btnExcute)
         Me.GroupBox3.Controls.Add(Me.rdbExport)
         Me.GroupBox3.Controls.Add(Me.rdbImport)
-        Me.GroupBox3.Location = New System.Drawing.Point(17, 726)
+        Me.GroupBox3.Location = New System.Drawing.Point(17, 670)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(976, 75)
+        Me.GroupBox3.Size = New System.Drawing.Size(976, 69)
         Me.GroupBox3.TabIndex = 28
         Me.GroupBox3.TabStop = False
+        '
+        'btnCsv
+        '
+        Me.btnCsv.Location = New System.Drawing.Point(218, 12)
+        Me.btnCsv.Name = "btnCsv"
+        Me.btnCsv.Size = New System.Drawing.Size(75, 21)
+        Me.btnCsv.TabIndex = 43
+        Me.btnCsv.Text = "导出CSV"
+        Me.btnCsv.UseVisualStyleBackColor = True
         '
         'lblRowCount
         '
         Me.lblRowCount.AutoSize = True
-        Me.lblRowCount.Location = New System.Drawing.Point(889, 14)
+        Me.lblRowCount.Location = New System.Drawing.Point(889, 13)
         Me.lblRowCount.Name = "lblRowCount"
-        Me.lblRowCount.Size = New System.Drawing.Size(0, 13)
+        Me.lblRowCount.Size = New System.Drawing.Size(0, 12)
         Me.lblRowCount.TabIndex = 42
         '
         'lblTemplateDown
         '
         Me.lblTemplateDown.AutoSize = True
-        Me.lblTemplateDown.Location = New System.Drawing.Point(648, 16)
+        Me.lblTemplateDown.Location = New System.Drawing.Point(648, 15)
         Me.lblTemplateDown.Name = "lblTemplateDown"
-        Me.lblTemplateDown.Size = New System.Drawing.Size(118, 13)
+        Me.lblTemplateDown.Size = New System.Drawing.Size(113, 12)
         Me.lblTemplateDown.TabIndex = 38
         Me.lblTemplateDown.TabStop = True
         Me.lblTemplateDown.Text = "检查项目MS模版.XLS"
         '
         'btnChoosePath
         '
-        Me.btnChoosePath.Location = New System.Drawing.Point(19, 41)
+        Me.btnChoosePath.Location = New System.Drawing.Point(19, 38)
         Me.btnChoosePath.Name = "btnChoosePath"
-        Me.btnChoosePath.Size = New System.Drawing.Size(75, 23)
+        Me.btnChoosePath.Size = New System.Drawing.Size(75, 21)
         Me.btnChoosePath.TabIndex = 39
         Me.btnChoosePath.Text = "选择路径"
         Me.btnChoosePath.UseVisualStyleBackColor = True
         '
         'txtFilePath
         '
-        Me.txtFilePath.Location = New System.Drawing.Point(104, 43)
+        Me.txtFilePath.Location = New System.Drawing.Point(104, 40)
         Me.txtFilePath.Name = "txtFilePath"
-        Me.txtFilePath.Size = New System.Drawing.Size(768, 20)
+        Me.txtFilePath.Size = New System.Drawing.Size(768, 21)
         Me.txtFilePath.TabIndex = 40
         '
         'btnExcute
         '
-        Me.btnExcute.Location = New System.Drawing.Point(792, 9)
+        Me.btnExcute.Location = New System.Drawing.Point(792, 8)
         Me.btnExcute.Name = "btnExcute"
-        Me.btnExcute.Size = New System.Drawing.Size(75, 23)
+        Me.btnExcute.Size = New System.Drawing.Size(75, 21)
         Me.btnExcute.TabIndex = 41
         Me.btnExcute.Text = "执行"
         Me.btnExcute.UseVisualStyleBackColor = True
@@ -901,9 +910,9 @@ Partial Class MsMaintenanceCheckForm
         'rdbExport
         '
         Me.rdbExport.AutoSize = True
-        Me.rdbExport.Location = New System.Drawing.Point(122, 16)
+        Me.rdbExport.Location = New System.Drawing.Point(122, 15)
         Me.rdbExport.Name = "rdbExport"
-        Me.rdbExport.Size = New System.Drawing.Size(73, 17)
+        Me.rdbExport.Size = New System.Drawing.Size(71, 16)
         Me.rdbExport.TabIndex = 37
         Me.rdbExport.Text = "批量导出"
         Me.rdbExport.UseVisualStyleBackColor = True
@@ -912,9 +921,9 @@ Partial Class MsMaintenanceCheckForm
         '
         Me.rdbImport.AutoSize = True
         Me.rdbImport.Checked = True
-        Me.rdbImport.Location = New System.Drawing.Point(19, 16)
+        Me.rdbImport.Location = New System.Drawing.Point(19, 15)
         Me.rdbImport.Name = "rdbImport"
-        Me.rdbImport.Size = New System.Drawing.Size(73, 17)
+        Me.rdbImport.Size = New System.Drawing.Size(71, 16)
         Me.rdbImport.TabIndex = 36
         Me.rdbImport.TabStop = True
         Me.rdbImport.Text = "批量导入"
@@ -925,7 +934,7 @@ Partial Class MsMaintenanceCheckForm
         Me.btnBack.Location = New System.Drawing.Point(933, -1)
         Me.btnBack.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.btnBack.Name = "btnBack"
-        Me.btnBack.Size = New System.Drawing.Size(76, 28)
+        Me.btnBack.Size = New System.Drawing.Size(76, 26)
         Me.btnBack.TabIndex = 46
         Me.btnBack.Text = "返回"
         Me.btnBack.UseVisualStyleBackColor = True
@@ -934,7 +943,7 @@ Partial Class MsMaintenanceCheckForm
         '
         Me.txtImgId.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.txtImgId.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtImgId.Location = New System.Drawing.Point(552, 159)
+        Me.txtImgId.Location = New System.Drawing.Point(552, 147)
         Me.txtImgId.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtImgId.MaxLength = 7
         Me.txtImgId.Name = "txtImgId"
@@ -945,7 +954,7 @@ Partial Class MsMaintenanceCheckForm
         '
         Me.txtBenchmarkType.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.txtBenchmarkType.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtBenchmarkType.Location = New System.Drawing.Point(75, 130)
+        Me.txtBenchmarkType.Location = New System.Drawing.Point(75, 120)
         Me.txtBenchmarkType.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtBenchmarkType.MaxLength = 2
         Me.txtBenchmarkType.Name = "txtBenchmarkType"
@@ -955,7 +964,7 @@ Partial Class MsMaintenanceCheckForm
         'txtGoodsName
         '
         Me.txtGoodsName.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.txtGoodsName.Location = New System.Drawing.Point(284, 24)
+        Me.txtGoodsName.Location = New System.Drawing.Point(284, 22)
         Me.txtGoodsName.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtGoodsName.MaxLength = 50
         Me.txtGoodsName.Name = "txtGoodsName"
@@ -967,7 +976,7 @@ Partial Class MsMaintenanceCheckForm
         Me.btnExit.Location = New System.Drawing.Point(1021, -1)
         Me.btnExit.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(76, 28)
+        Me.btnExit.Size = New System.Drawing.Size(76, 26)
         Me.btnExit.TabIndex = 47
         Me.btnExit.Text = "退出"
         Me.btnExit.UseVisualStyleBackColor = True
@@ -977,10 +986,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label35.AutoSize = True
         Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label35.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label35.Location = New System.Drawing.Point(203, 53)
+        Me.Label35.Location = New System.Drawing.Point(203, 49)
         Me.Label35.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(73, 13)
+        Me.Label35.Size = New System.Drawing.Size(79, 13)
         Me.Label35.TabIndex = 45
         Me.Label35.Text = "治具表示顺："
         '
@@ -988,7 +997,7 @@ Partial Class MsMaintenanceCheckForm
         '
         Me.txtToolDispNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.txtToolDispNo.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtToolDispNo.Location = New System.Drawing.Point(284, 50)
+        Me.txtToolDispNo.Location = New System.Drawing.Point(284, 46)
         Me.txtToolDispNo.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtToolDispNo.MaxLength = 3
         Me.txtToolDispNo.Name = "txtToolDispNo"
@@ -1000,10 +1009,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label27.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label27.Location = New System.Drawing.Point(644, 26)
+        Me.Label27.Location = New System.Drawing.Point(644, 24)
         Me.Label27.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(37, 13)
+        Me.Label27.Size = New System.Drawing.Size(43, 13)
         Me.Label27.TabIndex = 43
         Me.Label27.Text = "部门："
         '
@@ -1012,10 +1021,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label36.AutoSize = True
         Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label36.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label36.Location = New System.Drawing.Point(647, 53)
+        Me.Label36.Location = New System.Drawing.Point(647, 49)
         Me.Label36.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(73, 13)
+        Me.Label36.Size = New System.Drawing.Size(79, 13)
         Me.Label36.TabIndex = 47
         Me.Label36.Text = "分类表示顺："
         '
@@ -1023,7 +1032,7 @@ Partial Class MsMaintenanceCheckForm
         '
         Me.txtClassifyDispNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.txtClassifyDispNo.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtClassifyDispNo.Location = New System.Drawing.Point(728, 50)
+        Me.txtClassifyDispNo.Location = New System.Drawing.Point(728, 46)
         Me.txtClassifyDispNo.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtClassifyDispNo.MaxLength = 3
         Me.txtClassifyDispNo.Name = "txtClassifyDispNo"
@@ -1035,7 +1044,7 @@ Partial Class MsMaintenanceCheckForm
         Me.drpEditDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.drpEditDepartment.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.drpEditDepartment.FormattingEnabled = True
-        Me.drpEditDepartment.Location = New System.Drawing.Point(681, 22)
+        Me.drpEditDepartment.Location = New System.Drawing.Point(681, 20)
         Me.drpEditDepartment.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.drpEditDepartment.Name = "drpEditDepartment"
         Me.drpEditDepartment.Size = New System.Drawing.Size(81, 21)
@@ -1046,19 +1055,19 @@ Partial Class MsMaintenanceCheckForm
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label23.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label23.Location = New System.Drawing.Point(203, 28)
+        Me.Label23.Location = New System.Drawing.Point(203, 26)
         Me.Label23.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(61, 13)
+        Me.Label23.Size = New System.Drawing.Size(67, 13)
         Me.Label23.TabIndex = 41
         Me.Label23.Text = "商品名称："
         '
         'pbImg
         '
-        Me.pbImg.Location = New System.Drawing.Point(772, 22)
+        Me.pbImg.Location = New System.Drawing.Point(772, 20)
         Me.pbImg.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.pbImg.Name = "pbImg"
-        Me.pbImg.Size = New System.Drawing.Size(195, 157)
+        Me.pbImg.Size = New System.Drawing.Size(195, 145)
         Me.pbImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbImg.TabIndex = 37
         Me.pbImg.TabStop = False
@@ -1068,10 +1077,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label19.Location = New System.Drawing.Point(489, 163)
+        Me.Label19.Location = New System.Drawing.Point(489, 150)
         Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(48, 13)
+        Me.Label19.Size = New System.Drawing.Size(54, 13)
         Me.Label19.TabIndex = 36
         Me.Label19.Text = "图片ID："
         '
@@ -1080,17 +1089,17 @@ Partial Class MsMaintenanceCheckForm
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label10.Location = New System.Drawing.Point(8, 29)
+        Me.Label10.Location = New System.Drawing.Point(8, 27)
         Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(52, 13)
+        Me.Label10.Size = New System.Drawing.Size(58, 13)
         Me.Label10.TabIndex = 10
         Me.Label10.Text = "商品CD："
         '
         'txtChkWay
         '
         Me.txtChkWay.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.txtChkWay.Location = New System.Drawing.Point(75, 159)
+        Me.txtChkWay.Location = New System.Drawing.Point(75, 147)
         Me.txtChkWay.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtChkWay.MaxLength = 25
         Me.txtChkWay.Name = "txtChkWay"
@@ -1102,10 +1111,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label6.Location = New System.Drawing.Point(8, 79)
+        Me.Label6.Location = New System.Drawing.Point(8, 73)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(37, 13)
+        Me.Label6.Size = New System.Drawing.Size(43, 13)
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "类型："
         '
@@ -1114,10 +1123,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label18.Location = New System.Drawing.Point(8, 163)
+        Me.Label18.Location = New System.Drawing.Point(8, 150)
         Me.Label18.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(61, 13)
+        Me.Label18.Size = New System.Drawing.Size(67, 13)
         Me.Label18.TabIndex = 34
         Me.Label18.Text = "检查方式："
         '
@@ -1125,7 +1134,7 @@ Partial Class MsMaintenanceCheckForm
         '
         Me.txtEditGoodsCd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.txtEditGoodsCd.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtEditGoodsCd.Location = New System.Drawing.Point(75, 24)
+        Me.txtEditGoodsCd.Location = New System.Drawing.Point(75, 22)
         Me.txtEditGoodsCd.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtEditGoodsCd.MaxLength = 30
         Me.txtEditGoodsCd.Name = "txtEditGoodsCd"
@@ -1136,7 +1145,7 @@ Partial Class MsMaintenanceCheckForm
         '
         Me.txtBenchmarkValue3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.txtBenchmarkValue3.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtBenchmarkValue3.Location = New System.Drawing.Point(552, 129)
+        Me.txtBenchmarkValue3.Location = New System.Drawing.Point(552, 119)
         Me.txtBenchmarkValue3.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtBenchmarkValue3.MaxLength = 20
         Me.txtBenchmarkValue3.Name = "txtBenchmarkValue3"
@@ -1148,10 +1157,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label7.Location = New System.Drawing.Point(325, 53)
+        Me.Label7.Location = New System.Drawing.Point(325, 49)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(49, 13)
+        Me.Label7.Size = New System.Drawing.Size(55, 13)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "分类名："
         '
@@ -1159,7 +1168,7 @@ Partial Class MsMaintenanceCheckForm
         '
         Me.txtBenchmarkValue2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.txtBenchmarkValue2.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtBenchmarkValue2.Location = New System.Drawing.Point(363, 129)
+        Me.txtBenchmarkValue2.Location = New System.Drawing.Point(363, 119)
         Me.txtBenchmarkValue2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtBenchmarkValue2.MaxLength = 20
         Me.txtBenchmarkValue2.Name = "txtBenchmarkValue2"
@@ -1171,7 +1180,7 @@ Partial Class MsMaintenanceCheckForm
         Me.drpEditKindCd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.drpEditKindCd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.drpEditKindCd.FormattingEnabled = True
-        Me.drpEditKindCd.Location = New System.Drawing.Point(555, 22)
+        Me.drpEditKindCd.Location = New System.Drawing.Point(555, 20)
         Me.drpEditKindCd.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.drpEditKindCd.Name = "drpEditKindCd"
         Me.drpEditKindCd.Size = New System.Drawing.Size(81, 21)
@@ -1182,10 +1191,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label17.Location = New System.Drawing.Point(300, 134)
+        Me.Label17.Location = New System.Drawing.Point(300, 124)
         Me.Label17.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(55, 13)
+        Me.Label17.Size = New System.Drawing.Size(61, 13)
         Me.Label17.TabIndex = 30
         Me.Label17.Text = "基准值2："
         '
@@ -1231,11 +1240,11 @@ Partial Class MsMaintenanceCheckForm
         Me.grpGoodsEdit.Controls.Add(Me.Label12)
         Me.grpGoodsEdit.Controls.Add(Me.txtChkPosition)
         Me.grpGoodsEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.grpGoodsEdit.Location = New System.Drawing.Point(121, 209)
+        Me.grpGoodsEdit.Location = New System.Drawing.Point(121, 193)
         Me.grpGoodsEdit.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.grpGoodsEdit.Name = "grpGoodsEdit"
         Me.grpGoodsEdit.Padding = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.grpGoodsEdit.Size = New System.Drawing.Size(976, 186)
+        Me.grpGoodsEdit.Size = New System.Drawing.Size(976, 172)
         Me.grpGoodsEdit.TabIndex = 19
         Me.grpGoodsEdit.TabStop = False
         Me.grpGoodsEdit.Text = "检查项目编辑"
@@ -1244,7 +1253,7 @@ Partial Class MsMaintenanceCheckForm
         '
         Me.txtChktimes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.txtChktimes.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtChktimes.Location = New System.Drawing.Point(363, 159)
+        Me.txtChktimes.Location = New System.Drawing.Point(363, 147)
         Me.txtChktimes.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtChktimes.MaxLength = 2
         Me.txtChktimes.Name = "txtChktimes"
@@ -1256,10 +1265,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label21.AutoSize = True
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label21.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label21.Location = New System.Drawing.Point(300, 163)
+        Me.Label21.Location = New System.Drawing.Point(300, 150)
         Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(61, 13)
+        Me.Label21.Size = New System.Drawing.Size(67, 13)
         Me.Label21.TabIndex = 49
         Me.Label21.Text = "检查次数："
         '
@@ -1267,7 +1276,7 @@ Partial Class MsMaintenanceCheckForm
         '
         Me.txtBenchmarkValue1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.txtBenchmarkValue1.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtBenchmarkValue1.Location = New System.Drawing.Point(174, 130)
+        Me.txtBenchmarkValue1.Location = New System.Drawing.Point(174, 120)
         Me.txtBenchmarkValue1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtBenchmarkValue1.MaxLength = 20
         Me.txtBenchmarkValue1.Name = "txtBenchmarkValue1"
@@ -1279,10 +1288,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label8.Location = New System.Drawing.Point(8, 53)
+        Me.Label8.Location = New System.Drawing.Point(8, 49)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(61, 13)
+        Me.Label8.Size = New System.Drawing.Size(67, 13)
         Me.Label8.TabIndex = 12
         Me.Label8.Text = "治具编号："
         '
@@ -1290,7 +1299,7 @@ Partial Class MsMaintenanceCheckForm
         '
         Me.txtEditToolNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.txtEditToolNo.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.txtEditToolNo.Location = New System.Drawing.Point(75, 50)
+        Me.txtEditToolNo.Location = New System.Drawing.Point(75, 46)
         Me.txtEditToolNo.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtEditToolNo.MaxLength = 30
         Me.txtEditToolNo.Name = "txtEditToolNo"
@@ -1302,10 +1311,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label16.Location = New System.Drawing.Point(489, 132)
+        Me.Label16.Location = New System.Drawing.Point(489, 122)
         Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(55, 13)
+        Me.Label16.Size = New System.Drawing.Size(61, 13)
         Me.Label16.TabIndex = 29
         Me.Label16.Text = "基准值3："
         '
@@ -1314,10 +1323,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label9.Location = New System.Drawing.Point(519, 27)
+        Me.Label9.Location = New System.Drawing.Point(519, 25)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(37, 13)
+        Me.Label9.Size = New System.Drawing.Size(43, 13)
         Me.Label9.TabIndex = 11
         Me.Label9.Text = "种类："
         '
@@ -1326,10 +1335,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label15.Location = New System.Drawing.Point(111, 134)
+        Me.Label15.Location = New System.Drawing.Point(111, 124)
         Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(55, 13)
+        Me.Label15.Size = New System.Drawing.Size(61, 13)
         Me.Label15.TabIndex = 28
         Me.Label15.Text = "基准值1："
         '
@@ -1338,7 +1347,7 @@ Partial Class MsMaintenanceCheckForm
         Me.drpEditType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.drpEditType.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.drpEditType.FormattingEnabled = True
-        Me.drpEditType.Location = New System.Drawing.Point(75, 76)
+        Me.drpEditType.Location = New System.Drawing.Point(75, 70)
         Me.drpEditType.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.drpEditType.Name = "drpEditType"
         Me.drpEditType.Size = New System.Drawing.Size(62, 21)
@@ -1347,7 +1356,7 @@ Partial Class MsMaintenanceCheckForm
         'txtEditClassify
         '
         Me.txtEditClassify.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.txtEditClassify.Location = New System.Drawing.Point(382, 50)
+        Me.txtEditClassify.Location = New System.Drawing.Point(382, 46)
         Me.txtEditClassify.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtEditClassify.MaxLength = 50
         Me.txtEditClassify.Name = "txtEditClassify"
@@ -1359,10 +1368,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label14.Location = New System.Drawing.Point(8, 134)
+        Me.Label14.Location = New System.Drawing.Point(8, 124)
         Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(61, 13)
+        Me.Label14.Size = New System.Drawing.Size(67, 13)
         Me.Label14.TabIndex = 26
         Me.Label14.Text = "基准类型："
         '
@@ -1371,17 +1380,17 @@ Partial Class MsMaintenanceCheckForm
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label11.Location = New System.Drawing.Point(156, 79)
+        Me.Label11.Location = New System.Drawing.Point(156, 73)
         Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(37, 13)
+        Me.Label11.Size = New System.Drawing.Size(43, 13)
         Me.Label11.TabIndex = 20
         Me.Label11.Text = "类别："
         '
         'txtChkProject
         '
         Me.txtChkProject.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.txtChkProject.Location = New System.Drawing.Point(75, 103)
+        Me.txtChkProject.Location = New System.Drawing.Point(75, 95)
         Me.txtChkProject.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtChkProject.MaxLength = 250
         Me.txtChkProject.Name = "txtChkProject"
@@ -1391,7 +1400,7 @@ Partial Class MsMaintenanceCheckForm
         'txtKind
         '
         Me.txtKind.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.txtKind.Location = New System.Drawing.Point(201, 77)
+        Me.txtKind.Location = New System.Drawing.Point(201, 71)
         Me.txtKind.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtKind.MaxLength = 50
         Me.txtKind.Name = "txtKind"
@@ -1403,10 +1412,10 @@ Partial Class MsMaintenanceCheckForm
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label13.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label13.Location = New System.Drawing.Point(8, 105)
+        Me.Label13.Location = New System.Drawing.Point(8, 97)
         Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(61, 13)
+        Me.Label13.Size = New System.Drawing.Size(67, 13)
         Me.Label13.TabIndex = 24
         Me.Label13.Text = "检查项目："
         '
@@ -1415,37 +1424,28 @@ Partial Class MsMaintenanceCheckForm
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label12.Location = New System.Drawing.Point(419, 79)
+        Me.Label12.Location = New System.Drawing.Point(419, 73)
         Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(61, 13)
+        Me.Label12.Size = New System.Drawing.Size(67, 13)
         Me.Label12.TabIndex = 22
         Me.Label12.Text = "检查位置："
         '
         'txtChkPosition
         '
         Me.txtChkPosition.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.txtChkPosition.Location = New System.Drawing.Point(495, 77)
+        Me.txtChkPosition.Location = New System.Drawing.Point(495, 71)
         Me.txtChkPosition.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.txtChkPosition.MaxLength = 50
         Me.txtChkPosition.Name = "txtChkPosition"
         Me.txtChkPosition.Size = New System.Drawing.Size(267, 20)
         Me.txtChkPosition.TabIndex = 27
         '
-        'btnCsv
-        '
-        Me.btnCsv.Location = New System.Drawing.Point(218, 13)
-        Me.btnCsv.Name = "btnCsv"
-        Me.btnCsv.Size = New System.Drawing.Size(75, 23)
-        Me.btnCsv.TabIndex = 43
-        Me.btnCsv.Text = "导出CSV"
-        Me.btnCsv.UseVisualStyleBackColor = True
-        '
         'MsMaintenanceCheckForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1204, 826)
+        Me.ClientSize = New System.Drawing.Size(1204, 762)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.dtList)
         Me.Controls.Add(Me.btnClear)
