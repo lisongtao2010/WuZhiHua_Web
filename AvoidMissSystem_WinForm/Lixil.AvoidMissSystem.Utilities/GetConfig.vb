@@ -13,7 +13,7 @@ Public Class GetConfig
 
         Dim strVal As String = String.Empty
         Dim tableName As String = "TABLEB"
-        Dim xmlPath As String = Forms.Application.StartupPath & "/Maintenance_Config.xml"
+        Dim xmlPath As String = Forms.Application.StartupPath & "/Maintenance_Config.txt"
         Dim reader As New Xml.XmlTextReader(xmlPath)
 
         If File.Exists(xmlPath) = False Then

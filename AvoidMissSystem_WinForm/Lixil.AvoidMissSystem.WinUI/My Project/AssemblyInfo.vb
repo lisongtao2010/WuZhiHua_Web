@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' アセンブリ属性の値を確認します。
 
-<Assembly: AssemblyTitle("Lixil.AvoidMissSystem.WinUI")> 
+<Assembly: AssemblyTitle("无纸化—品质")> 
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("Microsoft")> 
-<Assembly: AssemblyProduct("Lixil.AvoidMissSystem.WinUI")> 
+<Assembly: AssemblyCompany("ｌｉｘｉｌ")> 
+<Assembly: AssemblyProduct("无纸化—品质")> 
 <Assembly: AssemblyCopyright("Copyright (C) Microsoft 2015")> 
 <Assembly: AssemblyTrademark("")> 
 
