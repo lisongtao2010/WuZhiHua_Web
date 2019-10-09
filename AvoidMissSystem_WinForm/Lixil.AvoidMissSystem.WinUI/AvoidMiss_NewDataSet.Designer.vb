@@ -316,7 +316,8 @@ Partial Public Class AvoidMiss_NewDataSet
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class TB_UserDataTable
-        Inherits Global.System.Data.TypedTableBase(Of TB_UserRow)
+        Inherits Global.System.Data.DataTable
+        Implements Global.System.Collections.IEnumerable
         
         Private columnID As Global.System.Data.DataColumn
         
@@ -462,6 +463,12 @@ Partial Public Class AvoidMiss_NewDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function FindByID(ByVal ID As Decimal) As TB_UserRow
             Return CType(Me.Rows.Find(New Object() {ID}),TB_UserRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overridable Function GetEnumerator() As Global.System.Collections.IEnumerator Implements Global.System.Collections.IEnumerable.GetEnumerator
+            Return Me.Rows.GetEnumerator
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -649,7 +656,8 @@ Partial Public Class AvoidMiss_NewDataSet
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
     Partial Public Class m_permissionDataTable
-        Inherits Global.System.Data.TypedTableBase(Of m_permissionRow)
+        Inherits Global.System.Data.DataTable
+        Implements Global.System.Collections.IEnumerable
         
         Private columnuser_id As Global.System.Data.DataColumn
         
@@ -815,6 +823,12 @@ Partial Public Class AvoidMiss_NewDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function FindByuser_idaccess_typeaccess_cd(ByVal user_id As Decimal, ByVal access_type As String, ByVal access_cd As String) As m_permissionRow
             Return CType(Me.Rows.Find(New Object() {user_id, access_type, access_cd}),m_permissionRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overridable Function GetEnumerator() As Global.System.Collections.IEnumerator Implements Global.System.Collections.IEnumerable.GetEnumerator
+            Return Me.Rows.GetEnumerator
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

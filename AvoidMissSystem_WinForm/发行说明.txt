@@ -1,0 +1,10 @@
+Win10客户端
+	系统是 64
+	Office 是32
+
+	需要安装
+		\\ot1686\WebShare\WuZhiHuaWinForm32\Win10安装\AccessDatabaseEngineEN.exe
+	发行程序要发行 32位
+
+
+	\\ot1686\WebShare\WuZhiHuaWinForm32\Lixil.AvoidMissSystem.WinUI.application
