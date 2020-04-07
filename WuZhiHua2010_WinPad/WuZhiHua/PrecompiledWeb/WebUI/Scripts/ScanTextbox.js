@@ -456,7 +456,16 @@ function IsContains(str, substr) {
     return str.indexOf(substr) >= 0;
 }
 function ReadBarCode(cd) {
-    if (cd.split("/").length >= 5) {
+
+    if (cd.split("/").length == 8) {
+        this.kind = "2";
+        this.zuofan = cd.split("/")[7].trim().replace(/-/g, "");
+        this.zhiPinCd = cd.split("/")[1].trim().replace(/-/g, "");
+        this.kunBaoSuu = cd.split("/")[3].trim().replace(/-/g, "");
+        this.tuoPanXuHao = cd.split("/")[6].trim().replace(/-/g, "");
+        this.xiangXian = cd.split("/")[5].trim().replace(/-/g, "");
+
+    } else if (cd.split("/").length >= 5) {
         this.kind = "2";
         this.zuofan = cd.split("/")[0].trim().replace(/-/g, "");
         this.zhiPinCd = cd.split("/")[1].trim().replace(/-/g, "");
