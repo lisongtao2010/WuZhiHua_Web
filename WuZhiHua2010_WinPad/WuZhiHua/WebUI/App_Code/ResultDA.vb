@@ -131,7 +131,7 @@ Public Class ResultDA
             .AppendLine("C.Code = '" & goods_cd & "' ")
             .AppendLine("And C.MakeNumber = '" & make_number & "' ")
 
-            .AppendLine("WHERE [goods_cd]='" & goods_cd & "'")
+            .AppendLine("WHERE [goods_cd]='" & goods_cd & "' or  [goods_cd]='" & goods_cd.Replace("-", "") & "'  ")
         End With
 
         '挿入の実行

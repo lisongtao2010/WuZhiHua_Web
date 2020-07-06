@@ -43,36 +43,36 @@ $(document).ready(function () {
                 this.select();
             });
 
-            $(".defaultPage_textbox_scan").keydown(function (e) {
+//            $(".defaultPage_textbox_scan").keydown(function (e) {
 
-                defaultPage_textbox_scan_do = true;
+//                defaultPage_textbox_scan_do = true;
 
-                var id;
-                id = "#" + $(this).attr("id");
+//                var id;
+//                id = "#" + $(this).attr("id");
 
-                var curKey = e.which;
-                if (curKey == 13 && $(".defaultPage_textbox_scan").length > 0) {
-                    SetDefaultScanData(id, true);
-                    defaultPage_textbox_scan_do = false;
-                    e.preventDefault ? e.preventDefault() : e.returnValue = false;
-                }
+//                var curKey = e.which;
+//                if (curKey == 13 && $(".defaultPage_textbox_scan").length > 0) {
+//                    SetDefaultScanData(id, true);
+//                    defaultPage_textbox_scan_do = false;
+//                    e.preventDefault ? e.preventDefault() : e.returnValue = false;
+//                }
 
-                setTimeout(function () {
-                    SetDefaultScanData(id, false);
-                    defaultPage_textbox_scan_do = false;
-                }, 700);
+////                setTimeout(function () {
+////                    SetDefaultScanData(id, false);
+////                    defaultPage_textbox_scan_do = false;
+////                }, 700);
 
-            });
+//            });
 
             $(".defaultPage_textbox_scan").keyup(function (e) {
 
-                var id;
-                id = "#" + $(this).attr("id");
+//                var id;
+//                id = "#" + $(this).attr("id");
 
-                setTimeout(function () {
-                    SetDefaultScanData(id, false);
-                    defaultPage_textbox_scan_do = false;
-                }, 500);
+//                setTimeout(function () {
+//                    SetDefaultScanData(id, false);
+//                    defaultPage_textbox_scan_do = false;
+//                }, 500);
 
             });
 
@@ -89,10 +89,10 @@ $(document).ready(function () {
                     e.preventDefault ? e.preventDefault() : e.returnValue = false;
                 }
 
-                setTimeout(function () {
-                    SetDefaultScanData(id, false);
-                    defaultPage_textbox_scan_do = false;
-                }, 700);
+//                setTimeout(function () {
+//                    SetDefaultScanData(id, false);
+//                    defaultPage_textbox_scan_do = false;
+//                }, 700);
 
             });
 

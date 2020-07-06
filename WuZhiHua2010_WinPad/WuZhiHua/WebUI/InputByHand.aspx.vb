@@ -419,7 +419,7 @@ SamePiCi:
             ResultDA.InsertResultDetailWaiguan(crIndex, Me.tbxGoodsCd.Text.Trim, Me.tbxCheckUserCd.Text.Trim)
 
             Dim tongyong_cd As String = _
-            checkDA.Gettongyong_cd(Me.tbxGoodsCd.Text.Trim)
+            checkDA.Gettongyong_cd(Me.tbxGoodsCd.Text.Trim.Replace("-", ""))
 
             If tongyong_cd <> "" Then
                 ResultDA.UpdFirstCheck(tongyong_cd)
