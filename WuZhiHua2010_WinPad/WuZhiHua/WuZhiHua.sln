@@ -3,10 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebUI", "WebUI", "{33CDC8B2-E2CB-4DE3-9161-DF81F4931DFF}"
 	ProjectSection(WebsiteProperties) = preProject
-		SccProjectName = ""$/WuZhiHua.root/WuZhiHua", CAAAAAAA"
+		SccProjectName = ""
 		SccAuxPath = ""
-		SccLocalPath = ".."
-		SccProvider = "MSSCCI:Microsoft Visual SourceSafe"
+		SccLocalPath = ""
+		SccProvider = ""
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv2.0"
 		Debug.AspNetCompiler.VirtualPath = "/WebUI"
 		Debug.AspNetCompiler.PhysicalPath = "WebUI\"
@@ -27,15 +27,6 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebUI", "WebUI", "{33CDC8B2
 	EndProjectSection
 EndProject
 Global
-	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 2
-		SccLocalPath0 = .
-		SccWebProject1 = true
-		SccProjectUniqueName1 = WebUI
-		SccLocalPath1 = .
-		SccProjectFilePathRelativizedFromConnection1 = WebUI\\
-		SccProjectEnlistmentChoice1 = 2
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
