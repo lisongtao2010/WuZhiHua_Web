@@ -2,7 +2,7 @@
 
 var defaultPage_textbox_scan_do = false;
 
-function SetDefaultScanData(id,isEnter) {
+function SetDefaultScanData(id, isEnter) {
     if (defaultPage_textbox_scan_do) {
         var BarCd = new ReadBarCode($(id).val());
         if (BarCd.kind == "2") {
@@ -17,7 +17,7 @@ function SetDefaultScanData(id,isEnter) {
                     $("#ctl00_MC_tbxCheckUserCd").select();
                 }
             }
-  
+
         }
     }
 
@@ -43,36 +43,36 @@ $(document).ready(function () {
                 this.select();
             });
 
-//            $(".defaultPage_textbox_scan").keydown(function (e) {
+            //            $(".defaultPage_textbox_scan").keydown(function (e) {
 
-//                defaultPage_textbox_scan_do = true;
+            //                defaultPage_textbox_scan_do = true;
 
-//                var id;
-//                id = "#" + $(this).attr("id");
+            //                var id;
+            //                id = "#" + $(this).attr("id");
 
-//                var curKey = e.which;
-//                if (curKey == 13 && $(".defaultPage_textbox_scan").length > 0) {
-//                    SetDefaultScanData(id, true);
-//                    defaultPage_textbox_scan_do = false;
-//                    e.preventDefault ? e.preventDefault() : e.returnValue = false;
-//                }
+            //                var curKey = e.which;
+            //                if (curKey == 13 && $(".defaultPage_textbox_scan").length > 0) {
+            //                    SetDefaultScanData(id, true);
+            //                    defaultPage_textbox_scan_do = false;
+            //                    e.preventDefault ? e.preventDefault() : e.returnValue = false;
+            //                }
 
-////                setTimeout(function () {
-////                    SetDefaultScanData(id, false);
-////                    defaultPage_textbox_scan_do = false;
-////                }, 700);
+            ////                setTimeout(function () {
+            ////                    SetDefaultScanData(id, false);
+            ////                    defaultPage_textbox_scan_do = false;
+            ////                }, 700);
 
-//            });
+            //            });
 
             $(".defaultPage_textbox_scan").keyup(function (e) {
 
-//                var id;
-//                id = "#" + $(this).attr("id");
+                //                var id;
+                //                id = "#" + $(this).attr("id");
 
-//                setTimeout(function () {
-//                    SetDefaultScanData(id, false);
-//                    defaultPage_textbox_scan_do = false;
-//                }, 500);
+                //                setTimeout(function () {
+                //                    SetDefaultScanData(id, false);
+                //                    defaultPage_textbox_scan_do = false;
+                //                }, 500);
 
             });
 
@@ -89,10 +89,10 @@ $(document).ready(function () {
                     e.preventDefault ? e.preventDefault() : e.returnValue = false;
                 }
 
-//                setTimeout(function () {
-//                    SetDefaultScanData(id, false);
-//                    defaultPage_textbox_scan_do = false;
-//                }, 700);
+                //                setTimeout(function () {
+                //                    SetDefaultScanData(id, false);
+                //                    defaultPage_textbox_scan_do = false;
+                //                }, 700);
 
             });
 
@@ -186,6 +186,8 @@ $(document).ready(function () {
                         //二维码扫描 生产明细书
                         if (zbenchmark_type == "00" || zbenchmark_type == "01") {
                             if (BarCd.zuofan == zbenchmark_value1 || BarCd.zhiPinCd == zbenchmark_value1 || BarCd.kunBaoSuu == zbenchmark_value1 || BarCd.tuoPanXuHao == zbenchmark_value1 || BarCd.xiangXian == zbenchmark_value1) {
+                                $(this).val(zbenchmark_value1);
+                            } else if (BarCd.allText.indexOf(zbenchmark_value1) > 0) {//如果存在标签内容
                                 $(this).val(zbenchmark_value1);
                             } else {
                                 $(this).val("二维码不符");
@@ -429,23 +431,23 @@ function ReMakeScanText(value) {
 function isInteger(obj) {
     return obj % 1 === 0 && obj.indexOf(".") == -1 && obj != '';
 }
-String.prototype.trim = function() {
+String.prototype.trim = function () {
     return this.replace(/(^\s*)|(\s*$)/g, '');
 }
-String.prototype.ltrim = function() {
+String.prototype.ltrim = function () {
     return this.replace(/(^\s*)/g, '');
 }
-String.prototype.rtrim = function() {
+String.prototype.rtrim = function () {
     return this.replace(/(\s*$)/g, '');
 }
-String.prototype.right = function(length) {
+String.prototype.right = function (length) {
     if (this.length - length >= 0 && this.length >= 0 && this.length - length <= this.length) {
         return this.substring(this.length - length, this.length);
     } else {
         return this
     }
 }
-String.prototype.left = function(length) {
+String.prototype.left = function (length) {
     if (this.length - length >= 0 && this.length >= 0 && this.length - length <= this.length) {
         return this.substring(0, length);
     } else {
@@ -457,31 +459,58 @@ function IsContains(str, substr) {
 }
 function ReadBarCode(cd) {
 
-    if (cd.split("/").length == 8) {
-        this.kind = "2";
-        this.zuofan = cd.split("/")[7].trim().replace(/-/g, "");
-        this.zhiPinCd = cd.split("/")[1].trim().replace(/-/g, "");
-        this.kunBaoSuu = cd.split("/")[3].trim().replace(/-/g, "");
-        this.tuoPanXuHao = cd.split("/")[6].trim().replace(/-/g, "");
-        this.xiangXian = cd.split("/")[5].trim().replace(/-/g, "");
+    var arr;
+    arr = cd.split("/");
+    this.allText = [];
+    var i;
+    for (i = 0; i <= arr.length - 1; i++) {
+        this.allText.push(arr[i].trim());
+    }
 
-    } else if (cd.split("/").length >= 5) {
+
+    //新标签
+    if (cd.length == 136) {
         this.kind = "2";
         this.zuofan = cd.split("/")[0].trim().replace(/-/g, "");
         this.zhiPinCd = cd.split("/")[1].trim().replace(/-/g, "");
-        this.kunBaoSuu = cd.split("/")[2].trim().replace(/-/g, "");
-        this.tuoPanXuHao = cd.split("/")[3].trim().replace(/-/g, "");
-        this.xiangXian = cd.split("/")[4].trim().replace(/-/g, "");
-    } else if (cd.right(2) == "/C") {
-        this.kind = "3";
-        this.cd = cd.left(16).trim().replace(/-/g, "");
-        this.lotRiQi = cd.substring(16, 25).trim();
+        this.kunBaoSuu = ""; //已经是数量了
+        this.tuoPanXuHao = "";
+        this.xiangXian = "";
     } else {
-        this.kind = "1";
-        this.cd = cd;
-        this.cd = this.cd.replace(/ /g, "");
-        this.cd = this.cd.replace(/-/g, "");
+
+        //元标签
+        if (cd.split("/").length == 8) {
+            this.kind = "2";
+            this.zuofan = cd.split("/")[7].trim().replace(/-/g, "");
+            this.zhiPinCd = cd.split("/")[1].trim().replace(/-/g, "");
+            this.kunBaoSuu = cd.split("/")[3].trim().replace(/-/g, "");
+            this.tuoPanXuHao = cd.split("/")[6].trim().replace(/-/g, "");
+            this.xiangXian = cd.split("/")[5].trim().replace(/-/g, "");
+        } else if (cd.split("/").length >= 5) {
+            this.kind = "2";
+            this.zuofan = cd.split("/")[0].trim().replace(/-/g, "");
+            this.zhiPinCd = cd.split("/")[1].trim().replace(/-/g, "");
+            this.kunBaoSuu = cd.split("/")[2].trim().replace(/-/g, "");
+            this.tuoPanXuHao = cd.split("/")[3].trim().replace(/-/g, "");
+            this.xiangXian = cd.split("/")[4].trim().replace(/-/g, "");
+        } else if (cd.right(2) == "/C") {
+            this.kind = "3";
+            this.cd = cd.left(16).trim().replace(/-/g, "");
+            this.lotRiQi = cd.substring(16, 25).trim();
+        } else {
+            this.kind = "1";
+            this.cd = cd;
+            this.cd = this.cd.replace(/ /g, "");
+            this.cd = this.cd.replace(/-/g, "");
+        }
+
+
     }
+
+
+
+
+
     return this;
 }
 function IsPC() {
