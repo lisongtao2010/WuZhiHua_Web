@@ -23,7 +23,7 @@
     <ManifestCertificateThumbprint>33698FF49B541AC61ADE1ED9B00442D91A0A64BC</ManifestCertificateThumbprint>
     <ManifestKeyFile>Lixil.AvoidMissSystem.WinUI_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetZone>LocalIntranet</TargetZone>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
