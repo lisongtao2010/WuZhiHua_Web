@@ -97,8 +97,9 @@ Partial Class _Default
                 ViewState("shareId") = rows(0).Item("ID")
 
                 'CASE1  存在待判的场合。选项：1 重新检查 2 默认检查  3 不检查
-                Me.btnDefault.Visible = True
-                Me.btnReCheck.Visible = True
+                Me.btnDefault.Visible = True '2 默认检查
+
+                Me.btnReCheck.Visible = True '1 重新检查
 
 
                 ''Me.btnNoCheck.Visible = True
