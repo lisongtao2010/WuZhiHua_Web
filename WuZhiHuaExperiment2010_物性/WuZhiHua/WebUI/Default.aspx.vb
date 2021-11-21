@@ -6,6 +6,8 @@ Partial Class _Default
     Public UserDA As New UserDA
     Private checkDA As New CheckDA
 
+    Public xingfan_list As String
+
     'Load
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
@@ -17,9 +19,40 @@ Partial Class _Default
                 kensaku()
             End If
 
+            Dim ResultDA As New ResultDA
+
+
+            Dim dt2 As DataTable = ResultDA.GetXingfan()
+            Dim sb2 As New StringBuilder
+            For i As Integer = 0 To dt2.Rows.Count - 1
+                sb2.AppendLine("<option value=""" & dt2.Rows(i).Item(0).ToString.Trim & """>" & dt2.Rows(i).Item(0).ToString.Trim & "</option>")
+
+            Next
+            xingfan_list = sb2.ToString
+
+            Dim dt As DataTable = ResultDA.GetMDlx()
+            Dim sb As New StringBuilder
+            For i As Integer = 0 To dt.Rows.Count - 1
+                sb.Append(dt.Rows(i).Item(0).ToString.Trim)
+                sb.Append(",")
+                sb.Append(dt.Rows(i).Item(1).ToString.Trim)
+                sb.Append(",")
+                sb.Append(dt.Rows(i).Item(2).ToString.Trim)
+
+                If i <> dt.Rows.Count - 1 Then
+                    sb.Append("|")
+                End If
+            Next
+            hidDLX.Value = sb.ToString
+
+            ViewState("xingfan_list") = xingfan_list
+
+
+
             Me.tbxGoodsCd.Focus()
             Me.lblMessage.Text = "请输入商品CD"
-
+        Else
+            xingfan_list = ViewState("xingfan_list").ToString
         End If
 
     End Sub
@@ -154,7 +187,6 @@ SamePiCi:
         End If
 
 
-
         If Me.tbxCheckUserCd.Text.Trim = "" Then
             Me.tbxCheckUserCd.Text = Me.tbxCheckUserCd.Text.Trim
             Me.lblMessage.Text = "请输入检查员CD"
@@ -255,6 +287,22 @@ SamePiCi:
 
         Rireki.InsRireki("新规检查Start", "", "", Me.tbxGoodsCd.Text, Me.tbxMakeNumber.Text, "", Me.tbxCheckUserCd.Text.Trim)
 
+        If Me.tbxXingfan.Text.Trim = "" Then
+            Me.lblHint.Text = "请输入型番"
+            Exit Sub
+        End If
+
+        If Me.hidBumen.Value = "" Then
+            Me.lblHint.Text = "没选部门"
+            Exit Sub
+        End If
+
+        If Me.hidLineName.Value = "" Then
+            Me.lblHint.Text = "没选生产线"
+            Exit Sub
+        End If
+
+
         '如果区分没有输入 那么 自动生成
         If Me.tbxMakeNumber.Text.Trim = "" Then
             Dim kbn As String = CInt(Right(CheckIndex.MakeNewIndex("QF", tbxCheckUserCd.Text.Trim, "11111111", 8), 8)).ToString
@@ -270,6 +318,8 @@ SamePiCi:
 
         End If
 
+
+        Exit Sub
 
         '采番
         Dim crIndex As String = _

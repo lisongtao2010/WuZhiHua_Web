@@ -481,4 +481,46 @@ Public Class ResultDA
         Return result
     End Function
 
+
+
+    ''' <summary>
+    ''' 获得型番关联表
+    ''' </summary>
+    ''' <param name="userId"></param>
+    ''' <returns>データセット</returns>
+    ''' <remarks></remarks>
+    Public Function GetMDlx() As DataTable
+
+        Dim sb As New StringBuilder
+        Dim ds As New DataSet
+        Dim paramList As New List(Of SqlParameter)
+        Dim tableName As String = "m_dlx"
+
+        sb.AppendLine("SELECT [department_cd]")
+        sb.AppendLine("      ,[line_name]")
+        sb.AppendLine("      ,[xingfan]")
+        sb.AppendLine("  FROM [m_dlx]")
+        sb.AppendLine("ORDER BY xingfan")
+        '検索の実行
+        FillDataset(DataAccessManager.Connection, CommandType.Text, sb.ToString(), ds, tableName, paramList.ToArray)
+        Return ds.Tables(0)
+
+    End Function
+
+    Public Function GetXingfan() As DataTable
+
+        Dim sb As New StringBuilder
+        Dim ds As New DataSet
+        Dim paramList As New List(Of SqlParameter)
+        Dim tableName As String = "m_dlx"
+
+        sb.AppendLine("SELECT distinct")
+        sb.AppendLine("       [xingfan]")
+        sb.AppendLine("  FROM [m_dlx]")
+        sb.AppendLine("ORDER BY xingfan")
+        '検索の実行
+        FillDataset(DataAccessManager.Connection, CommandType.Text, sb.ToString(), ds, tableName, paramList.ToArray)
+        Return ds.Tables(0)
+
+    End Function
 End Class

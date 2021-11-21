@@ -1,13 +1,15 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31829.152
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebUI", "WebUI", "{33CDC8B2-E2CB-4DE3-9161-DF81F4931DFF}"
 	ProjectSection(WebsiteProperties) = preProject
 		SccProjectName = ""$/WebUI", BAAAAAAA"
 		SccAuxPath = ""
 		SccLocalPath = "."
 		SccProvider = "MSSCCI:Microsoft Visual SourceSafe"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv2.0"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
 		Debug.AspNetCompiler.VirtualPath = "/WebUI"
 		Debug.AspNetCompiler.PhysicalPath = "WebUI\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\WebUI\"
@@ -23,19 +25,11 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebUI", "WebUI", "{33CDC8B2
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "50937"
+		SlnRelativePath = "WebUI\"
 		DefaultWebSiteLanguage = "Visual Basic"
 	EndProjectSection
 EndProject
 Global
-	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 1
-		SccWebProject0 = true
-		SccProjectUniqueName0 = WebUI
-		SccProjectName0 = \u0022$/WebUI\u0022,\u0020BAAAAAAA
-		SccLocalPath0 = H:\\WEBSHARE\\WuZhiHuaExperiment2010\\WuZhiHua\\WebUI
-		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
-		SccProjectEnlistmentChoice0 = 2
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
@@ -45,5 +39,17 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {394B4E99-D3F1-4176-8FAA-1C3F9B0E53BC}
+	EndGlobalSection
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 1
+		SccWebProject0 = true
+		SccProjectUniqueName0 = WebUI
+		SccProjectName0 = \u0022$/WebUI\u0022,\u0020BAAAAAAA
+		SccLocalPath0 = H:\\WEBSHARE\\WuZhiHuaExperiment2010\\WuZhiHua\\WebUI
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		SccProjectEnlistmentChoice0 = 2
 	EndGlobalSection
 EndGlobal
