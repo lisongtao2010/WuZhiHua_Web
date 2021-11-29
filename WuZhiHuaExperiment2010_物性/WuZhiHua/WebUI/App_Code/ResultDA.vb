@@ -525,7 +525,7 @@ Public Class ResultDA
     End Function
 
 
-    Public Function ins_t_dlx_chk(ByVal id As String, ByVal department_cd As String, ByVal line_name As String, ByVal xingfan As String) As Integer
+    Public Function ins_t_dlx_chk(ByVal id As String, ByVal department_cd As String, ByVal line_name As String, ByVal xingfan As String, ByVal chk_kbn As String) As Integer
         AddMethodEntrance(MyClass.GetType.FullName & "." & GetCurrentMethod.Name)
         Dim result As Integer
         Dim sb As New StringBuilder
@@ -539,7 +539,7 @@ Public Class ResultDA
         sb.AppendLine("      ,'" & department_cd & "'")
         sb.AppendLine("      ,'" & line_name & "'")
         sb.AppendLine("      ,'" & xingfan & "'")
-
+        sb.AppendLine("      ,'" & chk_kbn & "'")
         '更新の実行
         result = ExecuteNonQuery(DataAccessManager.Connection, CommandType.Text, sb.ToString(), paramList.ToArray)
 

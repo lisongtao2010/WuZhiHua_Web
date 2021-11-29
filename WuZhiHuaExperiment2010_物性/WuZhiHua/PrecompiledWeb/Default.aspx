@@ -114,9 +114,21 @@
         <asp:Button ID="btnContinueCheck" runat="server" Text="继续检查" CssClass="btn_common_new" Visible="false" Width="33%" />
 
     </div>
+    <div class="div_ms_new div_ng" style="overflow: hidden; text-align: left; color: Red; font-size: 30px; font-weight: bold;">
+        <asp:Label ID="lblNg" runat="server" Text="半年NG项目" Style="color: Red" Visible="false"></asp:Label>
+        <asp:Button ID="btnHid" runat="server" Text="隐藏" OnClientClick="$('.div_ng').hide();return false;" Font-Size="30px" />
+        <asp:GridView ID="gvNg" runat="server" Width="1250px" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" GridLines="None">
+            <AlternatingRowStyle BackColor="White" />
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+        </asp:GridView>
+
+    </div>
     <div class="div_ms_new" style="overflow: hidden; text-align: left; color: Red; font-size: 30px; font-weight: bold;">
         <asp:Label ID="lblChecked" runat="server" Text="检查完了的数据" Style="color: Red" Visible="false"></asp:Label>
-
     </div>
     <div class="div_ms_new">
         <asp:GridView ID="gvLastCheckResultMS" runat="server" AutoGenerateColumns="False" Width="1250px">

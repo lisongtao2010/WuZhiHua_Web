@@ -101,6 +101,20 @@ Partial Class _Default
         Dim lastCheckResultMS As Data.DataTable = _
             checkDA.GetLastReultInfoFrom_t_check_result(Me.tbxGoodsCd.Text, Me.tbxMakeNumber.Text, "no")
 
+        Dim ngDt As DataTable = checkDA.GetNgMS(Me.tbxGoodsCd.Text)
+        If ngDt.Rows.Count > 0 Then
+            gvNg.DataSource = ngDt
+            gvNg.DataBind()
+            lblNg.Visible = True
+            gvNg.Visible = True
+            btnHid.Visible = True
+        Else
+            lblNg.Visible = False
+            gvNg.Visible = False
+            btnHid.Visible = False
+        End If
+
+
         Me.btnReCheck.Visible = True
         Me.btnDefault.Visible = False
         Me.btnContinueCheck.Visible = False
@@ -287,10 +301,10 @@ SamePiCi:
 
         Rireki.InsRireki("新规检查Start", "", "", Me.tbxGoodsCd.Text, Me.tbxMakeNumber.Text, "", Me.tbxCheckUserCd.Text.Trim)
 
-        If Me.tbxXingfan.Text.Trim = "" Then
-            Me.lblHint.Text = "请输入型番"
-            Exit Sub
-        End If
+        'If Me.tbxXingfan.Text.Trim = "" Then
+        '    Me.lblHint.Text = "请输入型番"
+        '    Exit Sub
+        'End If
 
         If Me.hidBumen.Value = "" Then
             Me.lblHint.Text = "没选部门"
@@ -332,7 +346,10 @@ SamePiCi:
         '结果明细临时数据作成
         ResultDA.InsertResultDetailWaiguan(crIndex, Me.tbxGoodsCd.Text.Trim)
 
-        ResultDA.ins_t_dlx_chk(crIndex, Me.hidBumen.Value, Me.hidLineName.Value, tbxXingfan.Text.Trim)
+
+
+
+        ResultDA.ins_t_dlx_chk(crIndex, Me.hidBumen.Value, Me.hidLineName.Value, tbxGoodsCd.Text.Trim, lblChkKbn.Items(lblChkKbn.SelectedIndex).Value)
 
 
         Rireki.InsRireki("新规检查End", "", "", Me.tbxGoodsCd.Text, Me.tbxMakeNumber.Text, "", Me.tbxCheckUserCd.Text.Trim)
@@ -350,10 +367,10 @@ SamePiCi:
     Protected Sub btnDefault_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnDefault.Click
 
 
-        If Me.tbxXingfan.Text.Trim = "" Then
-            Me.lblHint.Text = "请输入型番"
-            Exit Sub
-        End If
+        'If Me.tbxXingfan.Text.Trim = "" Then
+        '    Me.lblHint.Text = "请输入型番"
+        '    Exit Sub
+        'End If
 
         If Me.hidBumen.Value = "" Then
             Me.lblHint.Text = "没选部门"
@@ -373,7 +390,7 @@ SamePiCi:
         ResultDA.InsertResultMoren(crIndex, Me.tbxGoodsCd.Text.Trim, Me.tbxMakeNumber.Text.Trim, Me.tbxCheckUserCd.Text.Trim, ViewState("shareId"))
 
 
-        ResultDA.ins_t_dlx_chk(crIndex, Me.hidBumen.Value, Me.hidLineName.Value, tbxXingfan.Text.Trim)
+        ResultDA.ins_t_dlx_chk(crIndex, Me.hidBumen.Value, Me.hidLineName.Value, tbxGoodsCd.Text.Trim, lblChkKbn.Items(lblChkKbn.SelectedIndex).Value)
 
         ResultDA.InsertResultDetail(crIndex, ViewState("shareId"))
         ResultDA.Updatet_check_result_continue_chk_flg(crIndex, "2")

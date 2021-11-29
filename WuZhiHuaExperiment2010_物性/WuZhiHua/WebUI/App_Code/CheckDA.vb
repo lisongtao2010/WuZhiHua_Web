@@ -170,6 +170,56 @@ Public Class CheckDA
 
     End Function
 
+
+    ''' <summary>
+    ''' 从检查结果表中取得当天该商品code的最新检查结果取得 
+    ''' </summary>
+    ''' <param name="strGoodsCode"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function GetNgMS(ByVal strGoodsCode As String) As DataTable
+        AddMethodEntrance(MyClass.GetType.FullName & "." & GetCurrentMethod.Name, strGoodsCode)
+
+        '因为商品表的中的商品CD为带“-”的,而在生产表中是不带“-”。所以要对商品CD加处理
+        Dim strPGoodCd As String = Replace(strGoodsCode, "-", "")
+        Dim paramList As New List(Of SqlParameter)
+
+        Dim sb As New StringBuilder
+        sb.AppendLine("SELECT ")
+        sb.AppendLine("  B.goods_cd AS '商品CD' ")
+        sb.AppendLine(" ,E.kind")
+        sb.AppendLine(" ,E.check_position")
+        sb.AppendLine(" ,E.check_item")
+        sb.AppendLine(" ,D.remarks")
+        sb.AppendLine("")
+        sb.AppendLine(" FROM t_check_result AS A  WITH(READCOMMITTED) ")
+        sb.AppendLine("LEFT JOIN m_goods AS B WITH(READCOMMITTED) ")
+        sb.AppendLine("ON B.id = A.goods_id ")
+        sb.AppendLine("AND B.delete_flg = '0' ")
+        sb.AppendLine("LEFT JOIN TB_User AS C WITH(READCOMMITTED) ")
+        sb.AppendLine("ON A.check_user = C.UserCode ")
+        sb.AppendLine("")
+        sb.AppendLine("LEFT JOIN t_result_detail D")
+        sb.AppendLine("ON D.result_id = A.id")
+        sb.AppendLine("")
+        sb.AppendLine("LEFT JOIN m_check E")
+        sb.AppendLine("ON E.id = D.check_id")
+        sb.AppendLine("")
+        sb.AppendLine("WHERE A.delete_flg = '0'  ")
+        sb.AppendLine("and B.goods_cd = '" & strPGoodCd & "' ")
+        sb.AppendLine("and D.result = 'NG'")
+        sb.AppendLine("and A.end_time>dateadd(month,-6,getdate())")
+        sb.AppendLine("ORDER BY A.end_time DESC")
+
+        Dim ds As New DataSet
+
+        '検索の実行
+        Dim tableName As String = "ResultInfo"
+        FillDataset(DataAccessManager.Connection, CommandType.Text, sb.ToString(), ds, tableName, paramList.ToArray)
+        Return ds.Tables(0)
+
+    End Function
+
     '商品分类列表
     Public Function GetGoodKind(ByVal goods_cd As String, ByVal kind_cd As String, ByVal tools_id As String, ByVal classify_id As String) As DataTable
 

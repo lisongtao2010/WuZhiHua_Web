@@ -101,6 +101,18 @@ Partial Class _Default
         Dim lastCheckResultMS As Data.DataTable = _
             checkDA.GetLastReultInfoFrom_t_check_result(Me.tbxGoodsCd.Text, Me.tbxMakeNumber.Text, "no")
 
+        Dim ngDt As DataTable = checkDA.GetNgMS(Me.tbxGoodsCd.Text)
+        If ngDt.Rows.Count > 0 Then
+            gvNg.DataSource = ngDt
+            gvNg.DataBind()
+            lblNg.Visible = True
+            gvNg.Visible = True
+        Else
+            lblNg.Visible = False
+            gvNg.Visible = False
+        End If
+
+
         Me.btnReCheck.Visible = True
         Me.btnDefault.Visible = False
         Me.btnContinueCheck.Visible = False

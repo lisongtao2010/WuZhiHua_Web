@@ -5,7 +5,7 @@ $(document).ready(function () {
     
 
     $("#kl").click(function (e) {
-        $("#ctl00_MC_tbxXingfan").val('');
+        $("#ctl00_MC_tbxGoodsCd").val('');
         $("#ctl00_MC_hidBumen").val('');
         $("#ctl00_MC_hidLineName").val('');
     });
@@ -41,7 +41,7 @@ $(document).ready(function () {
   
 
     function InitBumen() {
-        var xingfan = $("#ctl00_MC_tbxXingfan").val();
+        var xingfan = $("#ctl00_MC_tbxGoodsCd").val();
         var arrBumen = [];
 
         arrHTML_bumen = [];
@@ -61,7 +61,7 @@ $(document).ready(function () {
 
     InitAll();
 
-    $("#ctl00_MC_tbxXingfan").bind("input propertychange", function () {
+    $("#ctl00_MC_tbxGoodsCd").bind("input propertychange", function () {
 
         InitBumen();
         
@@ -95,7 +95,7 @@ $(document).ready(function () {
     });
 
     function InitLines() {
-        var xingfan = $("#ctl00_MC_tbxXingfan").val();
+        var xingfan = $("#ctl00_MC_tbxGoodsCd").val();
         var bumen = $("#ctl00_MC_lbBumen").val();
         arrHTML_line = [];
         for (i = 0; i <= arrDLX.length - 1; i++) {
