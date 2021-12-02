@@ -46,13 +46,20 @@
             background:#535353;
             color:#fff;
         }
+
+        #ctl00_MC_gvNg td{
+            border:1px solid #ccc;
+        }
+                #ctl00_MC_gvNg th{
+            border:1px solid #ccc;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="FC" runat="Server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MC" runat="Server">
     <%--扫描--%>
-    <script language="javascript" type="text/javascript" src="./Default.js?ver=1.1111"></script>
+    <script language="javascript" type="text/javascript" src="./Default.js?ver=1.1112"></script>
     <%--欠品更新--%>
     <%--Title--%>
     <table cellspacing="0" rules="all" border="0" class="table_title_new">
@@ -141,7 +148,7 @@
     <div class="div_ms_new div_ng" style="overflow: hidden; text-align: left; color: Red; font-size: 30px; font-weight: bold;">
         <asp:Label ID="lblNg" runat="server" Text="半年NG项目" Style="color: Red" Visible="false"></asp:Label>
         <asp:Button ID="btnHid" runat="server" Text="隐藏" OnClientClick="$('.div_ng').hide();return false;" Font-Size="30px" />
-        <asp:GridView ID="gvNg" runat="server" Width="1250px" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="gvNg" runat="server" Width="1250px" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" GridLines="None" BorderColor="#6699FF" BorderStyle="Dashed" BorderWidth="1px">
             <AlternatingRowStyle BackColor="White" />
             <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />

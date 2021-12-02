@@ -46,7 +46,7 @@ $(document).ready(function () {
 
         arrHTML_bumen = [];
         for (i = 0; i <= arrDLX.length - 1; i++) {
-            if ((arrBumen.length == 0 || arrBumen.indexOf[arrDLX[i][0]] < 0) && xingfan == arrDLX[i][2]) {
+            if ((arrBumen.length == 0 || arrBumen.indexOf(arrDLX[i][0]) < 0) && xingfan == arrDLX[i][2]) {
                 arrHTML_bumen.push("<option value=\"" + arrDLX[i][0] + "\">" + arrDLX[i][0] + "</option>");
                 arrBumen.push(arrDLX[i][0]);
             }
