@@ -85,7 +85,7 @@ $(document).ready(function () {
         $("#ctl00_MC_cbLineName")[0].selectedIndex = 0;
         $("#ctl00_MC_hidLineName").val($("#ctl00_MC_cbLineName").val());
 
-        //$("#ctl00_MC_hidBumen").val($("#ctl00_MC_lbBumen").val());
+        $("#ctl00_MC_hidBumen").val($("#ctl00_MC_lbBumen").val());
         //var arrLineName = [];
     });
 
