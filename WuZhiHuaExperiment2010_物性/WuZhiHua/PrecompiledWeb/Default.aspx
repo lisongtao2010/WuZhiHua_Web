@@ -1,39 +1,57 @@
-﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.Mobile.master" AutoEventWireup="false" CodeFile="Default.aspx.vb" Inherits="_Default" EnableEventValidation ="false" %>
+﻿<%@ Page Title="" Language="VB" MasterPageFile="~/Site.Mobile.master" AutoEventWireup="false" CodeFile="Default.aspx.vb" Inherits="_Default" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server">
     <style type="text/css">
-        .auto-style1 {
-            text-align: right;
-            color: #000066;
+        /* 去掉默认样式，设置新的样式 */
+        .select-style{
+            position: relative;
+            display: inline-block;
+        }
+        .select-style select{
+            display:inline-block;
+            box-sizing:border-box;
+            background:none;
+            border:1px solid #222;
+            outline:none;
+            -webkit-appearance:none;
+            padding:5px 15px 5px 5px;
+            line-height:inherit;
+            color:inherit;
+            cursor:pointer;
+            font-size:14px;
+            position:relative;
+            z-index:3;
+            height:100%;
+            border-radius:2px;
+        }
+        .select-style:after{
+            content:'';
+            color:red;
+            position:absolute;
+            top: 0;
+            bottom:0;
+            right:5px;
+            height:100%;
+            padding:5px 0;
+
+        }
+        .select-style select option{
+            color:#222;
+        }
+        .select-style select option:hover{
+            background-co:#535353;
+            color:#fff;
+        }
+        .select-style select option:checked{
+            background:#535353;
+            color:#fff;
         }
 
-        .auto-style2 {
-            width: 160px;
-            height: 62px;
+        #ctl00_MC_gvNg td{
+            border:1px solid #ccc;
         }
-
-        .auto-style3 {
-            width: 50px;
-            height: 62px;
-        }
-
-        .auto-style4 {
-            width: 140px;
-            height: 62px;
-        }
-
-        .auto-style5 {
-            width: 70px;
-            height: 62px;
-        }
-
-        .auto-style6 {
-            width: 90px;
-            height: 62px;
-        }
-
-        .auto-style7 {
-            height: 62px;
+                #ctl00_MC_gvNg th{
+            border:1px solid #ccc;
         }
     </style>
 </asp:Content>
@@ -41,58 +59,71 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MC" runat="Server">
     <%--扫描--%>
-    <script language="javascript" type="text/javascript" src="./Default.js"></script>
+    <script language="javascript" type="text/javascript" src="./Default.js?ver=1.1112"></script>
     <%--欠品更新--%>
-
     <%--Title--%>
     <table cellspacing="0" rules="all" border="0" class="table_title_new">
         <tr>
-            <th style="font-size: 25px; color: #fff;" class="auto-style2">
+            <th style="font-size: 25px; color: #fff;width:600px" >
                 <a style="font-size: 34px;">L</a>
                 <a style="font-size: 32px;">I</a>
                 <a style="font-size: 30px;">X</a>
                 <a style="font-size: 32px;">I</a>
                 <a style="font-size: 34px;">L</a>
                 <a style="font-size: 11px;">ver1.0</a>
-
             </th>
-            <th class="auto-style3">CD
-            </th>
-            <td class="auto-style4">
-                <asp:TextBox ID="tbxGoodsCd" runat="server" CssClass="defaultPage_textbox_scan" Text="" Width="140" AutoCompleteType="None"></asp:TextBox>
-            </td>
-            <th class="auto-style5">区分</th>
-            <td class="auto-style4">
-                <asp:TextBox ID="tbxMakeNumber" runat="server" CssClass="defaultPage_textbox_scan" Text="" Width="140" AutoCompleteType="None"></asp:TextBox>
-            </td>
-            <th class="auto-style6">检查员</th>
-            <td class="auto-style4">
-                <asp:TextBox ID="tbxCheckUserCd" runat="server" CssClass="defaultPage_textbox_scan" Text="302503" Width="140" AutoCompleteType="None"></asp:TextBox>
-            </td>
-            <th class="auto-style7">
+            <th>
                 <asp:Button ID="btnKensaku" runat="server" Text="查询" CssClass="btn_common_new" />
-                <asp:Button ID="btnByHand1" runat="server" Text="手入力" CssClass="btn_common_new" />
-                <asp:Button ID="btnByHand2" runat="server" Text="清空" CssClass="btn_common_new" />
-            </th>
-        </tr>
-        <tr>
-            <th style="font-size: 25px;" colspan="3"><a id="kl"> 型番 </a><asp:TextBox ID="tbxXingfan" runat="server" CssClass="defaultPage_textbox_scan" Text="" Width="260" AutoCompleteType="None" list="xingfan_list"></asp:TextBox>
-            </th>
-            <th style="width: 70px;" class="auto-style1">部<br />门</th>
-            <td style="width: 140px;">
-                <%--<asp:TextBox ID="tbxBumen" runat="server" CssClass="defaultPage_textbox_scan" Text="" Width="140" AutoCompleteType="None" list="xingfan_bumen_list"></asp:TextBox>--%>
-                <asp:ListBox ID="lbBumen" runat="server" Width="115px" style="font-size:24px;"></asp:ListBox>
-            </td>
-            <th style="width: 90px;">生<br />产<br />线</th>
-            <td colspan="2" style="text-align:left">
-<%--                <asp:TextBox ID="tbxLineName" runat="server" CssClass="defaultPage_textbox_scan" Text="" Width="340" AutoCompleteType="None" list="line_name_list"></asp:TextBox>--%>
 
-                <asp:ListBox ID="cbLineName" runat="server" Width="300" style="font-size:24px;"></asp:ListBox>
+
+            </th>
+            <th >
+                <asp:Button ID="btnByHand2" runat="server" Text="清空" CssClass="btn_common_new" />
+
+            </th>
+            <td>
+                <asp:Button ID="btnByHand1" runat="server" Text="手入力" CssClass="btn_common_new" />
+            </td>
+            <th></th>
+        </tr>
+    </table>
+    <table style="font-size:36px;">
+        <tr style="text-align:center;background-color:blue;color:#fff;">
+            <td class="auto-style1">CD/型番</td>
+            <td>部                门</td>
+            <td>生产线</td>
+            <td style="width:140px;">1,2,3检</td>
+            <td style="background-color:#000">区分</td>
+            <td>检查员</td>
+        </tr>
+        <tr style="vertical-align: top;">
+            <td>
+                <asp:TextBox ID="tbxGoodsCd" runat="server" CssClass="defaultPage_textbox_scan" Text="" Width="360" Height="36px" AutoCompleteType="None" list="xingfan_list" Font-Size="34px"></asp:TextBox>
+            </td>
+            <td>
+                <asp:ListBox ID="lbBumen" runat="server" CssClass="select-style" Width="140px" Style="font-size: 34px;"></asp:ListBox>
+            </td>
+            <td>
+
+                <asp:ListBox ID="cbLineName" runat="server" CssClass="select-style" Width="300px" Style="font-size: 34px;"></asp:ListBox>
+            </td>
+            <td>
+                <asp:ListBox ID="lblChkKbn" runat="server" CssClass="select-style" Width="140px"  Style="font-size: 34px;" >
+                    <asp:ListItem Selected="True" Value="1">一</asp:ListItem>
+                    <asp:ListItem  Value="2">二</asp:ListItem>
+                    <asp:ListItem  Value="3">三</asp:ListItem>
+                </asp:ListBox>
+            </td>
+            <td>
+                <asp:TextBox ID="tbxMakeNumber" runat="server" CssClass="defaultPage_textbox_scan" Height="36px" Text="" Width="140" AutoCompleteType="None" Font-Size="34px"></asp:TextBox>
+            </td>
+            <td>
+                <asp:TextBox ID="tbxCheckUserCd" runat="server" CssClass="defaultPage_textbox_scan"  Height="36px" Text="302503" Width="140" AutoCompleteType="None" Font-Size="34px"></asp:TextBox>
             </td>
         </tr>
     </table>
     <datalist id="xingfan_list">
-        <%=xingfan_list.ToString%>
+    <%=xingfan_list.ToString%>
     </datalist>
 
     <datalist id="xingfan_bumen_list">
@@ -117,7 +148,7 @@
     <div class="div_ms_new div_ng" style="overflow: hidden; text-align: left; color: Red; font-size: 30px; font-weight: bold;">
         <asp:Label ID="lblNg" runat="server" Text="半年NG项目" Style="color: Red" Visible="false"></asp:Label>
         <asp:Button ID="btnHid" runat="server" Text="隐藏" OnClientClick="$('.div_ng').hide();return false;" Font-Size="30px" />
-        <asp:GridView ID="gvNg" runat="server" Width="1250px" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="gvNg" runat="server" Width="1250px" CellPadding="4" EnableModelValidation="True" ForeColor="#333333" GridLines="None" BorderColor="#6699FF" BorderStyle="Dashed" BorderWidth="1px">
             <AlternatingRowStyle BackColor="White" />
             <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
@@ -190,7 +221,7 @@
 
                 <asp:TemplateField HeaderText="编辑谨慎使用">
                     <ItemTemplate>
-                        <input type="button" value="编辑" class="btn_common_new" onclick="return fnedit('<%#Eval("ID").ToString%>','<%#Eval("作番").ToString%>')" />
+                        <input type="button" value="编辑" class="btn_common_new" onclick="return fnedit('<%#Eval("ID").ToString%>    ','<%#Eval("作番").ToString%>    ')" />
                     </ItemTemplate>
                     <ItemStyle HorizontalAlign="Center" />
                 </asp:TemplateField>
@@ -264,7 +295,7 @@
 
                 <asp:TemplateField HeaderText="编辑">
                     <ItemTemplate>
-                        <input type="button" value="编辑" class="btn_common_new" onclick="return fnedit('<%#Eval("ID").ToString%>','<%#Eval("作番").ToString%>')" />
+                        <input type="button" value="编辑" class="btn_common_new" onclick="return fnedit('<%#Eval("ID").ToString%>    ','<%#Eval("作番").ToString%>    ')" />
                     </ItemTemplate>
                     <ItemStyle HorizontalAlign="Center" />
                 </asp:TemplateField>
@@ -280,8 +311,8 @@
     <asp:HiddenField ID="hidResultID" runat="server" />
     <asp:HiddenField ID="hidKbn" runat="server" />
     <asp:HiddenField ID="hidDLX" runat="server" />
-      <asp:HiddenField ID="hidBumen" runat="server" />
-      <asp:HiddenField ID="hidLineName" runat="server" />
+    <asp:HiddenField ID="hidBumen" runat="server" />
+    <asp:HiddenField ID="hidLineName" runat="server" />
     <script>
         function fnedit(id, kbn) {
             $("#ctl00_MC_hidResultID").val(id);

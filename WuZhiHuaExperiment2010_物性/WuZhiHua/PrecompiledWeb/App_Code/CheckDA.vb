@@ -187,10 +187,10 @@ Public Class CheckDA
         Dim sb As New StringBuilder
         sb.AppendLine("SELECT ")
         sb.AppendLine("  B.goods_cd AS '商品CD' ")
-        sb.AppendLine(" ,E.kind")
-        sb.AppendLine(" ,E.check_position")
-        sb.AppendLine(" ,E.check_item")
-        sb.AppendLine(" ,D.remarks")
+        sb.AppendLine(" ,E.kind AS '种类'")
+        sb.AppendLine(" ,E.check_item AS '项目'")
+        sb.AppendLine(" ,D.measure_value1+' , '+D.measure_value2+' , '+D.measure_value3+' , '+D.measure_value4+' , '+D.measure_value5+' , '+D.measure_value6 AS '结果'")
+        sb.AppendLine(" ,D.remarks AS '备考'")
         sb.AppendLine("")
         sb.AppendLine(" FROM t_check_result AS A  WITH(READCOMMITTED) ")
         sb.AppendLine("LEFT JOIN m_goods AS B WITH(READCOMMITTED) ")
@@ -207,8 +207,9 @@ Public Class CheckDA
         sb.AppendLine("")
         sb.AppendLine("WHERE A.delete_flg = '0'  ")
         sb.AppendLine("and B.goods_cd = '" & strPGoodCd & "' ")
-        sb.AppendLine("and D.result = 'NG'")
-        sb.AppendLine("and A.end_time>dateadd(month,-16,getdate())")
+        sb.AppendLine("and D.result <> 'OK'")
+        sb.AppendLine("and A.result = 'NG'")
+        sb.AppendLine("and A.end_time>dateadd(month,-6,getdate())")
         sb.AppendLine("ORDER BY A.end_time DESC")
 
         Dim ds As New DataSet

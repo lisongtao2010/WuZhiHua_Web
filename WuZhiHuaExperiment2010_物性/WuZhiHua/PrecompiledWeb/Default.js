@@ -5,7 +5,7 @@ $(document).ready(function () {
     
 
     $("#kl").click(function (e) {
-        $("#ctl00_MC_tbxXingfan").val('');
+        $("#ctl00_MC_tbxGoodsCd").val('');
         $("#ctl00_MC_hidBumen").val('');
         $("#ctl00_MC_hidLineName").val('');
     });
@@ -41,12 +41,12 @@ $(document).ready(function () {
   
 
     function InitBumen() {
-        var xingfan = $("#ctl00_MC_tbxXingfan").val();
+        var xingfan = $("#ctl00_MC_tbxGoodsCd").val();
         var arrBumen = [];
 
         arrHTML_bumen = [];
         for (i = 0; i <= arrDLX.length - 1; i++) {
-            if ((arrBumen.length == 0 || arrBumen.indexOf[arrDLX[i][0]] < 0) && xingfan == arrDLX[i][2]) {
+            if ((arrBumen.length == 0 || arrBumen.indexOf(arrDLX[i][0]) < 0) && xingfan == arrDLX[i][2]) {
                 arrHTML_bumen.push("<option value=\"" + arrDLX[i][0] + "\">" + arrDLX[i][0] + "</option>");
                 arrBumen.push(arrDLX[i][0]);
             }
@@ -61,7 +61,7 @@ $(document).ready(function () {
 
     InitAll();
 
-    $("#ctl00_MC_tbxXingfan").bind("input propertychange", function () {
+    $("#ctl00_MC_tbxGoodsCd").bind("input propertychange", function () {
 
         InitBumen();
         
@@ -85,7 +85,7 @@ $(document).ready(function () {
         $("#ctl00_MC_cbLineName")[0].selectedIndex = 0;
         $("#ctl00_MC_hidLineName").val($("#ctl00_MC_cbLineName").val());
 
-        //$("#ctl00_MC_hidBumen").val($("#ctl00_MC_lbBumen").val());
+        $("#ctl00_MC_hidBumen").val($("#ctl00_MC_lbBumen").val());
         //var arrLineName = [];
     });
 
@@ -95,7 +95,7 @@ $(document).ready(function () {
     });
 
     function InitLines() {
-        var xingfan = $("#ctl00_MC_tbxXingfan").val();
+        var xingfan = $("#ctl00_MC_tbxGoodsCd").val();
         var bumen = $("#ctl00_MC_lbBumen").val();
         arrHTML_line = [];
         for (i = 0; i <= arrDLX.length - 1; i++) {
