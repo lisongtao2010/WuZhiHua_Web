@@ -349,6 +349,44 @@ maxlength="100"><%#Eval("remarks").ToString %></textarea>
     <asp:HiddenField ID="hidTools_id" runat="server" />
     <asp:HiddenField ID="hidPicture_id" runat="server" />
     <asp:HiddenField ID="hidKind_Name" runat="server" />
+
+    
+    <hr />
+    <br />
+    <br />
+    <br />
+          <asp:FileUpload ID="PicUpload" runat="server" Font-Size="40" Height="80" />
+        <asp:Button ID="btnUpload" runat="server" Text="上传" Font-Size="40" Height="80" />
+
+        <asp:GridView ID="GvPic"
+            runat="server"
+            CssClass="chk_ms"
+            AutoGenerateColumns="false"
+            ShowHeader="false"
+            Font-Size="24px"
+            CellPadding="0"
+            CellSpacing="0"
+            Width="1060px"
+            Style="font-size: 24px;">
+            <Columns>
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:Image ID="Image1" runat="server" />
+                    </ItemTemplate>
+                    <ItemStyle Width="130px" HorizontalAlign="Left" CssClass="" />
+                </asp:TemplateField>
+                <asp:TemplateField>
+                    <ItemTemplate>
+                        <asp:Button ID="btnDel" runat="server" Text="删除" OnClick="btClick" Font-Size="40" Height="80" Width="140px" />
+                    </ItemTemplate>
+                    <ItemStyle Width="130px" HorizontalAlign="Left" CssClass="" />
+                </asp:TemplateField>
+
+
+            </Columns>
+        </asp:GridView>
+
+
     <script>
 
         $(document).ready(function () {

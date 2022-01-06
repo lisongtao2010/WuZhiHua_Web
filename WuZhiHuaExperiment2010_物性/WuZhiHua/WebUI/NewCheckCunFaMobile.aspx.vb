@@ -733,7 +733,7 @@ Partial Class NewCheckCunFaMobile
     Protected Sub btnUpload_Click(sender As Object, e As EventArgs) Handles btnUpload.Click
         Dim FilePath As String = Server.MapPath(".") & ("/IMG/")
         Dim Extension As String = System.IO.Path.GetExtension(PicUpload.PostedFile.FileName)
-        Dim NewFilePath As String = DateTime.Now.ToString("yyyyMMddHHmmss") & Extension
+        Dim NewFilePath As String = Me.tbxGoodsCd.Text.Trim & "_" & Me.tbxMakeNumber.Text.Trim & "_" & DateTime.Now.ToString("yyyyMMddHHmmss") & Extension
         Dim cm As New ComDDL
         Dim result_id As String = Me.hidResult_id.Value
         Dim user_cd As String = Me.tbxCheckUserCd.Text

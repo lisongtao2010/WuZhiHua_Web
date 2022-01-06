@@ -1,5 +1,7 @@
 ﻿Imports System.Data
 
+Imports System.IO
+Imports System.Drawing
 Partial Class NewCheckCunFaMobile
     Inherits System.Web.UI.Page
 
@@ -435,6 +437,9 @@ Partial Class NewCheckCunFaMobile
 
 
         Next
+
+        PicMSInit()
+
         Return True
 
     End Function
@@ -725,4 +730,48 @@ Partial Class NewCheckCunFaMobile
     '    Context.Items("Result_id") = Me.hidResult_id.Value
     '    Server.Transfer("CheckToolsList.aspx")
     'End Sub
+    Protected Sub btnUpload_Click(sender As Object, e As EventArgs) Handles btnUpload.Click
+        Dim FilePath As String = Server.MapPath(".") & ("/IMG/")
+        Dim Extension As String = System.IO.Path.GetExtension(PicUpload.PostedFile.FileName)
+        Dim NewFilePath As String = Me.tbxGoodsCd.Text.Trim & "_" & Me.tbxMakeNumber.Text.Trim & "_" & DateTime.Now.ToString("yyyyMMddHHmmss") & Extension
+        Dim cm As New ComDDL
+        Dim result_id As String = Me.hidResult_id.Value
+        Dim user_cd As String = Me.tbxCheckUserCd.Text
+        PicUpload.SaveAs(FilePath & NewFilePath)
+        cm.InsMPictureChk(result_id, (FilePath & NewFilePath), user_cd)
+        'File.Delete(FilePath & NewFilePath)
+        PicMSInit()
+
+    End Sub
+
+    Sub PicMSInit()
+        Dim result_id As String = Me.hidResult_id.Value
+        Dim cm As New ComDDL
+        Dim dtImg As Data.DataTable = cm.SelChkPicture(result_id)
+        GvPic.DataSource = dtImg
+        GvPic.DataBind()
+
+        For i As Integer = 0 To dtImg.Rows.Count - 1
+            Dim img As System.Web.UI.WebControls.Image = CType(GvPic.Rows(i).FindControl("Image1"), System.Web.UI.WebControls.Image)
+            Dim btn As Button = GvPic.Rows(i).FindControl("btnDel")
+
+            Dim MStream As New MemoryStream(CType(dtImg.Rows(i).Item("pic_conn"), Byte()))
+            Dim base64 As String = Convert.ToBase64String(MStream.ToArray())
+            img.ImageUrl = "data:image/jpg;base64," + base64
+            btn.Attributes.Item("idx") = dtImg.Rows(i).Item("idx")
+
+            ' AddHandler btn.Click, AddressOf Me.btClick
+        Next
+
+
+    End Sub
+
+    Public Sub btClick(ByVal sender As Object, ByVal e As EventArgs)
+        Dim btn As Button
+        btn = CType(sender, Button)
+        Dim cm As New ComDDL
+        Dim result_id As String = Me.hidResult_id.Value
+        cm.DelMPictureChk(result_id, btn.Attributes.Item("idx"))
+        PicMSInit()
+    End Sub
 End Class
