@@ -1,0 +1,393 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9DD3A98C-6704-443F-95B5-80B35AAC0895}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Lixil.AvoidMissSystem.WinUI.My.MyApplication</StartupObject>
+    <RootNamespace>Lixil.AvoidMissSystem.WinUI</RootNamespace>
+    <AssemblyName>Lixil.AvoidMissSystem.WinUI</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <OptionStrict>Off</OptionStrict>
+    <ManifestCertificateThumbprint>4C75209300BA303165C0D8CB3B49FA595DE9CD3A</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Lixil.AvoidMissSystem.WinUI_1_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetZone>LocalIntranet</TargetZone>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>\\ot1686\WebShare\WuZhiHuaWinForm32_TEST\</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>37</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Lixil.AvoidMissSystem.WinUI.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Lixil.AvoidMissSystem.WinUI.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>Off</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>20160308035940197.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Itis.ApplicationBlocks.ExceptionManagement, Version=2.1.0.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lixil.AvoidMissSystem.Utilities\dll\Itis.ApplicationBlocks.ExceptionManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="A000Module.vb" />
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="AvoidMiss_NewDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AvoidMiss_NewDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorDataForm.Designer.vb">
+      <DependentUpon>ErrorDataForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorDataForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrameWork\ColorCodedCheckedListBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FrameWork\ConnectionInfo.vb" />
+    <Compile Include="FrameWork\GetConfig.vb" />
+    <Compile Include="FrameWork\LoginInfo.vb" />
+    <Compile Include="FrameWork\MonitorInfo.vb" />
+    <Compile Include="Moudle\CheckInfo.vb" />
+    <Compile Include="msBaobiao.Designer.vb">
+      <DependentUpon>msBaobiao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="msBaobiao.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsMaintenanceAuthorityForm.Designer.vb">
+      <DependentUpon>MsMaintenanceAuthorityForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MsMaintenanceAuthorityForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsMaintenanceCheckForm.Designer.vb">
+      <DependentUpon>MsMaintenanceCheckForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MsMaintenanceCheckForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsMaintenanceLogForm.Designer.vb">
+      <DependentUpon>MsMaintenanceLogForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MsMaintenanceLogForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsMaintenanceMainForm.Designer.vb">
+      <DependentUpon>MsMaintenanceMainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MsMaintenanceMainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MsMaintenanceLoginForm.Designer.vb">
+      <DependentUpon>MsMaintenanceLoginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MsMaintenanceLoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrameWork\BaseForm.Designer.vb">
+      <DependentUpon>BaseForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrameWork\BaseForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrameWork\PageNavigationSection.vb" />
+    <Compile Include="FrameWork\StateManager.vb" />
+    <Compile Include="MsMaintenanceToolsForm.Designer.vb">
+      <DependentUpon>MsMaintenanceToolsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MsMaintenanceToolsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="MsMaintenancePictureForm.Designer.vb">
+      <DependentUpon>MsMaintenancePictureForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MsMaintenancePictureForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultDetail.Designer.vb">
+      <DependentUpon>ResultDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ResultDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultModify.Designer.vb">
+      <DependentUpon>ResultModify.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ResultModify.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User.Designer.vb">
+      <DependentUpon>User.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="m_permission.Designer.vb">
+      <DependentUpon>m_permission.vb</DependentUpon>
+    </Compile>
+    <Compile Include="m_permission.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ErrorDataForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ErrorDataForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="msBaobiao.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>msBaobiao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsMaintenanceAuthorityForm.resx">
+      <DependentUpon>MsMaintenanceAuthorityForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsMaintenanceCheckForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MsMaintenanceCheckForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsMaintenanceLogForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MsMaintenanceLogForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsMaintenanceMainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MsMaintenanceMainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsMaintenanceLoginForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MsMaintenanceLoginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrameWork\BaseForm.resx">
+      <DependentUpon>BaseForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsMaintenanceToolsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MsMaintenanceToolsForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MsMaintenancePictureForm.resx">
+      <DependentUpon>MsMaintenancePictureForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultDetail.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ResultDetail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultModify.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ResultModify.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>User.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="m_permission.resx">
+      <DependentUpon>m_permission.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AvoidMiss_NewDataSet.xsc">
+      <DependentUpon>AvoidMiss_NewDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="AvoidMiss_NewDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AvoidMiss_NewDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="AvoidMiss_NewDataSet.xss">
+      <DependentUpon>AvoidMiss_NewDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Lixil.AvoidMissSystem.WinUI_1_TemporaryKey.pfx" />
+    <None Include="Lixil.AvoidMissSystem.WinUI_TemporaryKey.pfx" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Template\AuthorityMSTempate.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\CheckMSTemplate.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\CheckMSTemplate.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\Picture.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Template\Tools.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lixil.AvoidMissSystem.BizLogic\Lixil.AvoidMissSystem.BizLogic.vbproj">
+      <Project>{27EEA7AE-DD2C-456D-94D1-2BFD92FCC215}</Project>
+      <Name>Lixil.AvoidMissSystem.BizLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lixil.AvoidMissSystem.Utilities\Lixil.AvoidMissSystem.Utilities.vbproj">
+      <Project>{04e2025a-0473-4e98-9580-f178da7b7645}</Project>
+      <Name>Lixil.AvoidMissSystem.Utilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersonalDataAccess\PersonalDataAccess.vbproj">
+      <Project>{E4002E37-C04D-42FE-97FC-F7C53BADAABF}</Project>
+      <Name>PersonalDataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="20160308035940197.ico" />
+    <Content Include="dll\MySql.Data.dll" />
+    <Content Include="Maintenance_Config.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PICTURE_BK\temp.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\14718.jpg" />
+    <None Include="Resources\23J58PICmGB_1024.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="UserControl\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

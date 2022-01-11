@@ -1,0 +1,53 @@
+﻿/****** SSMS からの SelectTopNRows コマンドのスクリプト  ******/
+SELECT  
+	tb_typems.goodsname --商品名
+	,tb_typems.Code --商品コード
+	,tb_completedata.makenumber/*作番  */
+	,tb_completedata.Finish_date
+	,tb_completedata.productionquantity/*完工数量  */
+	,tb_completedata.product_line/*生产线  */
+	,tb_completedata.direction/*向先  */
+	,tb_completedata.pay_date/*纳期日 */
+	,tb_checkdetail.CompleteDate    AS Check_Date --检查日期
+	, Isnull(TB_User.UserName, '') AS UserName --检查员
+	, '' as tools_no --治具编号
+	, '' as picture_id --图片名称
+	, '' as picture_content
+	, '' as classify_name
+	, '' as classify_order
+	, '' as kind_cd --类别
+	, '' as check_position --检查位置
+	, '' as check_item --检查项目
+	, '' as benchmark_type --基准类型
+	, '' as benchmark_value1 --基准值1
+	, '' as benchmark_value2 --基准值2
+	, '' as benchmark_value3 --基准值3
+	, '' as check_times --检查次数
+	, '' as check_way --方法
+	, '' as measure_value1 --实测值1
+	, '' as measure_value2 --实测值2
+	
+   , CASE
+      WHEN tb_checkdetail.Result = 'OK'
+			AND tb_checkdetail.InstructionBookState = 'OK'
+			AND tb_checkdetail.CabinetPartsState = 'OK'
+			AND tb_checkdetail.DYState = 'OK' THEN 'OK'
+      ELSE 'NG'
+    END as result --检查结果
+	--, tb_checkdetail.Result as result --检查结果
+	, '' as remarks --备注
+	, tb_checkdetail.lack   AS Qianpin --欠品
+	, CONVERT(VARCHAR(100), tb_checkdetail.Finish_Date, 120)             AS start_time --检查开始时间
+	, CONVERT(VARCHAR(100), tb_checkdetail.CompleteDate, 120)               AS end_time --检查终了时间
+	, '' AS Check_Time--Datediff(ss, isnull(tb_checkdetail.Finish_Date,getdate()), isnull(tb_checkdetail.CompleteDate,getdate()))    AS Check_Time --检查时长
+	, '' as shareResult_id --A.shareResult_id --检查种类 
+FROM [ScanCheck].[dbo].[tb_checkdetail]
+LEFT JOIN [ScanCheck].[dbo].tb_completedata 
+      ON tb_completedata.makenumber = tb_checkdetail.makenumber 
+      And tb_completedata.code = tb_checkdetail.code
+LEFT JOIN [ScanCheck].[dbo].tb_typems 
+      ON tb_completedata.code = tb_typems.code 
+LEFT JOIN [ScanCheck].[dbo].[TB_User]
+	  ON tb_checkdetail.CheckUser = TB_User.UserCode
+      
+ 

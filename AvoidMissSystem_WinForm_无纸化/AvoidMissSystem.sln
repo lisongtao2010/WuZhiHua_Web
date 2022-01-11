@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Lixil.AvoidMissSystem.WinUI", "Lixil.AvoidMissSystem.WinUI\Lixil.AvoidMissSystem.WinUI.vbproj", "{9DD3A98C-6704-443F-95B5-80B35AAC0895}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Lixil.AvoidMissSystem.BizLogic", "Lixil.AvoidMissSystem.BizLogic\Lixil.AvoidMissSystem.BizLogic.vbproj", "{27EEA7AE-DD2C-456D-94D1-2BFD92FCC215}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Lixil.AvoidMissSystem.DataAccess", "Lixil.AvoidMissSystem.DataAccess\Lixil.AvoidMissSystem.DataAccess.vbproj", "{A248A0CB-8408-43AB-9BF4-8C56A4CD0144}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Lixil.AvoidMissSystem.Utilities", "Lixil.AvoidMissSystem.Utilities\Lixil.AvoidMissSystem.Utilities.vbproj", "{04E2025A-0473-4E98-9580-F178DA7B7645}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PersonalDataAccess", "PersonalDataAccess\PersonalDataAccess.vbproj", "{E4002E37-C04D-42FE-97FC-F7C53BADAABF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DD3A98C-6704-443F-95B5-80B35AAC0895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DD3A98C-6704-443F-95B5-80B35AAC0895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DD3A98C-6704-443F-95B5-80B35AAC0895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DD3A98C-6704-443F-95B5-80B35AAC0895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27EEA7AE-DD2C-456D-94D1-2BFD92FCC215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27EEA7AE-DD2C-456D-94D1-2BFD92FCC215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27EEA7AE-DD2C-456D-94D1-2BFD92FCC215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27EEA7AE-DD2C-456D-94D1-2BFD92FCC215}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A248A0CB-8408-43AB-9BF4-8C56A4CD0144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A248A0CB-8408-43AB-9BF4-8C56A4CD0144}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A248A0CB-8408-43AB-9BF4-8C56A4CD0144}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A248A0CB-8408-43AB-9BF4-8C56A4CD0144}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04E2025A-0473-4E98-9580-F178DA7B7645}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04E2025A-0473-4E98-9580-F178DA7B7645}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04E2025A-0473-4E98-9580-F178DA7B7645}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04E2025A-0473-4E98-9580-F178DA7B7645}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4002E37-C04D-42FE-97FC-F7C53BADAABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4002E37-C04D-42FE-97FC-F7C53BADAABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4002E37-C04D-42FE-97FC-F7C53BADAABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4002E37-C04D-42FE-97FC-F7C53BADAABF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

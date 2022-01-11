@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<TABLEB>
+  <ExcelFilePatch>D:\无纸化数据</ExcelFilePatch>
+  
+  <SERVER>Ot1686</SERVER> <!--不使用了-->
+  <DataName>AvoidMiss_New</DataName> <!--不使用了-->
+  <UID>sa</UID><!--不使用了-->
+  <PWD>Scancheck1560</PWD><!--不使用了-->
+  <FileExportPath>D:\无纸化数据</FileExportPath>
+  <LogPath>C:\</LogPath>
+</TABLEB>
