@@ -20,8 +20,8 @@
     <SccProvider>
     </SccProvider>
     <OptionStrict>Off</OptionStrict>
-    <ManifestCertificateThumbprint>4C75209300BA303165C0D8CB3B49FA595DE9CD3A</ManifestCertificateThumbprint>
-    <ManifestKeyFile>Lixil.AvoidMissSystem.WinUI_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestCertificateThumbprint>F5FB8016582F71BB8ED92E5E90717AF2F1BA4207</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Lixil.AvoidMissSystem.WinUI_2_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>true</SignManifests>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -33,7 +33,7 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>2.0</OldToolsVersion>
     <TargetFrameworkProfile />
-    <PublishUrl>\\ot1686\WebShare\WuZhiHuaWinForm32_TEST\</PublishUrl>
+    <PublishUrl>\\10.160.192.44\WebShare\WuZhiHuaWinForm32_TEST\</PublishUrl>
     <Install>false</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -45,7 +45,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>37</ApplicationRevision>
+    <ApplicationRevision>38</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -308,6 +308,7 @@
       <DependentUpon>AvoidMiss_NewDataSet.xsd</DependentUpon>
     </None>
     <None Include="Lixil.AvoidMissSystem.WinUI_1_TemporaryKey.pfx" />
+    <None Include="Lixil.AvoidMissSystem.WinUI_2_TemporaryKey.pfx" />
     <None Include="Lixil.AvoidMissSystem.WinUI_TemporaryKey.pfx" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
