@@ -2,7 +2,7 @@
 
 Public Class DataAccessManager
 
-    Private Shared connStr As String = System.Configuration.ConfigurationManager.ConnectionStrings("connectionString").ConnectionString
+    Public Shared connStr As String = System.Configuration.ConfigurationManager.ConnectionStrings("connectionString").ConnectionString
 
     ''' <summary>
     ''' DB接続文字列の取得

@@ -1,4 +1,7 @@
 ﻿Imports System.Data
+Imports System.Collections.Generic
+
+Imports System.Text.RegularExpressions
 
 Partial Class _Default
     Inherits System.Web.UI.Page
@@ -11,6 +14,8 @@ Partial Class _Default
     'Load
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
+
+            Me.tbxDate_key.Text = System.DateTime.Now.ToString("yyyy/MM/dd")
 
             If Context.Items("Goods_cd") IsNot Nothing Then
                 Me.tbxGoodsCd.Text = Context.Items("Goods_cd")
@@ -83,6 +88,8 @@ Partial Class _Default
             Me.lblHint.Text = ""
             GVFlg3.DataSource = Nothing
             GVFlg3.DataBind()
+            Me.gvPlanMS.DataSource = Nothing
+            Me.gvPlanMS.DataBind()
             Return
         End If
 
@@ -91,6 +98,9 @@ Partial Class _Default
 
         '检查中数据取得
         CheckingDataBind()
+
+        '计划数据取得
+        PlanDataBind()
 
     End Sub
 
@@ -188,6 +198,65 @@ SamePiCi:
 
         bdQianpin(lastCheckResultMS, GVFlg3)
         bdTodayRow(lastCheckResultMS, GVFlg3)
+    End Function
+
+    '计划数据取得
+    Public Function PlanDataBind() As Boolean
+        Dim planMS As Data.DataTable
+
+
+        planMS = checkDA.GetPlanInfo(Me.tbxGoodsCd.Text, Me.tbxDate_key.Text)
+
+
+        gvPlanMS.DataSource = planMS
+        gvPlanMS.DataBind()
+
+
+        'btnReCheck.Enabled = planMS.Rows.Count > 0
+
+        If planMS.Rows.Count = 0 Then
+            lblMessage.Text = "没有计划数据。。。"
+        Else
+
+        End If
+
+
+        '中间材CD
+        For i As Integer = 0 To planMS.Rows.Count - 1
+            If planMS.Rows(i).Item("参照") = "1" Then '已经有参照数据
+                CType(gvPlanMS.Rows(i).FindControl("cbMerge"), CheckBox).Checked = True
+                CType(gvPlanMS.Rows(i).FindControl("cbMerge"), CheckBox).ForeColor = Drawing.Color.Blue
+
+                CType(gvPlanMS.Rows(i).FindControl("cbMerge"), CheckBox).Enabled = False
+                'CType(gvPlanMS.Rows(i).FindControl("cbMerge"), CheckBox).BackColor = Drawing.Color.Green
+                gvPlanMS.Rows(i).BackColor = Drawing.Color.Silver
+                'gvPlanMS.Rows(i).Style.Item("display") = "none"
+            Else
+
+                If planMS.Rows(i).Item("匹配型番").ToString.Split(","c).Length = 2 AndAlso planMS.Rows(i).Item("匹配型番").ToString.Split(","c)(1) = "" Then '只匹配到一个型番
+                    CType(gvPlanMS.Rows(i).FindControl("cbMerge"), CheckBox).Checked = True
+                    CType(gvPlanMS.Rows(i).FindControl("cbMerge"), CheckBox).ForeColor = Drawing.Color.Blue
+                    CType(gvPlanMS.Rows(i).FindControl("cbMerge"), CheckBox).Enabled = False
+                    'CType(gvPlanMS.Rows(i).FindControl("cbMerge"), CheckBox).BackColor = Drawing.Color.Green
+                    gvPlanMS.Rows(i).BackColor = Drawing.Color.Silver
+                    'gvPlanMS.Rows(i).Style.Item("display") = "none"
+                ElseIf Regex.Match(planMS.Rows(i).Item("中间材CD").ToString, "[a-zA-Z]" & tbxGoodsCd.Text.Trim & "[a-zA-Z0-9]").Success Then '输入型番 正则匹配
+                    CType(gvPlanMS.Rows(i).FindControl("cbMerge"), CheckBox).Checked = True
+                    CType(gvPlanMS.Rows(i).FindControl("cbMerge"), CheckBox).ForeColor = Drawing.Color.Blue
+                    CType(gvPlanMS.Rows(i).FindControl("cbMerge"), CheckBox).Enabled = True
+                    'CType(gvPlanMS.Rows(i).FindControl("cbMerge"), CheckBox).BackColor = Drawing.Color.Yellow
+                    gvPlanMS.Rows(i).BackColor = Drawing.Color.LightCoral
+                Else '需要人工判断
+                    CType(gvPlanMS.Rows(i).FindControl("cbMerge"), CheckBox).Checked = False
+                    CType(gvPlanMS.Rows(i).FindControl("cbMerge"), CheckBox).ForeColor = Drawing.Color.Blue
+                    CType(gvPlanMS.Rows(i).FindControl("cbMerge"), CheckBox).Enabled = True
+                    'CType(gvPlanMS.Rows(i).FindControl("cbMerge"), CheckBox).BackColor = Drawing.Color.Yellow
+                    gvPlanMS.Rows(i).BackColor = Drawing.Color.White
+                End If
+            End If
+
+        Next
+
     End Function
 
     '画面入力项目检查
@@ -289,6 +358,7 @@ SamePiCi:
             Return "#000"
         End If
     End Function
+
 #End Region
 
     ''' <summary>
@@ -347,9 +417,26 @@ SamePiCi:
         ResultDA.InsertResultDetailWaiguan(crIndex, Me.tbxGoodsCd.Text.Trim)
 
 
-
-
         ResultDA.ins_t_dlx_chk(crIndex, Me.hidBumen.Value, Me.hidLineName.Value, tbxGoodsCd.Text.Trim, lblChkKbn.Items(lblChkKbn.SelectedIndex).Value)
+
+
+        '选择行的作番取得
+        Dim selectedMakeNumberList As ArrayList
+        selectedMakeNumberList = New ArrayList
+        For i As Integer = 0 To gvPlanMS.Rows.Count - 1
+            If CType(gvPlanMS.Rows(i).FindControl("cbMerge"), CheckBox).Checked = True Then
+                selectedMakeNumberList.Add(CType(gvPlanMS.Rows(i).FindControl("lblmakeNumber"), Label).Text)
+            End If
+        Next
+
+        If selectedMakeNumberList.Count <> 0 Then
+            '型番与Code的对照表作成
+            ResultDA.ins_m_code_reference(Me.tbxGoodsCd.Text.Trim, selectedMakeNumberList)
+
+            '计划检查完了表作成
+            ResultDA.ins_m_plan_check_finished(crIndex, selectedMakeNumberList)
+        End If
+
 
 
         Rireki.InsRireki("新规检查End", "", "", Me.tbxGoodsCd.Text, Me.tbxMakeNumber.Text, "", Me.tbxCheckUserCd.Text.Trim)
@@ -434,10 +521,16 @@ SamePiCi:
         Else
             Return CDate(v).ToString("yy/MM/dd HH:mm")
         End If
-
-
     End Function
 
+    Public Function SetDateYMD(ByVal v As String) As String
+
+        If v.Trim = "" Then
+            Return ""
+        Else
+            Return CDate(v).ToString("yyyy-MM-dd")
+        End If
+    End Function
 
     Protected Sub btnByHand_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnByHand1.Click
 
@@ -453,5 +546,41 @@ SamePiCi:
     Protected Sub btnByHand2_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnByHand2.Click
         Server.Transfer("Default.aspx")
     End Sub
+
+
+    ''' <summary>
+    ''' 前一日
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Protected Sub btnPreDay_Click(sender As Object, e As EventArgs) Handles btnPreDay.Click
+        If Me.tbxDate_key.Text = "" Then
+            Me.tbxDate_key.Text = System.DateTime.Now.AddDays(-1).ToString("yyyy/MM/dd")
+        Else
+            Me.tbxDate_key.Text = Convert.ToDateTime(Me.tbxDate_key.Text).AddDays(-1).ToString("yyyy/MM/dd")
+        End If
+
+        kensaku()
+
+    End Sub
+
+    ''' <summary>
+    ''' 后一日
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Protected Sub btnNextDay_Click(sender As Object, e As EventArgs) Handles btnNextDay.Click
+        If Me.tbxDate_key.Text = "" Then
+            Me.tbxDate_key.Text = System.DateTime.Now.AddDays(1).ToString("yyyy/MM/dd")
+        Else
+            Me.tbxDate_key.Text = Convert.ToDateTime(Me.tbxDate_key.Text).AddDays(1).ToString("yyyy/MM/dd")
+        End If
+
+        kensaku()
+
+    End Sub
+
 
 End Class

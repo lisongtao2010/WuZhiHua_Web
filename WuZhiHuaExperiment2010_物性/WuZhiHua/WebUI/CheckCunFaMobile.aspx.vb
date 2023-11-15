@@ -41,20 +41,7 @@ Partial Class CheckCunFaMobile
             'Me.hidTools_id.Value = "2015090200003"
             'Me.hidPicture_id.Value = "0001093"
 
-            Dim result_id As String = Me.hidResult_id.Value
-            Dim goods_cd As String = Me.hidGoods_cd.Value
-            Dim kind_cd As String = Me.hidKind_cd.Value
-            Dim classify_id As String = Me.hidClassify_id.Value
-            Dim tools_id As String = Me.hidTools_id.Value
-            Dim picture_id As String = Me.hidPicture_id.Value
-
-            imgLook.ImageUrl = "Img.aspx?id=" & picture_id
-
-
-
-            GridViewBind(result_id, goods_cd, kind_cd, classify_id, tools_id)
-
-            lbl_RESULT_MSG.Text = Com.GetResultMsg(result_id)
+            PageInit()
 
         End If
 
@@ -62,6 +49,23 @@ Partial Class CheckCunFaMobile
 
 
 
+    End Sub
+
+    Public Sub PageInit()
+        Dim result_id As String = Me.hidResult_id.Value
+        Dim goods_cd As String = Me.hidGoods_cd.Value
+        Dim kind_cd As String = Me.hidKind_cd.Value
+        Dim classify_id As String = Me.hidClassify_id.Value
+        Dim tools_id As String = Me.hidTools_id.Value
+        Dim picture_id As String = Me.hidPicture_id.Value
+
+        imgLook.ImageUrl = "Img.aspx?id=" & picture_id
+
+
+
+        GridViewBind(result_id, goods_cd, kind_cd, classify_id, tools_id)
+
+        lbl_RESULT_MSG.Text = Com.GetResultMsg(result_id)
     End Sub
 
     Public Function GridViewBind(ByVal result_id As String, ByVal goods_cd As String, ByVal kind_cd As String, ByVal classify_id As String, ByVal tools_id As String) As Boolean
@@ -465,6 +469,10 @@ Partial Class CheckCunFaMobile
         Rireki.InsRireki("完了", "", "", Me.tbxGoodsCd.Text, Me.tbxMakeNumber.Text, "", Me.tbxCheckUserCd.Text.Trim)
         Dim ResultDA As New ResultDA
         ResultDA.Updatet_check_result_continue_chk_flg(Me.hidResult_id.Value, "0", Com.GetResult(Me.hidResult_id.Value))
+
+        '计划检查完了表的完了FLG和result更新
+        ResultDA.upd_m_plan_check_finished(Me.hidResult_id.Value, Com.GetResult(Me.hidResult_id.Value))
+
         Server.Transfer("Default.aspx")
     End Sub
 
@@ -503,6 +511,8 @@ Partial Class CheckCunFaMobile
         cm.InsMPictureChk(result_id, (FilePath & NewFilePath), user_cd)
         'File.Delete(FilePath & NewFilePath)
         PicMSInit()
+
+        PageInit()
 
     End Sub
 

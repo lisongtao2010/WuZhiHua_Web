@@ -13,7 +13,7 @@
     <script src="Scripts/jquery-1.10.2.min.js"></script>
     <script src="Scripts/ConstJScript.js"></script>
     <script src="Scripts/ScanTextbox.js"></script>
-    <script src="Scripts/CommonJScript.js"></script>
+    <script src="Scripts/CommonJScript.js?ver=1.1"></script>
 
 
 

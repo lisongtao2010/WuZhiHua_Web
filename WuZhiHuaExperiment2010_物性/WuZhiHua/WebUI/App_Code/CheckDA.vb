@@ -33,7 +33,7 @@ Public Class CheckDA
 
         sb.AppendLine(" SELECT ")
         sb.AppendLine(" @s=(SUBSTRING(CONVERT(CHAR(19), Finish_Date, 120),1,10) + ' 08:00:00.000') ")
-        sb.AppendLine(" FROM TB_CompleteData WITH(READCOMMITTED) ")
+        sb.AppendLine(" FROM [AvoidMiss_Experiment].[dbo].TB_CompleteData WITH(READCOMMITTED) ")
         sb.AppendLine(" WHERE ")
         sb.AppendLine(" Code = @Pgoods_cd ")
         sb.AppendLine(" AND MakeNumber = @MakeNumber  ")
@@ -41,14 +41,14 @@ Public Class CheckDA
 
         sb.AppendLine(" SELECT ")
         sb.AppendLine(" @e=(SUBSTRING(CONVERT(CHAR(19), DATEADD(DAY,1,Finish_Date), 120),1,10) + ' 07:59:59.999') ")
-        sb.AppendLine(" FROM TB_CompleteData WITH(READCOMMITTED) ")
+        sb.AppendLine(" FROM [AvoidMiss_Experiment].[dbo].TB_CompleteData WITH(READCOMMITTED) ")
         sb.AppendLine(" WHERE ")
         sb.AppendLine(" Code = @Pgoods_cd ")
         sb.AppendLine(" AND MakeNumber = @MakeNumber  ")
 
 
         sb.AppendLine("SELECT @p=Product_Line")
-        sb.AppendLine("FROM TB_CompleteData WITH(READCOMMITTED) ")
+        sb.AppendLine("FROM [AvoidMiss_Experiment].[dbo].TB_CompleteData WITH(READCOMMITTED) ")
         sb.AppendLine("WHERE Code=@Pgoods_cd ")
         sb.AppendLine("AND MakeNumber=@MakeNumber")
 
@@ -74,7 +74,7 @@ Public Class CheckDA
         sb.AppendLine("AND B.delete_flg = @delete_flg ")
         sb.AppendLine("LEFT JOIN TB_User AS C WITH(READCOMMITTED)  ")
         sb.AppendLine("ON A.check_user = C.UserCode  ")
-        sb.AppendLine("LEFT JOIN TB_CompleteData AS D WITH(READCOMMITTED)  ")
+        sb.AppendLine("LEFT JOIN [AvoidMiss_Experiment].[dbo].TB_CompleteData AS D WITH(READCOMMITTED)  ")
         sb.AppendLine("ON A.make_number = D.MakeNumber")
         sb.AppendLine("AND D.Code = @Pgoods_cd")
         sb.AppendLine("WHERE A.delete_flg = @delete_flg ")
@@ -82,7 +82,7 @@ Public Class CheckDA
         sb.AppendLine("AND (replace(cast(B.goods_cd as varchar(30)),'-',''))")
         sb.AppendLine("IN  (")
         sb.AppendLine("SELECT Code")
-        sb.AppendLine("FROM TB_CompleteData WITH(READCOMMITTED)")
+        sb.AppendLine("FROM [AvoidMiss_Experiment].[dbo].TB_CompleteData WITH(READCOMMITTED)")
         sb.AppendLine("WHERE Product_Line = @p")
         sb.AppendLine("AND Finish_Date BETWEEN @s AND @e")
         sb.AppendLine("AND Code = @Pgoods_cd ")
@@ -170,6 +170,65 @@ Public Class CheckDA
 
     End Function
 
+    ''' <summary>
+    ''' 按输入的型番和生产线从计划表中取得当天数据 
+    ''' </summary>
+    ''' <param name="strGoodsCode"></param>
+    ''' <param name="strSearchDate"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function GetPlanInfo(ByVal strGoodsCode As String, ByVal strSearchDate As String) As DataTable
+
+        '因为商品表的中的商品CD为带“-”的,而在生产表中是不带“-”。所以要对商品CD加处理
+        Dim strPGoodCd As String = Replace(strGoodsCode, "-", "")
+        Dim paramList As New List(Of SqlParameter)
+
+        Dim varname1 As New System.Text.StringBuilder
+
+        Dim strSearchDateFrom As String
+
+        If CDate(strSearchDate).DayOfWeek = DayOfWeek.Monday Then
+
+            strSearchDateFrom = CDate(strSearchDate).AddDays(-3).ToString("yyyy/MM/dd")
+        Else
+            strSearchDateFrom = CDate(strSearchDate).AddDays(-1).ToString("yyyy/MM/dd")
+        End If
+
+        varname1.Append("SELECT " & vbCrLf)
+        varname1.Append("    CASE WHEN B.型番 is null THEN 0  " & vbCrLf)
+        varname1.Append("         ELSE 1  " & vbCrLf)
+        varname1.Append("    END AS '参照' " & vbCrLf)
+        varname1.Append("  , A.Code AS '中间材CD' " & vbCrLf)
+        varname1.Append("  , A.MakeNumber AS '作番' " & vbCrLf)
+        varname1.Append("  , A.Product_Line AS '生产线' " & vbCrLf)
+        varname1.Append("  , C.line_name AS '号机' " & vbCrLf)
+        varname1.Append("  , A.ProductionQuantity AS '数量' " & vbCrLf)
+        varname1.Append("  , A.Finish_Date AS '生产日' " & vbCrLf)
+        varname1.Append("  , ISNULL(B.[型番],(SELECT [goods_cd] + ',' " & vbCrLf)
+        varname1.Append("     FROM m_goods " & vbCrLf)
+        varname1.Append("     WHERE A.Code like ('%' + goods_cd + '%') " & vbCrLf)
+        varname1.Append("     FOR xml path(''))) AS '匹配型番' " & vbCrLf)
+        varname1.Append(" " & vbCrLf)
+        varname1.Append("FROM [AvoidMiss_Experiment].[dbo].TB_CompleteData AS A WITH(READCOMMITTED)  " & vbCrLf)
+        varname1.Append("LEFT JOIN m_code_reference AS B WITH(READCOMMITTED) " & vbCrLf)
+        varname1.Append(" ON B.Code = A.Code " & vbCrLf)
+        varname1.Append("  " & vbCrLf)
+        varname1.Append("INNER JOIN m_line_haoji AS C WITH(READCOMMITTED) " & vbCrLf)
+        varname1.Append(" ON A.Product_Line = C.line_cd " & vbCrLf)
+        varname1.Append("WHERE  " & vbCrLf)
+        varname1.Append("A.Code like '%" & strGoodsCode & "%' " & vbCrLf)
+        varname1.Append("AND CONVERT(VARCHAR(100), A.Finish_Date, 111) >=  '" & strSearchDateFrom & "' " & vbCrLf)
+        varname1.Append("AND CONVERT(VARCHAR(100), A.Finish_Date, 111) <=  '" & strSearchDate & "' " & vbCrLf)
+        varname1.Append("ORDER BY A.Code, A.MakeNumber " & vbCrLf)
+
+        Dim ds As New DataSet
+
+        '検索の実行
+        Dim tableName As String = "PlanInfo"
+        FillDataset(DataAccessManager.Connection, CommandType.Text, varname1.ToString(), ds, tableName, paramList.ToArray)
+        Return ds.Tables(0)
+
+    End Function
 
     ''' <summary>
     ''' 从检查结果表中取得当天该商品code的最新检查结果取得 
@@ -552,7 +611,7 @@ Public Class CheckDA
         sb.AppendLine(" SELECT ")
         sb.AppendLine("  D.Product_Line AS '生产线'")
         sb.AppendLine(" , D.ProductionQuantity  AS '数量'")
-        sb.AppendLine("FROM TB_CompleteData AS D WITH(READCOMMITTED)  ")
+        sb.AppendLine("FROM [AvoidMiss_Experiment].[dbo].TB_CompleteData AS D WITH(READCOMMITTED)  ")
         sb.AppendLine("WHERE D.Code = '" & strGoodsCode & "' ")
         sb.AppendLine("AND D.MakeNumber = '" & strMakeNo & "'")
 
@@ -571,12 +630,112 @@ Public Class CheckDA
 
         Dim sb As New StringBuilder
         Dim paramList As New List(Of SqlParameter)
-        sb.AppendLine(" SELECT Code ,MakeNumber FROM TB_CompleteData where MakeNumber = '" & strMakeNo & "'")
+        sb.AppendLine(" SELECT Code ,MakeNumber FROM [AvoidMiss_Experiment].[dbo].TB_CompleteData where MakeNumber = '" & strMakeNo & "'")
         Dim ds As New DataSet
         '検索の実行
         FillDataset(DataAccessManager.Connection, CommandType.Text, sb.ToString(), ds, "GetGoodCD", paramList.ToArray)
         Return ds.Tables(0)
 
+    End Function
+
+    ''' <summary>
+    ''' 取得指定日和它前一天的未检查数据
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function GetNotCheckInfo(ByVal strSearchDate As String) As DataTable
+        Dim paramList As New List(Of SqlParameter)
+
+        Dim varname1 As New System.Text.StringBuilder
+
+        Dim strSearchDateFrom As String
+
+        If CDate(strSearchDate).DayOfWeek = DayOfWeek.Monday Then
+
+            strSearchDateFrom = CDate(strSearchDate).AddDays(-3).ToString("yyyy/MM/dd")
+        Else
+            strSearchDateFrom = CDate(strSearchDate).AddDays(-1).ToString("yyyy/MM/dd")
+        End If
+
+        varname1.Append("SELECT " & vbCrLf)
+        varname1.Append("    A.Code AS '中间材CD' " & vbCrLf)
+        varname1.Append("  , ISNULL(B.[型番],(SELECT [goods_cd] + ',' " & vbCrLf)
+        varname1.Append("     FROM m_goods " & vbCrLf)
+        varname1.Append("     WHERE A.Code like ('%' + goods_cd + '%') " & vbCrLf)
+        varname1.Append("     FOR xml path(''))) AS '型番' " & vbCrLf)
+        varname1.Append("  , A.MakeNumber AS '作番' " & vbCrLf)
+        varname1.Append("  , A.Product_Line AS '生产线' " & vbCrLf)
+        varname1.Append("  , C.line_name AS '号机' " & vbCrLf)
+        varname1.Append("  , A.ProductionQuantity AS '数量' " & vbCrLf)
+        varname1.Append("  , A.Finish_Date AS '生产日' " & vbCrLf)
+
+        varname1.Append("FROM v_not_checked_list A  " & vbCrLf)
+
+        varname1.Append("INNER JOIN m_line_haoji C" & vbCrLf)
+        varname1.Append(" ON A.Product_Line = C.line_cd " & vbCrLf)
+
+        varname1.Append("LEFT JOIN m_code_reference AS B " & vbCrLf)
+        varname1.Append(" ON B.Code = A.Code " & vbCrLf)
+
+        varname1.Append("WHERE CONVERT(VARCHAR(100), A.Finish_Date, 111) >=  '" & strSearchDateFrom & "' " & vbCrLf)
+        varname1.Append("  AND CONVERT(VARCHAR(100), A.Finish_Date, 111) <=  '" & strSearchDate & "' " & vbCrLf)
+
+        varname1.Append("ORDER BY 号机, A.Code, A.MakeNumber " & vbCrLf)
+
+        Dim ds As New DataSet
+
+        '検索の実行
+        Dim tableName As String = "NotCheckInfo"
+        FillDataset(DataAccessManager.Connection, CommandType.Text, varname1.ToString(), ds, tableName, paramList.ToArray)
+        Return ds.Tables(0)
+    End Function
+
+    Public Function GetNotCheckInfoSum(ByVal strSearchDate As String) As DataTable
+        Dim paramList As New List(Of SqlParameter)
+
+        Dim varname1 As New System.Text.StringBuilder
+
+        Dim strSearchDateFrom As String
+
+        If CDate(strSearchDate).DayOfWeek = DayOfWeek.Monday Then
+
+            strSearchDateFrom = CDate(strSearchDate).AddDays(-3).ToString("yyyy/MM/dd")
+        Else
+            strSearchDateFrom = CDate(strSearchDate).AddDays(-1).ToString("yyyy/MM/dd")
+        End If
+
+        varname1.Append("SELECT " & vbCrLf)
+        varname1.Append("    A.Code AS '中间材CD' " & vbCrLf)
+        varname1.Append("  , ISNULL(B.[型番],(SELECT [goods_cd] + ',' " & vbCrLf)
+        varname1.Append("     FROM m_goods " & vbCrLf)
+        varname1.Append("     WHERE A.Code like ('%' + goods_cd + '%') " & vbCrLf)
+        varname1.Append("     FOR xml path(''))) AS '型番' " & vbCrLf)
+        varname1.Append("  , '*' AS '作番' " & vbCrLf)
+        varname1.Append("  , A.Product_Line AS '生产线' " & vbCrLf)
+        varname1.Append("  , C.line_name AS '号机' " & vbCrLf)
+        varname1.Append("  , sum(A.ProductionQuantity) AS '数量' " & vbCrLf)
+        varname1.Append("  , A.Finish_Date AS '生产日' " & vbCrLf)
+
+        varname1.Append("FROM v_not_checked_list A  " & vbCrLf)
+
+        varname1.Append("INNER JOIN m_line_haoji C" & vbCrLf)
+        varname1.Append(" ON A.Product_Line = C.line_cd " & vbCrLf)
+
+        varname1.Append("LEFT JOIN m_code_reference AS B " & vbCrLf)
+        varname1.Append(" ON B.Code = A.Code " & vbCrLf)
+
+        varname1.Append("WHERE CONVERT(VARCHAR(100), A.Finish_Date, 111) >=  '" & strSearchDateFrom & "' " & vbCrLf)
+        varname1.Append("  AND CONVERT(VARCHAR(100), A.Finish_Date, 111) <=  '" & strSearchDate & "' " & vbCrLf)
+
+        varname1.Append("GROUP BY A.Code,型番,A.Product_Line, C.line_name,A.Finish_Date " & vbCrLf)
+        varname1.Append("ORDER BY 号机,A.Code " & vbCrLf)
+
+        Dim ds As New DataSet
+
+        '検索の実行
+        Dim tableName As String = "NotCheckInfo"
+        FillDataset(DataAccessManager.Connection, CommandType.Text, varname1.ToString(), ds, tableName, paramList.ToArray)
+        Return ds.Tables(0)
     End Function
 
 End Class

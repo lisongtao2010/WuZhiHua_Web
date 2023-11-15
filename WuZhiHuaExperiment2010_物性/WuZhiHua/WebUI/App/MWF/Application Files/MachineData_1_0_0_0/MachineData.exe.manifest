@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="MachineData.exe" version="1.0.0.0" publicKeyToken="2a6c3de4107d44fb" language="neutral" processorArchitecture="x86" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="MachineData" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="MachineData.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC マニフェスト オプション
+          Windows のユーザー アカウント制御のレベルを変更するには、
+          requestedExecutionLevel ノードを以下のいずれかで置換します。
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         下位互換性を保つためにファイルおよびレジストリの仮想化を使用する場合、
+         requestedExecutionLevel ノードを削除します。
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DotNetBarcode.dll" size="73728">
+      <assemblyIdentity name="DotNetBarcode" version="2.4.2480.34661" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>ZG0wtmw49xQVU4u9NDLy0dep0ns=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Itis.ApplicationBlocks.Data.dll" size="28672">
+      <assemblyIdentity name="Itis.ApplicationBlocks.Data" version="2.1.0.1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>+oxJRCP4y+9sMVogD7Zb52dCfdY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Itis.ApplicationBlocks.ExceptionManagement.dll" size="28672">
+      <assemblyIdentity name="Itis.ApplicationBlocks.ExceptionManagement" version="2.1.0.2" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>cI04xHq7iXoe/yrFYJ/YdUD3MNs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LitJSON.dll" size="49664">
+      <assemblyIdentity name="LitJSON" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>VA/kB3lyCmFfVTqcRXIgg6nEjtE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MachineData.exe" size="23440">
+      <assemblyIdentity name="MachineData" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>drDzDSGvmfEAY6js96oPZV+fz0Q=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.ApplicationBlocks.Data.dll" size="36864">
+      <assemblyIdentity name="Microsoft.ApplicationBlocks.Data" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>5suwxkFKBRzBV7iYWgQigS+i32s=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.ApplicationBlocks.ExceptionManagement.dll" size="36864">
+      <assemblyIdentity name="Microsoft.ApplicationBlocks.ExceptionManagement" version="1.0.2854.33221" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>FMxjsdHwlYRC9sT72FLg8aH8DEU=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.ApplicationBlocks.ExceptionManagement.Interfaces.dll" size="16384">
+      <assemblyIdentity name="Microsoft.ApplicationBlocks.ExceptionManagement.Interfaces" version="1.0.2854.33220" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>iLSNZXft2ZfrQugKOlwmm3R3uLg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="504320">
+      <assemblyIdentity name="Newtonsoft.Json" version="6.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>Z/C9XPo4JIYGJraz//N9yJ4wXOw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="DLL\DotNetBarcode.dll" size="73728">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ZG0wtmw49xQVU4u9NDLy0dep0ns=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DLL\Interop.MSScriptControl.dll" size="14848">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>gPpmR5EDL2wiazgW3LVb9g92rWg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DLL\Itis.ApplicationBlocks.Data.dll" size="28672">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>+oxJRCP4y+9sMVogD7Zb52dCfdY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DLL\Itis.ApplicationBlocks.ExceptionManagement.dll" size="28672">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>cI04xHq7iXoe/yrFYJ/YdUD3MNs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DLL\LitJSON.dll" size="49664">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>VA/kB3lyCmFfVTqcRXIgg6nEjtE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DLL\Microsoft.ApplicationBlocks.Data.dll" size="36864">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>5suwxkFKBRzBV7iYWgQigS+i32s=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DLL\Microsoft.ApplicationBlocks.ExceptionManagement.dll" size="36864">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>FMxjsdHwlYRC9sT72FLg8aH8DEU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DLL\Microsoft.ApplicationBlocks.ExceptionManagement.Interfaces.dll" size="16384">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>iLSNZXft2ZfrQugKOlwmm3R3uLg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="DLL\Newtonsoft.Json.dll" size="504320">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Z/C9XPo4JIYGJraz//N9yJ4wXOw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="MachineData.exe.config" size="183">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>zmtMKrAEuvsQh2jJFtlCNruBIWE=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=LIXIL\11043787" issuerKeyHash="edb4d1ce810a8dd129a298748d0ae0f64e46e3c1" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>zO9k3Z4Nx3LS2rvJP8pAXAJyOxg=</DigestValue></Reference></SignedInfo><SignatureValue>GM/MNTJw6x3hr86fJl3IO2Xt2sDIEfOklhbt8btMawoX7of2JwFRO83YPV/0Pq86Uhd90l6SZjgU2dWndzOFP2y9ry3BRvXbpMexcWZYN/vQg6bxaIZ230GGdrbVVPWPB0k/REsQ5lwq+D/RC9zVcxAW2I5Qm248BrgLXBeVVYY=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>2yuooBIJRz+naMHoV2fSk6zvr8ytRCF3h+9f15Kj2siZTsEbaahB29RmqwVVAKdfe86nBSVdBSBfJTNNam6ZFc51HVM/pZsLe72W5JkuECFXO5wzuDq1uepq+yYSejLe2MCSOnQ0TnnWQ0q7Tes2ElCaTnwCZlH+gTVBT3Bvh3E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="183b72025c40ca3fc9bbdad272c70d9edd64efcc" Description="" Url=""><as:assemblyIdentity name="MachineData.exe" version="1.0.0.0" publicKeyToken="2a6c3de4107d44fb" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=LIXIL\11043787</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>LytYBXYDmnDQmka3foGfb9HR7+k=</DigestValue></Reference></SignedInfo><SignatureValue>pXLE3/WtObv9X+NYWcmRJZXAmlRKZ43DpuaWM5jbRyGb0GkF7fVEVVPhWjSdT1NAJjo/rxI3dkJGSmrMvT/REw64zTyrcujyIwaUeBDEvQS4jY+25DeS4s63Gp4nfeOn4H/wVDbuHy/TO0JKwazq/9GCXDS60lIZtpr1/8ugGD0=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>2yuooBIJRz+naMHoV2fSk6zvr8ytRCF3h+9f15Kj2siZTsEbaahB29RmqwVVAKdfe86nBSVdBSBfJTNNam6ZFc51HVM/pZsLe72W5JkuECFXO5wzuDq1uepq+yYSejLe2MCSOnQ0TnnWQ0q7Tes2ElCaTnwCZlH+gTVBT3Bvh3E=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB0TCCATqgAwIBAgIQaEMix2hiC6VOvaCP8OMUcDANBgkqhkiG9w0BAQUFADAnMSUwIwYDVQQDHhwATABJAFgASQBMAFwAMQAxADAANAAzADcAOAA3MB4XDTIyMDgyOTA0MDA0MVoXDTIzMDgyOTEwMDA0MVowJzElMCMGA1UEAx4cAEwASQBYAEkATABcADEAMQAwADQAMwA3ADgANzCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA2yuooBIJRz+naMHoV2fSk6zvr8ytRCF3h+9f15Kj2siZTsEbaahB29RmqwVVAKdfe86nBSVdBSBfJTNNam6ZFc51HVM/pZsLe72W5JkuECFXO5wzuDq1uepq+yYSejLe2MCSOnQ0TnnWQ0q7Tes2ElCaTnwCZlH+gTVBT3Bvh3ECAwEAATANBgkqhkiG9w0BAQUFAAOBgQA9hrQo6o5JANU6w/FycyOu17AEajVqox4WC4Rumq1xMLax9OyDJ7Pe72cvUsl9OtzEo+fvDRL72Sm5M1P6jr6im3C/MNk+illBK+zN8hO4XQA3zhVRozVOFqFfHBuy0ZWJKB6GGgp6Ff0l60WBUjrQz1xV7kcmNeKDZHW83WnSkw==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

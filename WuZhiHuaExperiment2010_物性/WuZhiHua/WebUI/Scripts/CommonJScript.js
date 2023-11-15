@@ -18,9 +18,9 @@ function RowSelect(e) {
     $(e).css(oCSS.BGColor, conSelectRowClolor); //当前选择航变色
     GL_OLD_SELECTED_ROW = e; //纪录当前行
 
-    if (document.activeElement.tagName == "TEXTAREA" ) {
+    if (document.activeElement.tagName == "TEXTAREA") {
 
-    }else if (document.activeElement.tagName != "INPUT" ) {
+    } else if (document.activeElement.tagName != "INPUT") {
         e.focus();
     }
 
@@ -101,12 +101,33 @@ function KeyBoard(e) {
     if (txt == '合' || txt == '轻' || txt == '微' || txt == '中' || txt == '重' || txt == '警') {
         SetSelectResult(txt);
         UpdateRow();
-        SetNextFocus(event, obj ,false);
+        SetNextFocus(event, obj, false);
     } else if (txt == '回车') {
 
         CheckRowInput(Gl_FocusTextbox);
         UpdateRow();
         SetNextFocus(event, obj, true);
+    } else if (txt == '试验3' || txt == '试验4') {
+        //CheckRowInput(Gl_FocusTextbox);
+        //UpdateRow();
+        var iptCnt=0;
+        for (i = 1; i <= 6; i++) {
+            ipt = eval("$(GL_OLD_SELECTED_ROW).find('.JQ_SHICE'+i)");
+            if (ipt.length>0 && ipt.css('display') != 'none') {
+                iptCnt++;
+            }
+        }
+        var serKbn1;
+
+        if (txt == '试验3') {
+            serKbn1 = "1";
+        } else {
+            serKbn1 = "2";
+        }
+
+        IsShowAutoIpt = true;
+        AutoIpt($(GL_OLD_SELECTED_ROW),iptCnt + "","", serKbn1);
+
     } else {
 
         if (Gl_FocusTextbox == null) {
@@ -201,7 +222,7 @@ function GetMSRowsCount() {
 
 /* 获得下一个元素 */
 
-function SetNextFocus(e, sender ,nextTextBoxFlg) {
+function SetNextFocus(e, sender, nextTextBoxFlg) {
 
     //检查所有输入项目是否OK
     CheckAllOk();
@@ -217,7 +238,7 @@ function SetNextFocus(e, sender ,nextTextBoxFlg) {
             idxShice = 1;
 
             while (idxShice < 6) {
-                
+
                 //如果不是实测的入力框
                 //if (obj[0].className.indexOf("JQ_SHICE" + idxShice) != -1) {
                 if (IsInputDisplayAndShiCe(obj, "JQ_SHICE" + idxShice)) {
@@ -234,7 +255,7 @@ function SetNextFocus(e, sender ,nextTextBoxFlg) {
 
                     if (SetFocusSelectShiCe_And_SelectRow(GetTR(sender), ".JQ_SHICE" + (idxShice + 1))) {
                         return true;
-                    } 
+                    }
 
                     idxShice = 10; //exit while
 
@@ -303,66 +324,66 @@ function SelectNextRow_And_SetTextBoxFocus(sender) {
 
 
 
-    //获得下一个TR
-    function GetTR(sender) {
-        var tr;
-        tr = $(FindParentTR(sender));
-        if (tr.length > 0) {
-            return tr;
+//获得下一个TR
+function GetTR(sender) {
+    var tr;
+    tr = $(FindParentTR(sender));
+    if (tr.length > 0) {
+        return tr;
+    } else {
+        return null;
+    }
+}
+
+//获得下一个TR
+function GetNextTR(sender) {
+    var tr;
+    tr = $(FindParentTR(sender));
+    if (tr.length > 0) {
+        if (tr.next().length > 0) {
+            return tr.next();
         } else {
             return null;
         }
+    } else {
+        return null;
     }
+}
 
-    //获得下一个TR
-    function GetNextTR(sender) {
-        var tr;
-        tr = $(FindParentTR(sender));
-        if (tr.length > 0) {
-            if (tr.next().length > 0) {
-                return tr.next();
-            } else {
-                return null;
-            }
-        } else {
-            return null;
+//设置实测值焦点
+function SetFocusSelectShiCe_And_SelectRow(jq_tr, shiCeName) {
+
+    var jq_shiCeObj;
+
+    jq_ShiCeObj = jq_tr.find(shiCeName);
+
+    if (jq_ShiCeObj.length > 0) {
+        if (jq_ShiCeObj.css("display") != "none") {
+            RowSelect(jq_tr[0]);
+            jq_ShiCeObj[0].focus();
+            jq_ShiCeObj[0].select();
+            GL_JQ_INPUT_TEXTBOX_OLD_VALUE = jq_ShiCeObj[0].value;
+            return true;
         }
     }
 
-    //设置实测值焦点
-    function SetFocusSelectShiCe_And_SelectRow(jq_tr, shiCeName) {
-
-        var jq_shiCeObj;
-
-        jq_ShiCeObj = jq_tr.find(shiCeName);
-
-        if (jq_ShiCeObj.length > 0) {
-            if (jq_ShiCeObj.css("display") != "none") {
-                RowSelect(jq_tr[0]);
-                jq_ShiCeObj[0].focus();
-                jq_ShiCeObj[0].select();
-                GL_JQ_INPUT_TEXTBOX_OLD_VALUE = jq_ShiCeObj[0].value;
-                return true;
-            }
-        }
-
-        return false;
-    }
+    return false;
+}
 
 
 //获得活动行号
 function GetRowIndex(sender) {
     try {
-            var objTr;
-            objTr = FindParentTR(sender);
+        var objTr;
+        objTr = FindParentTR(sender);
 
-            if (objTr == null) {
-                return -1;
-            } else {
-                return $(objTr)[0].rowIndex;
-            }
-
-        } catch (e) {
+        if (objTr == null) {
             return -1;
+        } else {
+            return $(objTr)[0].rowIndex;
         }
+
+    } catch (e) {
+        return -1;
+    }
 }

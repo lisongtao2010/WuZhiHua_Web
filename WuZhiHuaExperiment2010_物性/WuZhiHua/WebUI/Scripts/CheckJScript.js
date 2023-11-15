@@ -17,11 +17,12 @@ function isInteger(obj) {
 }
 
 function KesanBilink(e,key) {
-   return Math.round(Math.round(25 / key * e.value * 100) / 10) / 10;
+   return Math.round(Math.round(25 / key * $(e).val() * 100) / 10) / 10;
 }
 
 function CheckRowInput(e) {
 
+    e = $(e)[0];
     //如果不是实测的入力框
     if (!IsInputDisplayAndShiCe(e, "JQ_SHICE")) {
         return;
@@ -80,6 +81,12 @@ function CheckRowInput(e) {
 
     }
 
+    if (parseInt(zbenchmark_type) == 50 || parseInt(zbenchmark_type) == 51 || parseInt(zbenchmark_type) == 52 || parseInt(zbenchmark_type) == 53) {
+        //e.value = (Math.round(e.value * 100) / 100).toFixed(1);
+
+        e.value = (e.value * 100 / 100).toFixed(1);
+    }
+
     //ピーリンク 2 Width
     if (parseInt(zbenchmark_type) >= 66 && parseInt(zbenchmark_type) <= 71) {
 
@@ -89,36 +96,36 @@ function CheckRowInput(e) {
 
         if (parseInt(zbenchmark_type) == 66) {
             if (v246.indexOf(ky) >= 0) {
-                e.value = KesanBilink(e, 15);
+                $(e).val(KesanBilink(e, 15));
             }
         } else if (parseInt(zbenchmark_type) == 67) {
             if (v246.indexOf(ky) >= 0) {
-                e.value = KesanBilink(e, 10);
+                $(e).val(KesanBilink(e, 10));
             }
         } else if (parseInt(zbenchmark_type) == 68) {
             if (v246.indexOf(ky) >= 0) {
-                e.value = KesanBilink(e, 5);
+                $(e).val(KesanBilink(e, 5));
             }
         } else if (parseInt(zbenchmark_type) == 69) {
             if (v135.indexOf(ky) >= 0) {
-                e.value = KesanBilink(e, 15);
+                $(e).val(KesanBilink(e, 15));
             }
             if (v246.indexOf(ky) >= 0) {
-                e.value = KesanBilink(e, 10);
+                $(e).val(KesanBilink(e, 10));
             }
         } else if (parseInt(zbenchmark_type) == 70) {
             if (v135.indexOf(ky) >= 0) {
-                e.value = KesanBilink(e, 15);
+                $(e).val(KesanBilink(e, 15));
             }
             if (v246.indexOf(ky) >= 0) {
-                e.value = KesanBilink(e, 5);
+                $(e).val(KesanBilink(e, 5));
             }
         } else if (parseInt(zbenchmark_type) == 71) {
             if (v135.indexOf(ky) >= 0) {
-                e.value = KesanBilink(e, 10);
+                $(e).val(KesanBilink(e, 10));
             }
             if (v246.indexOf(ky) >= 0) {
-                e.value = KesanBilink(e, 5);
+                $(e).val(KesanBilink(e, 5));
             }
         }
 
@@ -150,7 +157,7 @@ function CheckRowInput(e) {
                 e.value = Math.round(Math.round(e.value / 4 * 100) / 10) / 10;
 
             } else if (tr.attr("check_item") == "膜与膜") {
-
+                e.value = (Math.round(e.value * 100)/100).toFixed(1);
             }
         }
     }

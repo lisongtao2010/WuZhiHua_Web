@@ -61,7 +61,7 @@ Public Class ResultDA
             .AppendLine("FROM v_goods_kind A")
             .AppendLine("INNER JOIN m_check B ON")
             .AppendLine("B.goods_id = A.goods_id ")
-            .AppendLine("LEFT JOIN TB_CompleteData C ON")
+            .AppendLine("LEFT JOIN [AvoidMiss_Experiment].[dbo].TB_CompleteData C ON")
             .AppendLine("C.Code = '" & goods_cd & "' ")
             .AppendLine("And C.MakeNumber = '" & make_number & "' ")
             .AppendLine("WHERE A.[goods_cd]='" & goods_cd & "'")
@@ -124,7 +124,7 @@ Public Class ResultDA
             .AppendLine("LEFT JOIN m_check B ON")
             .AppendLine("B.goods_id = A.goods_id ")
 
-            .AppendLine("LEFT JOIN TB_CompleteData C ON")
+            .AppendLine("LEFT JOIN [AvoidMiss_Experiment].[dbo].TB_CompleteData C ON")
             .AppendLine("C.Code = '" & goods_cd & "' ")
             .AppendLine("And C.MakeNumber = '" & make_number & "' ")
 
@@ -267,6 +267,31 @@ Public Class ResultDA
 
 
     ''' <summary>
+    ''' 计划检查完了表更新
+    ''' </summary>
+    ''' <param name="id"></param>
+    ''' <param name="result"></param>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Function upd_m_plan_check_finished(ByVal id As String, Optional ByVal result As String = "") As Integer
+        Dim sb As New StringBuilder
+        Dim paramList As New List(Of SqlParameter)
+
+        sb.AppendLine(" UPDATE m_plan_check_finished ")
+        sb.AppendLine(" SET 完了FLG = 1 ")
+        If result <> "" Then
+            sb.AppendLine(", result = '" & result & "' ")
+        End If
+        sb.AppendLine(" WHERE ")
+        sb.AppendLine(" result_id = '" & id & "' ")
+
+        '更新の実行
+        Return ExecuteNonQuery(DataAccessManager.Connection, CommandType.Text, sb.ToString(), paramList.ToArray)
+
+    End Function
+
+
+    ''' <summary>
     ''' 向检查结果表内插入数据
     ''' </summary>
     ''' <returns></returns>
@@ -338,7 +363,7 @@ Public Class ResultDA
         sb.AppendLine(" , check_user_cd = @checkUserCd ")
 
         'パラメータ設定
-        paramList.Add(MakeParam("@result_id", SqlDbType.VarChar, 13, result_id))
+        paramList.Add(MakeParam("@result_id", SqlDbType.VarChar, 13, result_id.Trim))
         paramList.Add(MakeParam("@check_id", SqlDbType.VarChar, 9, check_id))
 
         sb.AppendLine(" , measure_value1 = @measure_value1  ")
@@ -545,4 +570,55 @@ Public Class ResultDA
 
         Return result
     End Function
+
+
+    Public Function ins_m_code_reference(ByVal typeNumber As String, ByVal makeNumbers As ArrayList) As Integer
+
+        Dim result As Integer = 0
+        Dim paramList As New List(Of SqlParameter)
+
+        For i As Integer = 0 To makeNumbers.Count - 1
+            Dim sb As New StringBuilder
+
+            sb.AppendLine(" INSERT INTO m_code_reference ")
+            sb.AppendLine(" SELECT ")
+            sb.AppendLine("     Code ")
+            sb.AppendLine("   , '" & typeNumber & "' ")
+            sb.AppendLine(" FROM [AvoidMiss_Experiment].[dbo].TB_CompleteData ")
+            sb.AppendLine(" WHERE MakeNumber = '" & makeNumbers(i) & "' ")
+            sb.AppendLine(" AND Code not in  (select Code from m_code_reference) ")
+
+            result = result + ExecuteNonQuery(DataAccessManager.Connection, CommandType.Text, sb.ToString(), paramList.ToArray)
+        Next
+
+        Return result
+    End Function
+
+    Public Function ins_m_plan_check_finished(ByVal id As String, ByVal makeNumbers As ArrayList) As Integer
+        Dim result As Integer = 0
+        Dim paramList As New List(Of SqlParameter)
+
+        For i As Integer = 0 To makeNumbers.Count - 1
+            Dim sb As New StringBuilder
+            sb.AppendLine(" INSERT INTO m_plan_check_finished ")
+            sb.AppendLine(" SELECT ")
+            sb.AppendLine("     Code ")
+            sb.AppendLine("   , MakeNumber ")
+            sb.AppendLine("   , Product_Line ")
+            sb.AppendLine("   , ProductionQuantity ")
+            sb.AppendLine("   , Finish_Date ")
+            sb.AppendLine("   , Pay_Date ")
+            sb.AppendLine("   , '" & id & "'  ")
+            sb.AppendLine("   , 0 ")
+            sb.AppendLine("   , NULL ")
+            sb.AppendLine(" FROM [AvoidMiss_Experiment].[dbo].TB_CompleteData ")
+            sb.AppendLine(" WHERE MakeNumber = '" & makeNumbers(i) & "' ")
+
+            'パラメータ設定
+            result = result + ExecuteNonQuery(DataAccessManager.Connection, CommandType.Text, sb.ToString(), paramList.ToArray)
+        Next
+
+        Return result
+    End Function
+
 End Class

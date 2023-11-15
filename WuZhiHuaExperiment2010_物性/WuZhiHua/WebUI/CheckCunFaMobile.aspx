@@ -2,8 +2,8 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="Server"></asp:Content>
 <asp:Content ID="C1" ContentPlaceHolderID="FC" runat="Server">
-    <script src="Scripts/CheckJScript.js" type="text/javascript"></script>
-    <script src="Scripts/UpdateJScript.js" type="text/javascript"></script>
+    <script src="Scripts/CheckJScript.js?ver=1.2" type="text/javascript"></script>
+    <script src="Scripts/UpdateJScript.js?ver=1.1" type="text/javascript"></script>
 
     <script>
         var Gl_FocusTextbox;
@@ -18,8 +18,10 @@
             $("#ctl00_FC_btnKensaku").click();
         }
     </script>
-
-    <div style="margin-left: 10px;">
+<style>
+    /*body{overflow:hidden}*/
+</style>
+ <div style="margin-left: 10px;">
         <table>
             <tr>
                 <td></td>
@@ -195,8 +197,8 @@
 
         <table>
             <tr>
-                <td style="width: 890px; text-align: left; vertical-align: top;">
-                    <div style="width: 880px; height: 700px; overflow: auto;">
+                <td style="width: 840px; text-align: left; vertical-align: top;">
+                    <div style="width: 830px; height: 700px; overflow: auto;">
                         <asp:Image ID="imgLook" runat="server" CssClass="JQ_IMG" />
 
                     </div>
@@ -236,17 +238,19 @@
                             <td onclick="KeyBoard(this);">删</td>
                         </tr>
                         <tr style="height: 100px;">
-                            <td onclick="KeyBoard(this);" colspan="3">回车</td>
+                            <td onclick="KeyBoard(this);" colspan="1" style="width:130px;">试验3</td>
+                            <td onclick="KeyBoard(this);" colspan="1" style="width:130px;">试验4</td>
+                            <td onclick="KeyBoard(this);" rowspan="2">回车</td>
                         </tr>
-                        <tr style="height: 100px;">
+<%--                        <tr style="height: 100px;">
                             <td runat="server" onclick="KeyBoard(this);">19.</td>
                             <td onclick="KeyBoard(this);">20.</td>
                             <td onclick="KeyBoard(this);">21.</td>
-                        </tr>
+                        </tr>--%>
                         <tr style="height: 100px;">
-                            <td onclick="KeyBoard(this);">22.</td>
+     <%--                       <td onclick="KeyBoard(this);">22.</td>--%>
                             <td onclick="KeyBoard(this);" style="background-color: Red;">重</td>
-                            <td onclick="KeyBoard(this);" style="background-color: green;">合</td>
+                            <td onclick="KeyBoard(this);" style="background-color: green;" colspan="1">合</td>
                         </tr>
                     </table>
 

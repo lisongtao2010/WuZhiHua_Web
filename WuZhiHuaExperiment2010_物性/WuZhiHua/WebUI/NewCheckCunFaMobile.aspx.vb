@@ -24,27 +24,31 @@ Partial Class NewCheckCunFaMobile
                 hidClassify_id.Value = Context.Items("classify_id")
             End If
 
+            PageInit()
 
-            Me.hidKind_cd.Value = "01" '外观01 治具 02 
-
-
-            Dim result_id As String = Me.hidResult_id.Value
-            Dim goods_cd As String = Me.hidGoods_cd.Value
-            Dim kind_cd As String = Me.hidKind_cd.Value
-            Dim classify_id As String = Me.hidClassify_id.Value
-            Dim tools_id As String = Me.hidTools_id.Value
-            Dim picture_id As String = Me.hidPicture_id.Value
-
-            imgLook.ImageUrl = "Img.aspx?id=" & picture_id
-
-            GridViewBind(result_id, goods_cd, kind_cd, classify_id, tools_id)
-
-            lbl_RESULT_MSG.Text = Com.GetResultMsg(result_id)
 
         End If
 
     End Sub
 
+    Public Sub PageInit()
+
+        Me.hidKind_cd.Value = "01" '外观01 治具 02 
+
+
+        Dim result_id As String = Me.hidResult_id.Value
+        Dim goods_cd As String = Me.hidGoods_cd.Value
+        Dim kind_cd As String = Me.hidKind_cd.Value
+        Dim classify_id As String = Me.hidClassify_id.Value
+        Dim tools_id As String = Me.hidTools_id.Value
+        Dim picture_id As String = Me.hidPicture_id.Value
+
+        imgLook.ImageUrl = "Img.aspx?id=" & picture_id
+
+        GridViewBind(result_id, goods_cd, kind_cd, classify_id, tools_id)
+
+        lbl_RESULT_MSG.Text = Com.GetResultMsg(result_id)
+    End Sub
     '头部标签
     Public Function GetKindLinks() As String
 
@@ -704,6 +708,10 @@ Partial Class NewCheckCunFaMobile
 
         Dim ResultDA As New ResultDA
         ResultDA.Updatet_check_result_continue_chk_flg(Me.hidResult_id.Value, "0", Com.GetResult(Me.hidResult_id.Value))
+
+        '计划检查完了表的完了FLG和result更新
+        ResultDA.upd_m_plan_check_finished(Me.hidResult_id.Value, Com.GetResult(Me.hidResult_id.Value))
+
         Server.Transfer("Default.aspx")
     End Sub
 
@@ -741,7 +749,7 @@ Partial Class NewCheckCunFaMobile
         cm.InsMPictureChk(result_id, (FilePath & NewFilePath), user_cd)
         'File.Delete(FilePath & NewFilePath)
         PicMSInit()
-
+        PageInit()
     End Sub
 
     Sub PicMSInit()
